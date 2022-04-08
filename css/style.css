@@ -44,7 +44,7 @@ nav a:focus {
 }
 /*----*/
 .header {
-    background: #49872E;
+    background: #041793;
 }
 .header-top {
      padding: 1em 0;
@@ -124,16 +124,16 @@ nav a:focus {
 	font-family: 'Cagliostro', sans-serif;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #49872E;
+    background-color: #041793;
     color: #ff9900;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #49872E;
+    background-color: #041793;
     color: #ff9900;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   color: #ff9900;
-   background-color: #49872E;
+   background-color: #041793;
 }
 .link-effect-2 {
   overflow: hidden;
@@ -181,7 +181,7 @@ nav a:focus {
 }
 .ban-grid h4 {
 	font-size: 2em;
-    color: #F58703;
+    color: #fed513;
     text-transform: capitalize;
 }
 .ban-grid p{
@@ -190,7 +190,7 @@ nav a:focus {
 	margin-top:0.5em
 }
 .ban-grid:hover div.ban-right i {
-    color: #49872E;
+    color: #041793;
 }
 .ban-left {
     float: left;
@@ -211,12 +211,12 @@ nav a:focus {
 }
 h2.tittle {
     font-size: 3.5em;
-    color: #49872E;
+    color: #041793;
     text-align: center;
 }
 h3.tittle{
  font-size: 3.5em;
-    color: #49872E;
+    color: #041793;
     text-align: center;
 }
 /*-- effect-7 css --*/
@@ -224,7 +224,7 @@ h3.tittle{
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: #F58703;
+	background: #fed513;
 	height: 100%;
 	opacity: 0;
 	width: 100%;
@@ -278,7 +278,7 @@ h3.tittle{
     position: absolute;
     left: 15px;
     bottom: 0;
-    background: #F58703;
+    background: #fed513;
     width: 92.3%;
     height: 60px;
 }
@@ -294,7 +294,7 @@ h3.tittle{
 }
 .student-grid h4 {
     font-size: 2em;
-    color: #F58703;
+    color: #fed513;
 }
 .student-grid p {
     font-size: 1em;
@@ -315,13 +315,13 @@ ul.grid-part {
     margin-top: 1em;
 }
 ul.grid-part li :hover {
-    color: #F58703;
+    color: #fed513;
     padding-left: 0.2em;
 }
 ul.grid-part li i {
     font-size: 1.2em;
     margin-right: 0.5em;
-    color: #49872E;
+    color: #041793;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -330,7 +330,7 @@ ul.grid-part li i {
 }
 h3.tittle1 {
     font-size: 3.5em;
-    color: #49872E;
+    color: #041793;
     text-align: center;
 	margin-bottom:0.8em;
 }
@@ -376,12 +376,12 @@ h3.tittle2 {
 }
 .new-right h4 {
     font-size: 2em;
-    color: #F58703;
+    color: #fed513;
 	line-height: 1.2em;
 }
 .new-right h5{
     font-size: 1.8em;
-    color: #F58703;
+    color: #fed513;
     line-height: 1.2em;
 }
 .new-right p {
@@ -393,7 +393,7 @@ h3.tittle2 {
 }
 .new-left h5 {
     font-size: 1.8em;
-    color: #F58703;
+    color: #fed513;
 }
 .new-left p {
      font-size: 1em;
@@ -448,7 +448,7 @@ h3.tittle2 {
 }
 .copy-section {
     padding: 2em 0;
-    background: #49872E;
+    background: #041793;
     text-align: center;
 }
 .copy-section p {
@@ -468,7 +468,7 @@ h3.tittle2 {
 .social-icons a i {
     width: 32px;
     height: 32px;
-    background:#F58703  url(../images/img-sprite.png) no-repeat 0px 0px;
+    background:#fed513  url(../images/img-sprite.png) no-repeat 0px 0px;
     display: inline-block;
 	margin:0 0.2em;
 	transition: 0.5s all;
@@ -479,7 +479,7 @@ h3.tittle2 {
 	    border-radius: 20px;
 }
 .social-icons i.icon1:hover {
-  background: #49872E  url(../images/img-sprite.png) no-repeat 0px 0px;
+  background: #041793  url(../images/img-sprite.png) no-repeat 0px 0px;
       transform: rotateY(360deg);
 }
 .social-icons i.icon1 {
@@ -489,21 +489,21 @@ h3.tittle2 {
     background-position: -32px 0px;
 }
 .social-icons i.icon2:hover {
-  background: #49872E  url(../images/img-sprite.png) no-repeat -32px 0px;
+  background: #041793  url(../images/img-sprite.png) no-repeat -32px 0px;
       transform: rotateY(360deg);
 }
 .social-icons i.icon3 {
     background-position: -64px 0px;
 }
 .social-icons i.icon3:hover {
-  background: #49872E  url(../images/img-sprite.png) no-repeat -64px 0px;
+  background: #041793  url(../images/img-sprite.png) no-repeat -64px 0px;
       transform: rotateY(360deg);
 }
 .social-icons i.icon4 {
     background-position: -96px 0px;
 }
 .social-icons i.icon4:hover {
-  background: #49872E  url(../images/img-sprite.png) no-repeat -96px 0px;
+  background: #041793  url(../images/img-sprite.png) no-repeat -96px 0px;
       transform: rotateY(360deg);
 }
 /**about**/
@@ -535,7 +535,7 @@ h3.tittle2 {
 }
 .about-grid h4 {
     font-size: 2em;
-    color: #F58703;
+    color: #fed513;
     margin-bottom: 0.7em;
 }
 .about-grid p {
@@ -544,7 +544,7 @@ h3.tittle2 {
 }
 .what-grid h4 {
     font-size: 2em;
-    color: #F58703;
+    color: #fed513;
 }
 .what-grid p {
     font-size: 1em;
@@ -600,7 +600,7 @@ h3.tittle2 {
     margin-top: 3em;
 }
 .statistic {
-    background: #F58703;
+    background: #fed513;
     padding: 2em 2em;
     border-radius: 50%;
     width: 100%;
@@ -644,7 +644,7 @@ h3.tittle2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #49872E;
+  background: #041793;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -676,7 +676,7 @@ h3.tittle2 {
     font-size: 2em;
     text-align: center;
 	margin:0.5em 0;
-	color: #F58703;
+	color: #fed513;
 }
 .ser-grid p {
     font-size: 1em;
@@ -687,7 +687,7 @@ h3.tittle2 {
     width: 80px;
     height: 80px;
     font-size: 2em;
-    border: 3px double #49872E;
+    border: 3px double #041793;
     line-height: 80px;
     border-radius: 50px;
     color: #f58025;
@@ -706,7 +706,7 @@ h3.tittle2 {
 }
 .ourser-grid h4 {
     font-size: 2em;
-    color: #F58703;
+    color: #fed513;
     margin-top: .8em;
 }
 .ourser-grid p {
@@ -841,7 +841,7 @@ img.zoom-img:hover {
 /*--portfolio--*/
 .course-grid1 h4 {
     font-size: 2em;
-    color: #F58703;
+    color: #fed513;
     text-transform: capitalize;
 }
 .course-grid1 p {
@@ -873,7 +873,7 @@ img.zoom-img:hover {
 	margin-top:3em;
 }
 .serach-w3agile {
-    background: #F58703;
+    background: #fed513;
     padding: 3em 0;
 }
 /*--codes--*/
@@ -933,7 +933,7 @@ li.list-group-item1 {
 }
 .grid_5 h3, .grid_5 h2, .grid_5 h1, .grid_5 h4, .grid_5 h5, h3.hdg, h3.bars {
 	margin-bottom: 1em;
-    color:#F58703;
+    color:#fed513;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	border-top: none !important;
@@ -1142,7 +1142,7 @@ h2.typoh2{
 .contact-left h4 {
     font-size: 2em;
     margin: 0 0 1em;
-	color: #F58703;
+	color: #fed513;
 }
 .contact-left p {
     font-size: 1em;
@@ -1168,7 +1168,7 @@ h2.typoh2{
     font-size: 1em;
     padding: 1em 0;
     width: 19.68%;
-    background: #49872E;
+    background: #041793;
     border: none;
     transition: .5s all;
     -webkit-transition: .5s all;
@@ -1179,7 +1179,7 @@ h2.typoh2{
 	    margin-top: 1em;
 }
 .contact-left input[type="submit"]:hover , .contact-left input[type="reset"]:hover {
-    background: #F58703;
+    background: #fed513;
 }
 /*--responsive--*/
 @media(max-width:1440px){
@@ -1245,6 +1245,7 @@ ul.grid-part li {
 }
 .w3agile_Projects_grid figcaption h4 {
     margin: 1.8em 0 .5em;
+}
 }
 @media(max-width:991px){
 .navbar-brand h1 a {
@@ -1434,10 +1435,10 @@ h3.tittle, h3.tittle2, h3.tittle1 {
     text-align: center;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #F58703;
+    background-color: #fed513;
 }
 .navbar-default .navbar-toggle {
-    border-color: #F58703;
+    border-color: #fed513;
 }
 .navbar-toggle {
     position: relative;
@@ -1446,15 +1447,15 @@ h3.tittle, h3.tittle2, h3.tittle1 {
     margin-top: 8px;
     margin-right: 15px;
     margin-bottom: 8px;
-    background-color: #F58703;
+    background-color: #fed513;
     background-image: none;
-    border: 1px solid #F58703;
+    border: 1px solid #fed513;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #49872E;
+    border-color: #041793;
 }
 .banner-w3agile {
     min-height: 147px;
@@ -1841,6 +1842,7 @@ h3.tittle, h3.tittle2, h3.tittle1 {
 .contact-bottom {
     margin: 1em 0;
 }
+}
 @media(max-width:384px){
 .ban-grid {
     width: 100%;
@@ -1953,4 +1955,30 @@ h3.tittle1{
 .statistic {
     padding: 3em 3em;
 }
+}
+
+.road{background:url('https://transport.maharashtra.gov.in/Images/roadbg.jpg') repeat-x;height:106px;overflow:hidden}
+.div1{width:128px;height:55px;background:url('https://transport.maharashtra.gov.in/Images/rickshaw.png') no-repeat;font-weight:700;position:relative;margin-top:-35px;margin-left:-400px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite}
+.div2{width:128px;height:55px;background:url('https://transport.maharashtra.gov.in/Images/car2.png') no-repeat;font-weight:700;position:relative;margin-top:-50px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite}
+.div3{width:357px;height:145px;background:url('https://transport.maharashtra.gov.in/Images/truck.png') no-repeat;font-weight:700;position:relative;margin-top:-128px;margin-left:-170px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite;z-index:-1}
+.div4{width:128px;height:55px;background:url('https://transport.maharashtra.gov.in/Images/taxi.png') no-repeat;font-weight:700;position:relative;margin-top:-38px;margin-left:-400px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite}
+.div5{width:92px;height:73px;background:url('https://transport.maharashtra.gov.in/Images/bike.png') no-repeat;font-weight:700;position:relative;margin-top:35px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite;z-index:-1}
+.vehiclesdiv{margin-top:-150px;z-index:0;position:absolute;overflow-x:hidden;width:100%}
+#div1{-webkit-animation-timing-function:linear}
+#div2{-webkit-animation-timing-function:ease}
+#div3{-webkit-animation-timing-function:ease-in}
+#div4{-webkit-animation-timing-function:ease-out}
+#div5{-webkit-animation-timing-function:ease-in-out}
+#div1{animation-timing-function:linear}
+#div2{animation-timing-function:ease}
+#div3{animation-timing-function:ease-in}
+#div4{animation-timing-function:ease-out}
+#div5{animation-timing-function:ease-in-out}
+@-webkit-keyframes mymove {
+from{left:-150px}
+to{left:2100px}
+}
+@keyframes mymove {
+from{left:-150px}
+to{left:2100px}
 }
