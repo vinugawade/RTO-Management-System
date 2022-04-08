@@ -45,12 +45,11 @@
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
 									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
-									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
+									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
 									<!--<li><a href="status.php"><span data-hover="Status">Status</span></a></li>-->
 									<li><a href="complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
-									<li><a href="gallery.html"><span data-hover="Gallery">Gallery</span></a></li>
 								</ul>
 							</nav>
 						</div>
@@ -177,7 +176,7 @@ if(isset($_POST['submit']))
 {
 	$q1=implode(',',$_POST['q1']);
 
-	$sql="select edate,eid,id from llr order by id desc limit 1";
+	$sql="select edate,eid,id from LL order by id desc limit 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
 
@@ -218,7 +217,7 @@ if(isset($_POST['submit']))
 	}
 	$pwd=generate_password(10);
 
-	$sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
+	$sql="INSERT INTO LL(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
 	if (mysqli_query($conn, $sql))
 		{
 			echo "<script>window.alert('Record created successfully')</script>";

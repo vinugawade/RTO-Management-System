@@ -45,11 +45,10 @@
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
 									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
-									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
+									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
 									<li><a href="complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
-									<li><a href="gallery.html"><span data-hover="Gallery">Gallery</span></a></li>
 								</ul>
 							</nav>
 						</div>

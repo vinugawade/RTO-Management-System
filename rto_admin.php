@@ -10,10 +10,6 @@
 <!--css-->
 
 <style>
-/*form {
-    border: 50px solid #f1f1f1;
-}*/
-
 input[type=text], input[type=password] {
     width: 30%;
     padding: 12px 20px;
@@ -128,7 +124,7 @@ span.psw {
 
 						<p>
 						<ul>
-						<li><a href="admin_get_llr_info.php"><h4>View LLR entry table</h4></a></li>
+						<li><a href="admin_get_llr_info.php"><h4>View LL entry table</h4></a></li>
 						<br>
 						<li><a href="admin_get_reg_info.php"><h4>View Registration entry table</h4></a></li>
 						<br>
@@ -190,17 +186,5 @@ span.psw {
 				</div>
 			</div>
 		<!--footer-->
-		<!---copy--->
-			<div class="copy-section">
-				<div class="container">
-					<div class="social-icons">
-						<a href="#"><i class="icon1"></i></a>
-						<a href="#"><i class="icon2"></i></a>
-						<a href="#"><i class="icon3"></i></a>
-						<a href="#"><i class="icon4"></i></a>
-					</div>
-				</div>
-			</div>
-			<!---copy--->
 </body>
 </html>

@@ -45,12 +45,11 @@
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
 									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
-									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
+									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
 									<!--<li><a href="status.php"><span data-hover="Status">Status</span></a></li>-->
 									<li><a href="complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
-									<li><a href="gallery.html"><span data-hover="Gallery">Gallery</span></a></li>
 								</ul>
 							</nav>
 						</div>
@@ -72,7 +71,7 @@
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
 							<h4>Enter your Aadhar Number</h4>
-								<p><form action="llr.php" method="get">
+								<p><form action="LL.php" method="get">
           				<br><br><br>
           				Aadhar number: <input type="text" name="aad" >
 						<br><br>
@@ -121,17 +120,5 @@
 				</div>
 			</div>
 		<!--footer-->
-		<!---copy--->
-			<div class="copy-section">
-				<div class="container">
-					<div class="social-icons">
-						<a href="#"><i class="icon1"></i></a>
-						<a href="#"><i class="icon2"></i></a>
-						<a href="#"><i class="icon3"></i></a>
-						<a href="#"><i class="icon4"></i></a>
-					</div>
-				</div>
-			</div>
-			<!---copy--->
 </body>
 </html>

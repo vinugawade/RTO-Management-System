@@ -8,7 +8,7 @@
 				}
 
 				mysqli_select_db($conn,"rto_db");
-					$sql1 = "delete from llr where llr_status=1";
+					$sql1 = "delete from LL where llr_status=1";
 					$result1 = $conn->query($sql1);
 					$sql2 = "delete from dl where dl_status=1";
 					$result2 = $conn->query($sql2);

@@ -45,11 +45,10 @@
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
 									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
-									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
+									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
 									<li><a href="complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
-									<li><a href="gallery.html"><span data-hover="Gallery">Gallery</span></a></li>
 								</ul>
 							</nav>
 						</div>
@@ -81,7 +80,7 @@
 
 					$_SESSION['aadhar']=$aad;
 
-					$sql1 = "SELECT aadhar,llr_status,passwd FROM llr where aadhar=$aad order by llr_id desc limit 1";
+					$sql1 = "SELECT aadhar,llr_status,passwd FROM LL where aadhar=$aad order by llr_id desc limit 1";
 					$result1 = $conn->query($sql1);
 					$row1=mysqli_fetch_row($result1);
 
@@ -110,18 +109,18 @@
 
 					if (mysqli_num_rows($result1) > 0 && $passwd==$row1[2]){
 						if($row1[1]==1){
-							echo "<br><br><br>&emsp; &emsp;Your LLR Status: Approved";
+							echo "<br><br><br>&emsp; &emsp;Your LL Status: Approved";
 							echo "<br>&emsp; &emsp;<a href=print_llr.php><u>Print</u></a>";
 						}
 						else if($row1[1]==-1){
-							echo "<br><br><br>&emsp; &emsp;Your LLR Status: Rejected, apply for LLR again!!";
+							echo "<br><br><br>&emsp; &emsp;Your LL Status: Rejected, apply for LL again!!";
 						}
 						else{
-							echo "<br><br><br>&emsp; &emsp;Your LLR Status: Not yet approved";
+							echo "<br><br><br>&emsp; &emsp;Your LL Status: Not yet approved";
 						}
 					}
 					else{
-						echo "<br><br>&emsp; &emsp; You have not applied for LLR";
+						echo "<br><br>&emsp; &emsp; You have not applied for LL";
 					}
 
 					$age = floor((time() - strtotime($dob)) / 31556926);

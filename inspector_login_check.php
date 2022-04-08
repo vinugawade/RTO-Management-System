@@ -20,9 +20,9 @@
 
 						$_SESSION['username'] = $username;
 
-						if($row2[1]=='llr'){
+						if($row2[1]=='LL'){
 							echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('Welcome LLR Inspector')
+							window.alert('Welcome LL Inspector')
 							window.location.href='llr_inspector.php'
 							</SCRIPT>");
 						}

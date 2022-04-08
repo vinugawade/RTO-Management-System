@@ -1,5 +1,5 @@
 <html>
-<title>Print LLR</title>
+<title>Print LL</title>
 <body>
 <?php
 session_start();
@@ -15,8 +15,8 @@ $row1 = mysqli_fetch_row($result1);
 $name = $row1[1] ." ".$row1[2]." ".$row1[3];
 $gender = $row1[0];
 if($gender=='M')
-	$image = "images/t3.jpg";
-else $image = "images/t2.jpg";
+	$image = "images/anonymous.png";
+else $image = "images/anonymous.png";
 //echo $name;
 
 
@@ -26,7 +26,7 @@ $row2 = mysqli_fetch_row($result2);
 $address = $row2[0].", ".$row2[1].", ".$row2[2];
 //echo $address;
 
-$sql3 = "select llr_issue_date,cov from llr where aadhar='$aad' order by llr_id desc limit 1";
+$sql3 = "select llr_issue_date,cov from LL where aadhar='$aad' order by llr_id desc limit 1";
 $result3 = $conn->query($sql3);
 $row3 = mysqli_fetch_row($result3);
 $llr_issue_date = $row3[0];
@@ -61,13 +61,13 @@ $llr_expiry_date = date("Y-m-d", strtotime("+6 months",strtotime($llr_issue_date
 </tr>
 
 <tr>
-<td>LLR Issue-Date</td>
+<td>LL Issue-Date</td>
 <td colspan="2"><?php echo $llr_issue_date ?></td>
 </tr>
 
 
 <tr>
-<td>LLR Expiry-Date</td>
+<td>LL Expiry-Date</td>
 <td colspan="2"><?php echo $llr_expiry_date ?></td>
 </tr>
 

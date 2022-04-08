@@ -12,7 +12,7 @@
 					$aad=$_GET["aad"];
 					$llr_id=$_GET["llr_id"];
 					$llr_status=$_GET["llr_status"];
-					$sql="select llr_id,llr_status from llr where aadhar='$aad' and llr_id='$llr_id'";
+					$sql="select llr_id,llr_status from LL where aadhar='$aad' and llr_id='$llr_id'";
 
 
 					$result = $conn->query($sql);
@@ -22,7 +22,7 @@
 					if (mysqli_num_rows($result) > 0) {
 						if($row2[1]==0){
 							$date=Date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")))."<br>";
-							$sql1="update llr set llr_status=$llr_status,llr_issue_date='$date' where aadhar='$aad' and llr_id='$llr_id'";
+							$sql1="update LL set llr_status=$llr_status,llr_issue_date='$date' where aadhar='$aad' and llr_id='$llr_id'";
 							if($conn->query($sql1)==TRUE){
 								echo ("<SCRIPT LANGUAGE='JavaScript'>
 								window.alert('Record Updated successfully!!')
@@ -44,7 +44,7 @@
 					}
 					else {
 							echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('LLR entry not found')
+							window.alert('LL entry not found')
 							window.location.href='llr_update.php'
 							</SCRIPT>");
 					}

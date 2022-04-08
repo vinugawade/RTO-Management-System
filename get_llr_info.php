@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-<title>LLR Table</title>
+<title>LL Table</title>
 <body>
-<p><h1><b>RTO Maharashtra: LLR Table</b></h1></p>
+<p><h1><b>RTO Maharashtra: LL Table</b></h1></p>
 <p><a href="llr_inspector.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 <a href="logout.php"><font color="blue" size="5"><b>Logout</b></font></a></p>
@@ -18,12 +18,12 @@
 
 				mysqli_select_db($conn,"rto_db");
 
-$sql1 = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM llr";
+$sql1 = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM LL";
 
 $result1 = $conn->query($sql1);
 
 $body="body";
-$subject="LLR Update";
+$subject="LL Update";
 
 if($result1){
 echo '<div align="center"><table align="left" border="2"
@@ -33,8 +33,8 @@ cellspacing="2" cellpadding="10">
 <td align="left"><b>Aadhaar No</b></td>
 <td align="left"><b>Name</b></td>
 <td align="left"><b>COV</b></td>
-<td align="left"><b>LLR ID</b></td>
-<td align="left"><b>LLR Status</b></td>
+<td align="left"><b>LL ID</b></td>
+<td align="left"><b>LL Status</b></td>
 <td align="left"><b>Email</b></td>
 </tr></div>';
 

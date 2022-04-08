@@ -10,10 +10,6 @@
 <!--css-->
 
 <style>
-/*form {
-    border: 50px solid #f1f1f1;
-}*/
-
 input[type=text], input[type=password] {
     width: 30%;
     padding: 12px 20px;
@@ -122,15 +118,15 @@ span.psw {
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">LLR Inspector Page</h3>
+					<h3 class="tittle">LL Inspector Page</h3>
 					<div class="student-grids">
 						<div class="col-md-10 student-grid">
 
 						<p>
 						<ul>
-						<li><a href="get_llr_info.php"><h4>View LLR entry table</h4></a></li>
+						<li><a href="get_llr_info.php"><h4>View LL entry table</h4></a></li>
 						<br>
-						<li><a href="llr_update.php"><h4>Update LLR Status</h4></a></li>
+						<li><a href="llr_update.php"><h4>Update LL Status</h4></a></li>
 						<br>
 						</ul>
 						</p>
@@ -171,17 +167,5 @@ span.psw {
 				</div>
 			</div>
 		<!--footer-->
-		<!---copy--->
-			<div class="copy-section">
-				<div class="container">
-					<div class="social-icons">
-						<a href="#"><i class="icon1"></i></a>
-						<a href="#"><i class="icon2"></i></a>
-						<a href="#"><i class="icon3"></i></a>
-						<a href="#"><i class="icon4"></i></a>
-					</div>
-				</div>
-			</div>
-			<!---copy--->
 </body>
 </html>

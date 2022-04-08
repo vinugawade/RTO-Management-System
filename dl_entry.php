@@ -45,12 +45,11 @@
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
 									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
-									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
+									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
 									<!--<li><a href="status.php"><span data-hover="Status">Status</span></a></li>-->
 									<li><a href="complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
-									<li><a href="gallery.html"><span data-hover="Gallery">Gallery</span></a></li>
 								</ul>
 							</nav>
 						</div>
@@ -79,7 +78,7 @@ mysqli_select_db($conn,"rto_db");
 						$results1=0;
 						$flag=0;
 
-					$sql1="select llr_issue_date,llr_status,llr_id,cov from llr where aadhar=$aad order by llr_id desc" ;
+					$sql1="select llr_issue_date,llr_status,llr_id,cov from LL where aadhar=$aad order by llr_id desc" ;
 					$result1=$conn->query($sql1);
 
 					$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
@@ -99,28 +98,28 @@ mysqli_select_db($conn,"rto_db");
 					else
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('Apply for LLR first')
+							window.alert('Apply for LL first')
 							window.location.href='applyforllr.php'
 							</SCRIPT>");
 					}
 					if($cov!=$q1)
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('Apply for vehicles for which LLR has been approved')
+							window.alert('Apply for vehicles for which LL has been approved')
 							window.location.href='applyfordl.php'
 							</SCRIPT>");
 					}
 					if($llr_status==-1)
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('You did not pass the LLR test. Apply for it again.')
+							window.alert('You did not pass the LL test. Apply for it again.')
 							window.location.href='applyforllr.php'
 							</SCRIPT>");
 					}
 					if($llr_status==0)
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('Your LLR is not yet approved')
+							window.alert('Your LL is not yet approved')
 							window.location.href='index.html'
 							</SCRIPT>");
 					}
@@ -128,14 +127,14 @@ mysqli_select_db($conn,"rto_db");
 					if($age<1)
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('Apply after one month of LLR issue')
+							window.alert('Apply after one month of LL issue')
 							window.location.href='index.html'
 							</SCRIPT>");
 					}
 					else if($age>6)
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
-							window.alert('Your LLR has expired. Apply for LLR again.')
+							window.alert('Your LL has expired. Apply for LL again.')
 							window.location.href='applyforllr.php'
 							</SCRIPT>");
 					}
@@ -181,7 +180,7 @@ mysqli_select_db($conn,"rto_db");
 								echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 								echo "<br>Your DL test ID:".$eid."<br>";
 								echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
-								//echo "Your LLR exam password:".$pwd."<br>";
+								//echo "Your LL exam password:".$pwd."<br>";
 								echo "<br>Your DL test venue:<br>".$rto_address."<br>";
 								echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 								echo "<br>Please note down above details to be able to take the DL test<br>

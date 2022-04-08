@@ -206,15 +206,18 @@ nav a:focus {
 .welcome-w3,.new-w3agile,.about-w3,.services-w3l,.projects-agile,.courses-w3ls,.statistics-w3,.typo-w3,.contact-w3l{
     padding: 5em 0;
 }
+.welcome-w3{
+    padding-bottom: 0;
+}
 .wel-grids,.student-grids,.about-grids,.what-grids,.staff-grids,.statistics-grids,.services-grids,.ourser-grids,.course-grids {
     margin-top:4em;
 }
-h2.tittle {
+h2.title {
     font-size: 3.5em;
     color: #041793;
     text-align: center;
 }
-h3.tittle{
+h3.title{
  font-size: 3.5em;
     color: #041793;
     text-align: center;
@@ -328,13 +331,13 @@ ul.grid-part li i {
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
-h3.tittle1 {
+h3.title1 {
     font-size: 3.5em;
     color: #041793;
     text-align: center;
 	margin-bottom:0.8em;
 }
-h3.tittle2 {
+h3.title2 {
     font-size: 3.5em;
     color: #fff;
     text-align: center;
@@ -1195,7 +1198,7 @@ h2.typoh2{
 .ban-grid h4,.student-grid h4,.new-right h4,.footer-grid h4,.about-grid h4,.what-grid h4,.staff-right h4,.ser-grid h4,.ourser-grid h4,.course-grid1 h4,.contact-left h4  {
     font-size: 1.8em;
 }
-h2.tittle {
+h2.title {
     font-size: 3.2em;
 }
 .ban-grid p,.student-grid p,.new-left p,.new-right p,.footer-grid p,.about-grid p,.what-grid p,.statistic p,.ser-grid p,.ourser-grid p,.course-grid1 p,.contact-left p{
@@ -1207,7 +1210,7 @@ h2.tittle {
 .text-grid h4 {
     padding-top: 0.7em;
 }
-h3.tittle,h3.tittle2,h3.tittle1 {
+h3.title,h3.title2,h3.title1 {
     font-size: 3.2em;
 }
 ul.grid-part li {
@@ -1258,10 +1261,10 @@ ul.grid-part li {
     float: left;
     width: 25%;
 }
-h2.tittle {
+h2.title {
     font-size: 3em;
 }
-h3.tittle, h3.tittle2, h3.tittle1 {
+h3.title, h3.title2, h3.title1 {
     font-size: 3em;
 }
 .ban-grid h4, .student-grid h4, .new-right h4, .footer-grid h4, .about-grid h4, .what-grid h4, .staff-right h4, .ser-grid h4, .ourser-grid h4, .course-grid1 h4, .contact-left h4 {
@@ -1464,10 +1467,10 @@ h3.tittle, h3.tittle2, h3.tittle1 {
 .nav > li > a {
     padding: 3px 7px;
 }
-h2.tittle {
+h2.title {
     font-size: 2.8em;
 }
-h3.tittle, h3.tittle2, h3.tittle1 {
+h3.title, h3.title2, h3.title1 {
     font-size: 2.8em;
 }
 .testimonials-w3 h5 {
@@ -1627,10 +1630,10 @@ ul.grid-part li {
 }
 }
 @media(max-width:600px){
-h2.tittle {
+h2.title {
     font-size: 2.5em;
 }
-h3.tittle, h3.tittle2, h3.tittle1 {
+h3.title, h3.title2, h3.title1 {
     font-size: 2.5em;
 }
 .testimonials-w3 h5 {
@@ -1735,10 +1738,10 @@ h3.tittle, h3.tittle2, h3.tittle1 {
 .port-7.effect-2 .text-desc {
     padding: 10px 10px 0;
 }
-h2.tittle {
+h2.title {
     font-size: 2.4em;
 }
-h3.tittle, h3.tittle2, h3.tittle1 {
+h3.title, h3.title2, h3.title1 {
     font-size: 2.4em;
 }
 .port-7.effect-2 .text-desc {
@@ -1773,10 +1776,10 @@ h3.tittle, h3.tittle2, h3.tittle1 {
 }
 }
 @media(max-width:414px){
-h2.tittle {
+h2.title {
     font-size: 2.1em;
 }
-h3.tittle, h3.tittle2, h3.tittle1 {
+h3.title, h3.title2, h3.title1 {
     font-size: 2.1em;
 }
 .wel-grid {
@@ -1848,7 +1851,7 @@ h3.tittle, h3.tittle2, h3.tittle1 {
     width: 100%;
 	  padding: 1em 0;
 }
-h2.tittle {
+h2.title {
     font-size: 1.9em;
 }
 .ban-grid h4, .student-grid h4, .new-right h4, .footer-grid h4, .about-grid h4, .what-grid h4, .staff-right h4, .ser-grid h4, .ourser-grid h4, .course-grid1 h4, .contact-left h4 {
@@ -1898,7 +1901,7 @@ h2.tittle {
 .indicate p {
     font-size: 0.87em
 }
-h2.tittle {
+h2.title {
     font-size: 1.9em;
     line-height: 1.5em;
 }
@@ -1924,7 +1927,7 @@ h2.tittle {
 .navbar-default {
     padding: 0.5em 0;
 }
-h3.tittle1{
+h3.title1{
 	margin-bottom:0.4em;
 }
 .place-grid {

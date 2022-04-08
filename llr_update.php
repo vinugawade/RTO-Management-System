@@ -10,10 +10,6 @@
 <!--css-->
 
 <style>
-/*form {
-    border: 50px solid #f1f1f1;
-}*/
-
 input[type=text], input[type=password] {
     width: 30%;
     padding: 12px 20px;
@@ -122,18 +118,18 @@ span.psw {
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">LLR Status Update</h3>
+					<h3 class="tittle">LL Status Update</h3>
 					<div class="student-grids">
 						<div class="col-md-10 student-grid">
-							<h4>Enter the details of citizen's LLR entry</h4>
+							<h4>Enter the details of citizen's LL entry</h4>
 								<p><form action="llr_updated.php" method="get">
           				<br><br>
           				Aadhar number: <input type="text" name="aad" >
 						<br>
-						LLR ID: <input type="text" name="llr_id">
+						LL ID: <input type="text" name="llr_id">
 						<br>
-						LLR Status: <input type="text" name="llr_status"><br>
-						Enter 1 for Approval, -1 for Rejection in LLR Status<br><br>
+						LL Status: <input type="text" name="llr_status"><br>
+						Enter 1 for Approval, -1 for Rejection in LL Status<br><br>
 
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
 						<p><a href="llr_inspector.php"><h4>Back</h4></a></p>
@@ -173,17 +169,5 @@ span.psw {
 				</div>
 			</div>
 		<!--footer-->
-		<!---copy--->
-			<div class="copy-section">
-				<div class="container">
-					<div class="social-icons">
-						<a href="#"><i class="icon1"></i></a>
-						<a href="#"><i class="icon2"></i></a>
-						<a href="#"><i class="icon3"></i></a>
-						<a href="#"><i class="icon4"></i></a>
-					</div>
-				</div>
-			</div>
-			<!---copy--->
 </body>
 </html>
