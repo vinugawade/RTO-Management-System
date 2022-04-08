@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RTO Karnataka</title>
+<title>RTO Maharashtra</title>
 <!--css-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html">RTO <span>Karnataka</span></a></h1>
+								<h1><a href="index.html">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="home.html"><span data-hover="Home">Home</span></a></li>
+									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -70,7 +70,7 @@
           <div class="col-md-10 student-grid">
 <?php
 $conn = mysqli_connect("localhost","root","");
-mysqli_select_db($conn,"dbms_p1");
+mysqli_select_db($conn,"rto_db");
 					if(isset($_POST['submit']))
 					{
 						$q1=implode(',',$_POST['q1']);
@@ -78,14 +78,14 @@ mysqli_select_db($conn,"dbms_p1");
 						$passwd = $_POST['passwd'];
 						$results1=0;
 						$flag=0;
-						
+
 					$sql1="select llr_issue_date,llr_status,llr_id,cov from llr where aadhar=$aad order by llr_id desc" ;
 					$result1=$conn->query($sql1);
 
 					$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
 					$result5=$conn->query($sql5);
 					$row5=mysqli_fetch_row($result5);
-					
+
 					if(mysqli_num_rows($result1)>0)
 					{
 						while($row=mysqli_fetch_assoc($result1))
@@ -121,7 +121,7 @@ mysqli_select_db($conn,"dbms_p1");
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
 							window.alert('Your LLR is not yet approved')
-							window.location.href='home.html'
+							window.location.href='index.html'
 							</SCRIPT>");
 					}
 					$age = floor((time() - strtotime($llr_issue_date)) / 2592000);
@@ -129,7 +129,7 @@ mysqli_select_db($conn,"dbms_p1");
 					{
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
 							window.alert('Apply after one month of LLR issue')
-							window.location.href='home.html'
+							window.location.href='index.html'
 							</SCRIPT>");
 					}
 					else if($age>6)
@@ -144,9 +144,9 @@ mysqli_select_db($conn,"dbms_p1");
 						$sql="select edate,eid,dl_id from dl order by dl_id desc limit 1";
 						$result=$conn->query($sql);
 						$flag=1;
-						
+
 						$row=mysqli_fetch_array($result);
-						
+
 						$x=$row[2]+1;
 						$d=$row[0];
 						$d=date("Y-m-d", strtotime("+1 week"));
@@ -167,10 +167,10 @@ mysqli_select_db($conn,"dbms_p1");
 						$result3=$conn->query($sql3);
 						$row3=mysqli_fetch_row($result3);
 						$rto_address = $row3[0];
-						
+
 						$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
 						$mail_id = $row5[3];
-						
+
 						$sql="INSERT INTO dl(aadhar,name,cov,edate,eid,passwd,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$passwd','$mail_id')";
 						if (mysqli_query($conn, $sql))
 						{
@@ -188,7 +188,7 @@ mysqli_select_db($conn,"dbms_p1");
 								<br>Please report to the test venue at 10:00AM on the specified date<br>";
 								echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 								*/
-								//echo "<script>window.location.href='home.html'</script>";
+								//echo "<script>window.location.href='index.html'</script>";
 						}
 						else
 						{
@@ -200,7 +200,7 @@ mysqli_select_db($conn,"dbms_p1");
 </div>
 
 <div class="col-md-10">
-	
+
 <table border ="1" cellpadding="10" cellspacing="5" align="center">
 <tr>
   <td align = "center" colspan="2"><b>DL TEST DETAILS</b></td>
@@ -234,7 +234,7 @@ mysqli_select_db($conn,"dbms_p1");
 </tr>
 </table>
 
-<p align="center"><a href="home.html"><h2 align="center">Exit</h2></a></p>
+<p align="center"><a href="index.html"><h2 align="center">Exit</h2></a></p>
 
     <div class="clearfix"></div>
   </div>
@@ -250,17 +250,17 @@ mysqli_select_db($conn,"dbms_p1");
       <div class="footer-grids">
         <div class="col-md-8 footer-grid">
           <h4>About Us</h4>
-          <p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Karnataka.<span>
+          <p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Maharashtra.<span>
               It issues driving licences, organises collection of vehicle excise duty and sells personalised registrations.
               It also is responsible to inspect vehicle's insurance and clear the pollution test.</span></p>
         </div>
         <div class="col-md-4 footer-grid">
         <h4>Information</h4>
           <ul>
-            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Bengaluru</li>
+            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Oros</li>
             <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>080 2956789</li>
-            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:karnataka@rto.com"> karnataka@rto.com</a></li>
-            <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Sat 10:00 hr to 17:00 hr</li>
+            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:oros@rto.com"> oros@rto.com</a></li>
+            <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Fri 10:00 AM - 08:00 PM</li>
           </ul>
         </div>
         <div class="clearfix"></div>

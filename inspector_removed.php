@@ -1,4 +1,4 @@
-<?php   
+<?php
 				session_start();
 				$username=$_SESSION['username'];
 				$conn = mysqli_connect("localhost","root","");
@@ -7,7 +7,7 @@
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				}
 
-				mysqli_select_db($conn,"dbms_p1");
+				mysqli_select_db($conn,"rto_db");
 				if(isset($_POST['submit'])){
 					$username=$_POST["username"];
 					$privilege=$_POST["privilege"];
@@ -27,5 +27,5 @@
 								</SCRIPT>");
 					}
 				}
-					
+
 ?>

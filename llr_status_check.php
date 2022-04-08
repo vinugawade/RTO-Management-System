@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RTO Karnataka</title>
+<title>RTO Maharashtra</title>
 <!--css-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html">RTO <span>Karnataka</span></a></h1>
+								<h1><a href="index.html">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="home.html"><span data-hover="Home">Home</span></a></li>
+									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	<!--header-->
-	
+
 	<div class="content">
     <!--banner-bottom-->
 
@@ -70,22 +70,22 @@
           <div class="col-md-10 student-grid">
 			<?php
 				$conn = mysqli_connect("localhost","root","");
-				mysqli_select_db($conn,"dbms_p1");
+				mysqli_select_db($conn,"rto_db");
 				$results1=0;
 
 					session_start();
-					
+
 					$aad=$_GET["aad"];
 					$passwd = $_GET["passwd"];
 					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 
 					$_SESSION['aadhar']=$aad;
-					
+
 					$sql1 = "SELECT aadhar,llr_status,passwd FROM llr where aadhar=$aad order by llr_id desc limit 1";
 					$result1 = $conn->query($sql1);
 					$row1=mysqli_fetch_row($result1);
-					
-					
+
+
 					$result = $conn->query($sql);
 					if (mysqli_num_rows($result) > 0) {
 
@@ -99,20 +99,20 @@
 					else {
 						echo "0 results";
 					}
-					
+
 					if (mysqli_num_rows($result1) > 0 && $passwd!=$row1[2]){
 						echo ("<SCRIPT LANGUAGE='JavaScript'>
 							window.alert('Password incorrect')
 							window.location.href='llr_status.php'
 							</SCRIPT>");
 					}
-						
-						
+
+
 					if (mysqli_num_rows($result1) > 0 && $passwd==$row1[2]){
 						if($row1[1]==1){
 							echo "<br><br><br>&emsp; &emsp;Your LLR Status: Approved";
 							echo "<br>&emsp; &emsp;<a href=print_llr.php><u>Print</u></a>";
-						}	
+						}
 						else if($row1[1]==-1){
 							echo "<br><br><br>&emsp; &emsp;Your LLR Status: Rejected, apply for LLR again!!";
 						}
@@ -123,20 +123,20 @@
 					else{
 						echo "<br><br>&emsp; &emsp; You have not applied for LLR";
 					}
-					
+
 					$age = floor((time() - strtotime($dob)) / 31556926);
 
 
 					if($age<18)
 					{echo ("<SCRIPT LANGUAGE='JavaScript'>
 							window.alert('Not eligible')
-							window.location.href='home.html'
+							window.location.href='index.html'
 							</SCRIPT>");
 					}
 			?>
 		</div>
 		</div>
 		</div></div></div>
-		<p align="center"><a href="home.html"><h2 align="center">Exit</h2></a></p>
+		<p align="center"><a href="index.html"><h2 align="center">Exit</h2></a></p>
 		</body>
 		</html>

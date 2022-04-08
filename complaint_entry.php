@@ -1,6 +1,6 @@
 <?php
 					$conn = mysqli_connect("localhost","root","");
-					mysqli_select_db($conn,"dbms_p1");
+					mysqli_select_db($conn,"rto_db");
 					if(isset($_POST['submit']))
 					{
 						$q1=$_POST['aad'];
@@ -10,11 +10,11 @@
 						$sql="INSERT INTO complaint(aadhar,cdate,cdesc) VALUES('$q1','$date','$com')";
 
 						$results2=mysqli_query($conn,$sql);
-						
+
 					if(!$results2)
 					{
 						echo "<script>alert(' unsuccessful')</script>";
 					}
-						echo "<script>windows.location.href='home.html'</script>";
+						echo "<script>windows.location.href='index.html'</script>";
 					}
 				?>

@@ -1,4 +1,4 @@
-<?php   
+<?php
 				session_start();
 				$username=$_SESSION['username'];
 				$conn = mysqli_connect("localhost","root","");
@@ -7,7 +7,7 @@
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				}
 
-				mysqli_select_db($conn,"dbms_p1");
+				mysqli_select_db($conn,"rto_db");
 					$sql1 = "delete from llr where llr_status=1";
 					$result1 = $conn->query($sql1);
 					$sql2 = "delete from dl where dl_status=1";

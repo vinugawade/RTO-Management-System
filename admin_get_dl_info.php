@@ -2,7 +2,7 @@
 <html>
 <title>DL Table</title>
 <body>
-<p><h1><b><u>RTO Karnataka: DL Table</u></b></h1></p>
+<p><h1><b><u>RTO Maharashtra: DL Table</u></b></h1></p>
 <p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 <a href="admin_logout.php"><font color="blue" size="5"><b>Logout</b></font></a></p>
@@ -15,8 +15,8 @@
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				}
 
-				mysqli_select_db($conn,"dbms_p1");
-				
+				mysqli_select_db($conn,"rto_db");
+
 
 $sql1 = "SELECT aadhar,name,cov,dl_id,dl_status,mail_id FROM dl";
 
@@ -42,12 +42,12 @@ cellspacing="2" cellpadding="10">
 
 while($row = mysqli_fetch_array($result1)){
 $link=$row['mail_id'];
-echo '<div align="center"><tr><td align="left">' . 
-$row['aadhar'] . '</td><td align="left">' . 
+echo '<div align="center"><tr><td align="left">' .
+$row['aadhar'] . '</td><td align="left">' .
 $row['name'] . '</td><td align="left">' .
-$row['cov'] . '</td><td align="left">' . 
+$row['cov'] . '</td><td align="left">' .
 $row['dl_id'] . '</td><td align="left">' .
-$row['dl_status'] . '</td><td align="left">' . 
+$row['dl_status'] . '</td><td align="left">' .
 '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
 //echo '</tr>';
 }

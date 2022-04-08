@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RTO Karnataka</title>
+<title>RTO Maharashtra</title>
 <!--css-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html">RTO <span>Karnataka</span></a></h1>
+								<h1><a href="index.html">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="home.html"><span data-hover="Home">Home</span></a></li>
+									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -70,7 +70,7 @@
           <div class="col-md-3 student-grid">
 			<?php
 				$conn = mysqli_connect("localhost","root","");
-				mysqli_select_db($conn,"dbms_p1");
+				mysqli_select_db($conn,"rto_db");
 				$results1=0;
 
 					$aad=$_GET["aad"];
@@ -96,19 +96,19 @@
 					if($age<18)
 					{echo ("<SCRIPT LANGUAGE='JavaScript'>
 							window.alert('Not eligible')
-							window.location.href='home.html'
+							window.location.href='index.html'
 							</SCRIPT>");
 					}
 			?>
     </div>
     <div class="col-md-3 student-grid">
 			<form method="post" action="llr_entry.php">
-			
+
 			<br><br>
-				
+
 <p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>
 <p><input name="passwd" type="hidden" id="b" value="<?php echo $_GET["passwd"] ?>"></p>
-				
+
 				<p>&emsp;&emsp;&emsp;Select category of vehicle
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
@@ -137,17 +137,17 @@
       <div class="footer-grids">
         <div class="col-md-8 footer-grid">
           <h4>About Us</h4>
-          <p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Karnataka.<span>
+          <p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Maharashtra.<span>
               It issues driving licences, organises collection of vehicle excise duty and sells personalised registrations.
               It also is responsible to inspect vehicle's insurance and clear the pollution test.</span></p>
         </div>
         <div class="col-md-4 footer-grid">
         <h4>Information</h4>
           <ul>
-            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Bengaluru</li>
+            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Oros</li>
             <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>080 2956789</li>
-            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:karnataka@rto.com"> karnataka@rto.com</a></li>
-            <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Sat 10:00 hr to 17:00 hr</li>
+            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:oros@rto.com"> oros@rto.com</a></li>
+            <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Fri 10:00 AM - 08:00 PM</li>
           </ul>
         </div>
         <div class="clearfix"></div>
@@ -172,7 +172,7 @@
 
 <?php
 $conn = mysqli_connect("localhost","root","");
-mysqli_select_db($conn,"dbms_p1");
+mysqli_select_db($conn,"rto_db");
 if(isset($_POST['submit']))
 {
 	$q1=implode(',',$_POST['q1']);
@@ -180,9 +180,9 @@ if(isset($_POST['submit']))
 	$sql="select edate,eid,id from llr order by id desc limit 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
-	
+
 	echo "edate: ".$row;
-	
+
 	$x=$row[2]+1;
 	$d=$row[0];
 	$sub=substr($row[1],1);

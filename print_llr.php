@@ -4,7 +4,7 @@
 <?php
 session_start();
 $conn = mysqli_connect("localhost","root","");
-mysqli_select_db($conn,"dbms_p1");
+mysqli_select_db($conn,"rto_db");
 
 $aad = $_SESSION['aadhar'];
 //echo $aad;
@@ -38,18 +38,18 @@ $llr_expiry_date = date("Y-m-d", strtotime("+6 months",strtotime($llr_issue_date
 <br><br><br>
 <table border ="1" cellpadding="10" cellspacing="5" align="center">
 <tr>
-  <td align = "center" colspan="3" ><b>RTO Karnataka</br> Learner's License</b></td>
+  <td align = "center" colspan="3" ><b>RTO Maharashtra</br> Learner's License</b></td>
 </tr>
 
 <tr>
   <td>Aadhar </td>
   <td width="200px"><?php echo $aad ?></td>
-  <td width="100px" rowspan="3">  <img src="<?php echo $image ?>" height="100px" width="100px">    </td>   
+  <td width="100px" rowspan="3">  <img src="<?php echo $image ?>" height="100px" width="100px">    </td>
 </tr>
 <tr>
   <td>Name  </td>
   <td><?php echo $name ?></td>
-  
+
 </tr>
 <tr>
 <td>COV</td>

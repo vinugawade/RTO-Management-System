@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RTO Karnataka</title>
+<title>RTO Maharashtra</title>
 <!--css-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html">RTO <span>Karnataka</span></a></h1>
+								<h1><a href="index.html">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="home.html"><span data-hover="Home">Home</span></a></li>
+									<li><a href="index.html"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LLR">LLR</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -59,7 +59,7 @@
 		</div>
 	<!--header-->
 	<!-- banner -->
-	
+
 	<!--content-->
 		<div class="content">
 			<!--banner-bottom-->
@@ -70,12 +70,12 @@
 					<h3 class="tittle">Vehicle Registration</h3>
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
-						
+
 							<ul type="circle"><br><br>
 								<li><a href = "applyforreg.php"><h4><font color = "green">Apply for Registration</h4></a></li><br><br>
 								<li><a href = "reg_status.php"><h4><font color = "green">Check Registration Status</h4></a></li><br><br>
 							</ul>
-						
+
 						</div>
 						<div class="col-md-4 student-grid">
 							<img src="images/reg1.jpg" class="img-responsive">
@@ -93,17 +93,17 @@
 					<div class="footer-grids">
 						<div class="col-md-8 footer-grid">
 							<h4>About Us</h4>
-							<p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Karnataka.<span>
+							<p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Maharashtra.<span>
 							    It issues driving licences, organises collection of vehicle excise duty and sells personalised registrations.
                   It also is responsible to inspect vehicle's insurance and clear the pollution test.</span></p>
 						</div>
 						<div class="col-md-4 footer-grid">
 						<h4>Information</h4>
 							<ul>
-								<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Bengaluru</li>
+								<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Oros</li>
 								<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>080 2956789</li>
-								<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:karnataka@rto.com"> karnataka@rto.com</a></li>
-								<li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Sat 10:00 hr to 17:00 hr</li>
+								<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:oros@rto.com"> oros@rto.com</a></li>
+								<li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Fri 10:00 AM - 08:00 PM</li>
 							</ul>
 						</div>
 						<div class="clearfix"></div>

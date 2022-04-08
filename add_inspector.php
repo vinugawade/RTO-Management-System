@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RTO Karnataka</title>
+<title>RTO Maharashtra</title>
 <!--css-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -105,7 +105,7 @@ span.psw {
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html">RTO <span>Karnataka</span></a></h1>
+								<h1><a href="index.html">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 					</div>
@@ -114,7 +114,7 @@ span.psw {
 		</div>
 	<!--header-->
 	<!-- banner -->
-	
+
 	<!--content-->
 		<h2><p align="center"><font face="Arial Black" color="green">Add Inspector</font></p></h2>
 
@@ -130,7 +130,7 @@ span.psw {
 	<label><b>Privilege</b></label>
     <input type="text" placeholder="llr,dl or reg" name="privilege" required>
 	<br><br>
-        
+
     <button type="submit" name="submit">Submit</button>
   </div>
 
@@ -142,17 +142,17 @@ span.psw {
 					<div class="footer-grids">
 						<div class="col-md-8 footer-grid">
 							<h4>About Us</h4>
-							<p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Karnataka.<span>
+							<p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Maharashtra.<span>
 							    It issues driving licences, organises collection of vehicle excise duty and sells personalised registrations.
                   It also is responsible to inspect vehicle's insurance and clear the pollution test.</span></p>
 						</div>
 						<div class="col-md-4 footer-grid">
 						<h4>Information</h4>
 							<ul>
-								<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Bengaluru</li>
+								<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Oros</li>
 								<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>080 2956789</li>
-								<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:karnataka@rto.com"> karnataka@rto.com</a></li>
-								<li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Sat 10:00 hr to 17:00 hr</li>
+								<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:oros@rto.com"> oros@rto.com</a></li>
+								<li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Fri 10:00 AM - 08:00 PM</li>
 							</ul>
 						</div>
 						<div class="clearfix"></div>

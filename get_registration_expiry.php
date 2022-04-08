@@ -2,7 +2,7 @@
 <html>
 <title>Registration Table</title>
 <body>
-<p><h1><b><u>RTO Karnataka: Registration Table</u></b></h1></p>
+<p><h1><b><u>RTO Maharashtra: Registration Table</u></b></h1></p>
 <p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 <a href="admin_logout.php"><font color="red" size="5"><b>Logout</b></font></a></p>
@@ -16,8 +16,8 @@
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				}
 
-				mysqli_select_db($conn,"dbms_p1");
-				
+				mysqli_select_db($conn,"rto_db");
+
 
 $sql1 = "SELECT aadhar,name,cov,vno,reg_issue_date,reg_expiry_date,mail_id FROM reg where DATEDIFF(reg_expiry_date,CURDATE())<=30";
 
@@ -41,14 +41,14 @@ cellspacing="2" cellpadding="10">
 </tr></div>';
 
 while($row = mysqli_fetch_array($result1)){
-$body='Hello,'.'Your Registration for vehicle with No '.$row['vno'].' will expire within a month. '.'Please visit nearest RTO Office to renew registration of your vehicle '.' - RTO Karnataka';
+$body='Hello,'.'Your Registration for vehicle with No '.$row['vno'].' will expire within a month. '.'Please visit nearest RTO Office to renew registration of your vehicle '.' - RTO Maharashtra';
 $link=$row['mail_id'];
-echo '<div align="center"><tr><td align="left">' . 
-$row['aadhar'] . '</td><td align="left">' . 
+echo '<div align="center"><tr><td align="left">' .
+$row['aadhar'] . '</td><td align="left">' .
 $row['name'] . '</td><td align="left">' .
-$row['cov'] . '</td><td align="left">' . 
+$row['cov'] . '</td><td align="left">' .
 $row['vno'] . '</td><td align="left">' .
-$row['reg_issue_date'] . '</td><td align="left">' . 
+$row['reg_issue_date'] . '</td><td align="left">' .
 $row['reg_expiry_date'] . '</td><td align="left">' .
 '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
 //echo '</tr>';
