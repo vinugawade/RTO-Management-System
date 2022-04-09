@@ -88,8 +88,6 @@
     -ms-transform-origin:100% 0;
     -o-transform-origin:100% 0;
     transform-origin:100% 0;
-    -webkit-animation:immortalkenburns 20000ms linear 0s infinite alternate;
-    animation:immortalkenburns 20000ms linear 0s infinite alternate;
 }
     @-webkit-keyframes immortalkenburns
 {
