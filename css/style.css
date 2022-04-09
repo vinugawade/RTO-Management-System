@@ -213,6 +213,7 @@ nav a:focus {
     margin-top:4em;
 }
 h2.title {
+    padding-bottom: 2rem;
     font-size: 3.5em;
     color: #041793;
     text-align: center;
