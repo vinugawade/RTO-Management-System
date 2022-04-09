@@ -15,6 +15,6 @@
 					{
 						echo "<script>alert(' unsuccessful')</script>";
 					}
-						echo "<script>windows.location.href='index.html'</script>";
+						echo "<script>windows.location.href='index.php'</script>";
 					}
 				?>

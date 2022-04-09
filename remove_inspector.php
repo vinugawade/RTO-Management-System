@@ -101,7 +101,7 @@ span.psw {
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 					</div>
