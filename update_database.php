@@ -1,7 +1,8 @@
 <?php
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -15,9 +16,9 @@
 					$sql3 = "delete from complaint";
 					$result3 = $conn->query($sql3);
 					if (($result1 && $result2 && $result3) == TRUE) {
-								echo ("<SCRIPT LANGUAGE='JavaScript'>
+								echo ("<script>
 								window.alert('Database updated successfully!!')
 								window.location.href='rto_admin.php'
-								</SCRIPT>");
+								</script>");
 					}
 ?>

@@ -9,7 +9,8 @@
 <?php
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -56,10 +57,10 @@ echo '</table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
 
 } else {
 
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Couldn't fetch the data')
 							window.location.href='rto_admin.php'
-							</SCRIPT>");
+							</script>");
 
 }
 

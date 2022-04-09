@@ -68,7 +68,8 @@
         <div class="student-grids">
           <div class="col-md-8 student-grid">
 			<?php
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				mysqli_select_db($conn,"rto_db");
 				$results1=0;
 
@@ -96,10 +97,10 @@
 					}
 
 					if (mysqli_num_rows($result1) > 0 && $passwd!=$row1[2]){
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('Password incorrect')
 							window.location.href='reg_status.php'
-							</SCRIPT>");
+							</script>");
 					}
 
 
@@ -120,10 +121,10 @@
 
 
 					if($age<18)
-					{echo ("<SCRIPT LANGUAGE='JavaScript'>
+					{echo ("<script>
 							window.alert('Not eligible')
 							window.location.href='index.php'
-							</SCRIPT>");
+							</script>");
 					}
 			?>
 		</div>

@@ -68,7 +68,8 @@
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 			<?php
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				mysqli_select_db($conn,"rto_db");
 				$results1=0;
 
@@ -76,9 +77,9 @@
 					$passwd=$_GET["passwd"];
 					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 
+					$dob='';
 					$result = $conn->query($sql);
 					if (mysqli_num_rows($result) > 0) {
-
 						while($row = mysqli_fetch_assoc($result)) {
 							echo "<p><br><br><br>";
 							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
@@ -93,10 +94,10 @@
 
 
 					if($age<18)
-					{echo ("<SCRIPT LANGUAGE='JavaScript'>
+					{echo ("<script>
 							window.alert('Not eligible')
 							window.location.href='index.php'
-							</SCRIPT>");
+							</script>");
 					}
 			?>
     </div>
@@ -170,7 +171,8 @@
 </html>
 
 <?php
-$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 mysqli_select_db($conn,"rto_db");
 if(isset($_POST['submit']))
 {

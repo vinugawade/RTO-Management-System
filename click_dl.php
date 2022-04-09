@@ -14,8 +14,8 @@ include("./include/header.php");
 						<div class="col-md-6 student-grid">
 
 							<ul type="circle"><br><br>
-								<li><a href = "applyfordl.php"><h4><font color = "green">Apply for DL</h4></a></li><br><br>
-								<li><a href = "dl_status.php"><h4><font color = "green">Check DL status</h4></a></li><br><br>
+								<li><a href = "applyfordl.php"><h4><font color = "#fed513">Apply for DL</h4></a></li><br><br>
+								<li><a href = "dl_status.php"><h4><font color = "#fed513">Check DL status</h4></a></li><br><br>
 							</ul>
 
 						</div>

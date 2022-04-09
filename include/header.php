@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO</a></h1>
 							</div>
 						</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,8 +44,11 @@
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
 									<li><a href="./index.php"><span data-hover="Home">Home</span></a></li>
-									<li><a href="./click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="./click_registration.php"><span data-hover="Registration">Registration</span></a></li>
+									<li><a href="./customer.php"><span data-hover="user">User</span></a></li>
+									<li><a href="./admin_login.php"><span data-hover="Admin">Admin</span></a></li>
+									<li><a href="./inspector_login.php"><span data-hover="Inspector">Inspector</span></a></li>
+									<li><a href="./click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="./click_dl.php"><span data-hover="DL">DL</span></a></li>
 									<li><a href="./complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
 								</ul>

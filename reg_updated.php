@@ -1,7 +1,8 @@
 <?php
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -26,10 +27,10 @@
 							$exp = Date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")+2))."<br>";
 							$sql1="update reg set reg_status=$reg_status,reg_issue_date='$date',vno='$vno',reg_expiry_date='$exp'              where aadhar='$aad' and r_id='$r_id'";
 							if($conn->query($sql1)==TRUE){
-								echo ("<SCRIPT LANGUAGE='JavaScript'>
+								echo ("<script>
 								window.alert('Record Updated successfully!!')
 								window.location.href='reg_update.php'
-								</SCRIPT>");
+								</script>");
 							}
 							else
 							{
@@ -38,17 +39,17 @@
 
 						}
 						else if($row4[1]==1 || $row4[1]==-1){
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Already updated!!')
 							window.location.href='reg_update.php'
-							</SCRIPT>");
+							</script>");
 						}
 					}
 					else {
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Registration entry not found')
 							window.location.href='reg_update.php'
-							</SCRIPT>");
+							</script>");
 					}
 				}
 ?>

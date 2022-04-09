@@ -1,6 +1,6 @@
 <?php
-				session_start();
-				$conn = mysqli_connect("localhost","root","");
+include("./include/connect.php");
+session_start();
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -20,30 +20,30 @@
 
 						$_SESSION['username'] = $username;
 
-						if($row2[1]=='LL'){
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+						if($row2[1]=='llr'){
+							echo ("<script>
 							window.alert('Welcome LL Inspector')
 							window.location.href='llr_inspector.php'
-							</SCRIPT>");
+							</script>");
 						}
 						else if($row2[1]=='reg'){
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Welcome Vehicle Registration Inspector')
 							window.location.href='reg_inspector.php'
-							</SCRIPT>");
+							</script>");
 						}
 						else if($row2[1]=='dl'){
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Welcome DL Inspector')
 							window.location.href='dl_inspector.php'
-							</SCRIPT>");
+							</script>");
 						}
 					}
 					else {
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Invalid Credentials')
 							window.location.href='inspector_login.php'
-							</SCRIPT>");
+							</script>");
 					}
 				}
 ?>

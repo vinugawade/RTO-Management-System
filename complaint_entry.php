@@ -1,5 +1,6 @@
 <?php
-					$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 					mysqli_select_db($conn,"rto_db");
 					if(isset($_POST['submit']))
 					{

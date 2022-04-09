@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
-<html>
-<title>LL Table</title>
+<?php
+include("./include/header.php");
+?>
 <body>
 <p><h1><b>RTO Maharashtra: LL Table</b></h1></p>
 <p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -10,7 +10,8 @@
 
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -55,10 +56,10 @@ echo '</table>;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
 
 } else {
 
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Couldn't fetch the data')
 							window.location.href='rto_admin.php'
-							</SCRIPT>");
+							</script>");
 
 }
 
@@ -67,4 +68,7 @@ mysqli_close($conn);
 <br>
 
 </body>
+<?php
+include("./include/footer.php");
+?>
 </html>

@@ -68,7 +68,8 @@
         <div class="student-grids">
           <div class="col-md-10 student-grid">
 <?php
-$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 mysqli_select_db($conn,"rto_db");
 					if(isset($_POST['submit']))
 					{
@@ -97,46 +98,46 @@ mysqli_select_db($conn,"rto_db");
 					}
 					else
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('Apply for LL first')
 							window.location.href='applyforllr.php'
-							</SCRIPT>");
+							</script>");
 					}
 					if($cov!=$q1)
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('Apply for vehicles for which LL has been approved')
 							window.location.href='applyfordl.php'
-							</SCRIPT>");
+							</script>");
 					}
 					if($llr_status==-1)
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('You did not pass the LL test. Apply for it again.')
 							window.location.href='applyforllr.php'
-							</SCRIPT>");
+							</script>");
 					}
 					if($llr_status==0)
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('Your LL is not yet approved')
 							window.location.href='index.php'
-							</SCRIPT>");
+							</script>");
 					}
 					$age = floor((time() - strtotime($llr_issue_date)) / 2592000);
 					if($age<1)
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('Apply after one month of LL issue')
 							window.location.href='index.php'
-							</SCRIPT>");
+							</script>");
 					}
 					else if($age>6)
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 							window.alert('Your LL has expired. Apply for LL again.')
 							window.location.href='applyforllr.php'
-							</SCRIPT>");
+							</script>");
 					}
 					else
 					{

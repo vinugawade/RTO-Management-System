@@ -1,7 +1,8 @@
 <?php
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -43,10 +44,10 @@
 							$sql7="insert into license(aadhar,name,license_no,cov,license_issue_date,license_expiry_date,mail_id) values ('$aad','$name','$lno','$cov','$date','$exp','$mail_id')";
 
 								if($conn->query($sql1)==TRUE && $conn->query($sql7)==TRUE){
-								echo ("<SCRIPT LANGUAGE='JavaScript'>
+								echo ("<script>
 								window.alert('Record Updated successfully!!')
 								window.location.href='dl_update.php'
-								</SCRIPT>");
+								</script>");
 								}
 								else
 								{
@@ -54,10 +55,10 @@
 								}
 							}
 							if($conn->query($sql1)==TRUE){
-								echo ("<SCRIPT LANGUAGE='JavaScript'>
+								echo ("<script>
 								window.alert('Record Updated successfully!!')
 								window.location.href='dl_update.php'
-								</SCRIPT>");
+								</script>");
 							}
 							else
 							{
@@ -66,17 +67,17 @@
 
 						}
 						else if($row3[1]==1 || $row3[1]==-1){
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Already updated!!')
 							window.location.href='dl_update.php'
-							</SCRIPT>");
+							</script>");
 						}
 					}
 					else {
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('DL entry not found')
 							window.location.href='dl_update.php'
-							</SCRIPT>");
+							</script>");
 					}
 				}
 ?>

@@ -1,7 +1,8 @@
 <?php
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -24,10 +25,10 @@
 							$date=Date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")))."<br>";
 							$sql1="update LL set llr_status=$llr_status,llr_issue_date='$date' where aadhar='$aad' and llr_id='$llr_id'";
 							if($conn->query($sql1)==TRUE){
-								echo ("<SCRIPT LANGUAGE='JavaScript'>
+								echo ("<script>
 								window.alert('Record Updated successfully!!')
 								window.location.href='llr_update.php'
-								</SCRIPT>");
+								</script>");
 							}
 							else
 							{
@@ -36,17 +37,17 @@
 
 						}
 						else if($row2[1]==1 || $row2[1]==-1){
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('Already updated!!')
 							window.location.href='llr_update.php'
-							</SCRIPT>");
+							</script>");
 						}
 					}
 					else {
-							echo ("<SCRIPT LANGUAGE='JavaScript'>
+							echo ("<script>
 							window.alert('LL entry not found')
 							window.location.href='llr_update.php'
-							</SCRIPT>");
+							</script>");
 					}
 				}
 ?>

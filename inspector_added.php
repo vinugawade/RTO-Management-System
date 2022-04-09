@@ -1,7 +1,8 @@
 <?php
 				session_start();
 				$username=$_SESSION['username'];
-				$conn = mysqli_connect("localhost","root","");
+
+include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -15,17 +16,17 @@
 					$sql="insert into inspector(username,password,privilege) values ('$username','$password','$privilege')";
 					$result = $conn->query($sql);
 					if (mysqli_affected_rows($conn)==1) {
-								echo ("<SCRIPT LANGUAGE='JavaScript'>
+								echo ("<script>
 								window.alert('Inspector added successfully!!')
 								window.location.href='rto_admin.php'
-								</SCRIPT>");
+								</script>");
 					}
 					else
 					{
-						echo ("<SCRIPT LANGUAGE='JavaScript'>
+						echo ("<script>
 								window.alert('Error adding Inspector!!')
 								window.location.href='rto_admin.php'
-								</SCRIPT>");
+								</script>");
 					}
 				}
 
