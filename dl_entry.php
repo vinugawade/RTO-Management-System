@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="index.php"><span data-hover="Home">Home</span></a></li>
+									<li><a href="./index.php"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -64,7 +64,7 @@
     <!--student-->
     <div class="student-w3ls">
       <div class="container">
-        <h3 class="tittle">Driver's License Registration</h3>
+        <h3 class="title">Driver's License Registration</h3>
         <div class="student-grids">
           <div class="col-md-10 student-grid">
 <?php
@@ -79,7 +79,7 @@ mysqli_select_db($conn,"rto_db");
 						$results1=0;
 						$flag=0;
 
-					$sql1="select llr_issue_date,llr_status,llr_id,cov from LL where aadhar=$aad order by llr_id desc" ;
+					$sql1="select llr_issue_date,llr_status,llr_id,cov FROM llr where aadhar=$aad order by llr_id desc" ;
 					$result1=$conn->query($sql1);
 
 					$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
@@ -121,7 +121,7 @@ mysqli_select_db($conn,"rto_db");
 					{
 						echo ("<script>
 							window.alert('Your LL is not yet approved')
-							window.location.href='index.php'
+							window.location.href='./index.php'
 							</script>");
 					}
 					$age = floor((time() - strtotime($llr_issue_date)) / 2592000);
@@ -129,7 +129,7 @@ mysqli_select_db($conn,"rto_db");
 					{
 						echo ("<script>
 							window.alert('Apply after one month of LL issue')
-							window.location.href='index.php'
+							window.location.href='./index.php'
 							</script>");
 					}
 					else if($age>6)
@@ -163,7 +163,7 @@ mysqli_select_db($conn,"rto_db");
 						$result2=$conn->query($sql2);
 						$row2=mysqli_fetch_row($result2);
 						$city=$row2[0];
-						$sql3="SELECT rto_address from offices where district='$city'";
+						$sql3="SELECT rto_address from offices";
 						$result3=$conn->query($sql3);
 						$row3=mysqli_fetch_row($result3);
 						$rto_address = $row3[0];
@@ -188,7 +188,7 @@ mysqli_select_db($conn,"rto_db");
 								<br>Please report to the test venue at 10:00AM on the specified date<br>";
 								echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 								*/
-								//echo "<script>window.location.href='index.php'</script>";
+								//echo "<script>window.location.href='./index.php'</script>";
 						}
 						else
 						{
@@ -234,7 +234,7 @@ mysqli_select_db($conn,"rto_db");
 </tr>
 </table>
 
-<p align="center"><a href="index.php"><h2 align="center">Exit</h2></a></p>
+<p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>
 
     <div class="clearfix"></div>
   </div>

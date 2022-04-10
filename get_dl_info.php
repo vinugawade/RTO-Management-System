@@ -47,10 +47,10 @@ $row['cov'] . '</td><td align="left">' .
 $row['dl_id'] . '</td><td align="left">' .
 $row['dl_status'] . '</td><td align="left">' .
 '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
-//echo '</tr>';
+
 }
 
-echo '</table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+echo '</table>';
 
 } else {
 

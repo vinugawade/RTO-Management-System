@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="index.php"><span data-hover="Home">Home</span></a></li>
+									<li><a href="./index.php"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -57,14 +57,11 @@
 			</div>
 		</div>
 	<!--header-->
-
 	<div class="content">
-    <!--banner-bottom-->
-
     <!--student-->
     <div class="student-w3ls">
       <div class="container">
-        <h3 class="tittle">Learner's License Registration</h3>
+        <h3 class="title">Learner's License Registration</h3>
         <div class="student-grids">
           <div class="col-md-10 student-grid">
 			<?php
@@ -76,12 +73,11 @@ include("./include/connect.php");
 					session_start();
 
 					$aad=$_GET["aad"];
-					$passwd = $_GET["passwd"];
 					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 
 					$_SESSION['aadhar']=$aad;
 
-					$sql1 = "SELECT aadhar,llr_status,passwd FROM LL where aadhar=$aad order by llr_id desc limit 1";
+					$sql1 = "SELECT aadhar,llr_status FROM llr where aadhar=$aad order by llr_id desc limit 1";
 					$result1 = $conn->query($sql1);
 					$row1=mysqli_fetch_row($result1);
 
@@ -130,13 +126,13 @@ include("./include/connect.php");
 					if($age<18)
 					{echo ("<script>
 							window.alert('Not eligible')
-							window.location.href='index.php'
+							window.location.href='./index.php'
 							</script>");
 					}
 			?>
 		</div>
 		</div>
 		</div></div></div>
-		<p align="center"><a href="index.php"><h2 align="center">Exit</h2></a></p>
+		<p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>
 		</body>
 		</html>

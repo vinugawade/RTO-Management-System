@@ -20,19 +20,19 @@ session_start();
 
 						$_SESSION['username'] = $username;
 
-						if($row2[1]=='llr'){
+						if($row2[1]=='LL'){
 							echo ("<script>
 							window.alert('Welcome LL Inspector')
 							window.location.href='llr_inspector.php'
 							</script>");
 						}
-						else if($row2[1]=='reg'){
+						else if($row2[1]=='REG'){
 							echo ("<script>
 							window.alert('Welcome Vehicle Registration Inspector')
 							window.location.href='reg_inspector.php'
 							</script>");
 						}
-						else if($row2[1]=='dl'){
+						else if($row2[1]=='DL'){
 							echo ("<script>
 							window.alert('Welcome DL Inspector')
 							window.location.href='dl_inspector.php'

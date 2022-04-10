@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
-<html>
-<title>Registration Table</title>
+<?php
+include("./include/header.php");
+?>
 <body>
 <p><h1><b>RTO Maharashtra: Registration Table</b></h1></p>
 <p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -48,10 +48,10 @@ $row['cov'] . '</td><td align="left">' .
 $row['r_id'] . '</td><td align="left">' .
 $row['reg_status'] . '</td><td align="left">' .
 '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
-//echo '</tr>';
+
 }
 
-echo '</table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+echo '</table>';
 
 } else {
 
@@ -67,4 +67,7 @@ mysqli_close($conn);
 <br>
 
 </body>
+<?php
+include("./include/footer.php");
+?>
 </html>

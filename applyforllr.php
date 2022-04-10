@@ -4,20 +4,16 @@ include("./include/header.php");
 <body>
 	<!--content-->
 		<div class="content">
-			<!--banner-bottom-->
-
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">Learner's License Registration</h3>
+					<h3 class="title">Learner's License Registration</h3>
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
 							<h4>Enter your Aadhar Number</h4>
-								<p><form action="LL.php" method="get">
+								<p><form action="./llr.php" method="get">
           				<br><br><br>
-          				Aadhar number: <input type="text" name="aad" >
-						<br><br>
-						New Password: <input type="password" name="passwd">
+          				Aadhar number: <input type="text" name="aad" pattern="^\d{12}$" required>
 						<br><br>
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
           			</form>	</p>
@@ -26,10 +22,10 @@ include("./include/header.php");
 
 						</div>
 						<div class="col-md-3 student-grid">
-							<img src="images/llr1.jpg" class="img-responsive">
+							<img src="./images/llr1.jpg" class="img-responsive">
 						</div>
 						<div class="col-md-3 student-grid">
-							<img src="images/llr2.jpg" class="img-responsive">
+							<img src="./images/llr2.jpg" class="img-responsive">
 						</div>
 						<div class="clearfix"></div>
 					</div>

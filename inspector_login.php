@@ -65,7 +65,7 @@ span.psw {
 </style>
 <body>
 	<!--content-->
-		<h2><p align="center"><font face="Arial Black" color="green">RTO INSPECTOR'S LOGIN FORM</font></p></h2>
+		<h2><p align="center"><font face="Arial Black" color="#fed513">RTO INSPECTOR'S LOGIN FORM</font></p></h2>
 
 <form action="inspector_login_check.php" method="get" align="center">
 

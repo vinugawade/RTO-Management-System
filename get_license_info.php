@@ -1,28 +1,21 @@
-<!DOCTYPE HTML>
-<html>
-<title>License Table</title>
+<?php
+include("./include/header.php");
+include("./include/connect.php");
+?>
 <body>
-<p><h1><b><u>RTO Maharashtra: License Holders</u></b></h1></p>
+<p><h1><b>RTO Maharashtra: License Holders</b></h1></p>
 <p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 <a href="admin_logout.php"><font color="blue" size="5"><b>Logout</b></font></a></p>
 <?php
-
-				session_start();
-				$username=$_SESSION['username'];
-
-include("./include/connect.php");
-				if (mysqli_connect_errno())
-				{
-					echo "Failed to connect to MySQL: " . mysqli_connect_error();
-				}
-
-				mysqli_select_db($conn,"rto_db");
-
+session_start();
+$username=$_SESSION['username'];
+if (mysqli_connect_errno()){
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+mysqli_select_db($conn,"rto_db");
 $sql1 = "SELECT aadhar,name,license_no,cov,license_issue_date,mail_id FROM license";
-
 $result1 = $conn->query($sql1);
-
 $body="body";
 $subject="DL Update";
 
@@ -48,22 +41,22 @@ $row['license_no'] . '</td><td align="left">' .
 $row['cov'] . '</td><td align="left">' .
 $row['license_issue_date'] . '</td><td align="left">' .
 '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
-//echo '</tr>';
 }
 
-echo '</table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+echo '</table>';
 
 } else {
-
-							echo ("<script>
-							window.alert('Couldn't fetch the data')
-							window.location.href='rto_admin.php'
-							</script>");
-
+	echo ("<script>
+	window.alert('Couldn't fetch the data')
+	window.location.href='rto_admin.php'
+	</script>");
 }
 
 mysqli_close($conn);
 ?>
 <br>
 </body>
+<?php
+include("./include/footer.php");
+?>
 </html>

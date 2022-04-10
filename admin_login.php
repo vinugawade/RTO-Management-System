@@ -65,7 +65,7 @@ span.psw {
 }
 </style>
 	<!--content-->
-		<h2><p align="center"><font face="Arial Black" color="green">RTO Maharashtra Admin Login Page</font></p></h2>
+		<h2><p align="center"><font face="Arial Black" color="#fed513">RTO Maharashtra Admin Login Page</font></p></h2>
 
 <form action="admin_login_check.php" method="post" align="center">
   <div class="container">

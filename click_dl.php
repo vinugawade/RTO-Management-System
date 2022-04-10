@@ -9,7 +9,7 @@ include("./include/header.php");
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">Driver's Licence</h3>
+					<h3 class="title">Driver's Licence</h3>
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
 

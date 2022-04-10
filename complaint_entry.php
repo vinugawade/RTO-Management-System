@@ -16,6 +16,6 @@ include("./include/connect.php");
 					{
 						echo "<script>alert(' unsuccessful')</script>";
 					}
-						echo "<script>windows.location.href='index.php'</script>";
+						echo "<script>windows.location.href='./index.php'</script>";
 					}
 				?>

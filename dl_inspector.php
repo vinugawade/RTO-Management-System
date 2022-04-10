@@ -101,7 +101,7 @@ span.psw {
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 					</div>
@@ -118,7 +118,7 @@ span.psw {
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">DL Inspector Page</h3>
+					<h3 class="title">DL Inspector Page</h3>
 					<div class="student-grids">
 						<div class="col-md-10 student-grid">
 

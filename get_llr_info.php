@@ -20,7 +20,7 @@ if (mysqli_connect_errno()) {
 
 mysqli_select_db($conn, "rto_db");
 
-$sql1 = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM LL";
+$sql1 = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM llr";
 
 $result1 = $conn->query($sql1);
 
@@ -49,9 +49,9 @@ cellspacing="2" cellpadding="10">
         $row['llr_id'] . '</td><td align="left">' .
         $row['llr_status'] . '</td><td align="left">' .
         '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
-        //echo '</tr>';
+
     }
-    echo '</table>;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+    echo '</table>;';
 
 } else {
 	echo ("<script>

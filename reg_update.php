@@ -101,7 +101,7 @@ span.psw {
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 					</div>
@@ -118,13 +118,13 @@ span.psw {
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">Vehicle Registration Status Update</h3>
+					<h3 class="title">Vehicle Registration Status Update</h3>
 					<div class="student-grids">
 						<div class="col-md-10 student-grid">
 							<h4>Enter the details of citizen's Registration entry</h4>
 								<p><form action="reg_updated.php" method="get">
           				<br><br>
-          				Aadhar number: <input type="text" name="aad" >
+          				Aadhar number: <input type="text" name="aad" pattern="^\d{12}$" required>
 						<br>
 						Registration ID: <input type="text" name="r_id">
 						<br>

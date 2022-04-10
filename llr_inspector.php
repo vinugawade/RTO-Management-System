@@ -70,7 +70,7 @@ span.psw {
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">LL Inspector Page</h3>
+					<h3 class="title">LL Inspector Page</h3>
 					<div class="student-grids">
 						<div class="col-md-10 student-grid">
 

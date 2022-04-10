@@ -9,33 +9,35 @@ include("./include/header.php");
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">User Registration</h3>
+					<h3 class="title">User Registration</h3>
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
-								<p><form action="customerdata.php" method="POST">
-          				<br><br><br>
-
-						First Name: <input type="text" name="first_name">
+								<p><form action="./customerdata.php" method="POST">
+						First Name: <input type="text" name="first_name" required>
 						<br><br>
-					    Middle Name: <input type="text" name="middle_name">
+					    Middle Name: <input type="text" name="middle_name" required>
 						<br><br>
-					    Last Name: <input type="text" name="last_name">
+					    Last Name: <input type="text" name="last_name" required>
 						<br><br>
-          				Aadhar number: <input type="text" name="aadhar" >
+          				Aadhar number: <input type="text" name='aadhar' pattern="^\d{12}$" required>
 						<br><br>
-					    Gender : <input type="text" name="gender">
+					    Gender :	<select name="gender" required>
+								<option value="">Select Gender</option>
+								<option value="m">Male</option>
+								<option value="f">Female</option>
+							</select>
 						<br><br>
-						Date Of Birth: <input type="text" name="dob">
+						Date Of Birth: <input type="date" name="dob" required>
 						<br><br>
-						Phone No.: <input type="text" name="phone_no">
+						Phone No: <input type="text" name="phone_no" pattern="^\d{10}$" required>
 						<br><br>
-						Mail_id:<input type="text" name="mail_id">
+						Mail_id:<input type="email" name="mail_id">
 						<br><br>
-						Street:<input type="text" name="street">
+						Street:<input type="text" name="street" required>
 						<br><br>
-						city:<input type="text" name="city">
+						city:<input type="text" name="city" required>
 						<br><br>
-						state:<input type="text" name="state">
+						state:<input type="text" name="state" required>
 						<br><br>
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
           			</form>	</p>

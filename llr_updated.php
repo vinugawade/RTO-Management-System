@@ -13,7 +13,7 @@ include("./include/connect.php");
 					$aad=$_GET["aad"];
 					$llr_id=$_GET["llr_id"];
 					$llr_status=$_GET["llr_status"];
-					$sql="select llr_id,llr_status from LL where aadhar='$aad' and llr_id='$llr_id'";
+					$sql="select llr_id,llr_status FROM llr where aadhar='$aad' and llr_id='$llr_id'";
 
 
 					$result = $conn->query($sql);

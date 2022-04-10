@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="index.php"><span data-hover="Home">Home</span></a></li>
+									<li><a href="./index.php"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -66,13 +66,13 @@
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="tittle">Check status of your Vehicle regestration</h3>
+					<h3 class="title">Check status of your Vehicle regestration</h3>
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
 							<h4>Enter your Aadhar Number</h4>
-								<p><form action="reg_status_check.php" method="get">
+								<p><form action="reg_status_check.php" method="get" >
           				<br><br><br>
-          				Aadhar number : <input type="text" name="aad" >
+          				Aadhar number : <input type="text" name="aad" pattern="^\d{12}$" required>
 						<br><br><br>
 						Enter Password: <input type="password" name="passwd">
 						<br><br><br>

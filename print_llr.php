@@ -27,7 +27,7 @@ $row2 = mysqli_fetch_row($result2);
 $address = $row2[0].", ".$row2[1].", ".$row2[2];
 //echo $address;
 
-$sql3 = "select llr_issue_date,cov from LL where aadhar='$aad' order by llr_id desc limit 1";
+$sql3 = "select llr_issue_date,cov FROM llr where aadhar='$aad' order by llr_id desc limit 1";
 $result3 = $conn->query($sql3);
 $row3 = mysqli_fetch_row($result3);
 $llr_issue_date = $row3[0];

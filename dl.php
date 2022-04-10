@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.php">RTO <span>Maharashtra</span></a></h1>
+								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
-									<li><a href="index.php"><span data-hover="Home">Home</span></a></li>
+									<li><a href="./index.php"><span data-hover="Home">Home</span></a></li>
 									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
 									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
 									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
@@ -63,7 +63,7 @@
     <!--student-->
     <div class="student-w3ls">
       <div class="container">
-        <h3 class="tittle">Driver's License Registration</h3>
+        <h3 class="title">Driver's License Registration</h3>
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 			<?php
@@ -96,7 +96,7 @@ include("./include/connect.php");
 					if($age<18)
 					{echo ("<script>
 							window.alert('Not eligible')
-							window.location.href='index.php'
+							window.location.href='./index.php'
 							</script>");
 					}
 			?>
@@ -178,7 +178,7 @@ if(isset($_POST['submit']))
 {
 	$q1=implode(',',$_POST['q1']);
 
-	$sql="select edate,eid,id from LL order by id desc limit 1";
+	$sql="select edate,eid,id FROM llr order by id desc limit 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
 
@@ -219,7 +219,7 @@ if(isset($_POST['submit']))
 	}
 	$pwd=generate_password(10);
 
-	$sql="INSERT INTO LL(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
+	$sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
 	if (mysqli_query($conn, $sql))
 		{
 			echo "<script>window.alert('Record created successfully')</script>";
