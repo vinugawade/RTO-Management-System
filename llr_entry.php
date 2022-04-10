@@ -109,6 +109,6 @@ if(isset($_POST['submit']))
 </div>
   </body>
 <?php
-include("./include/header.php");
+include("./include/footer.php");
 ?>
 </html>
