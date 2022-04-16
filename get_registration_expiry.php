@@ -4,16 +4,14 @@ include("./include/connect.php");
 ?>
 <body>
 <p><h1><b>RTO Maharashtra: Registration Table</b></h1></p>
-<p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<p><a href="rto_admin.php"><b>Back</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-<a href="admin_logout.php"><font color="red" size="5"><b>Logout</b></font></a></p>
+<a href="admin_logout.php"><b>Logout</b></a></p>
 <?php
 session_start();
 $username=$_SESSION['username'];
 
-if (mysqli_connect_errno()){
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+
 mysqli_select_db($conn,"rto_db");
 
 $sql1 = "SELECT aadhar,name,cov,vno,reg_issue_date,reg_expiry_date,mail_id FROM reg where DATEDIFF(reg_expiry_date,CURDATE())<=30";

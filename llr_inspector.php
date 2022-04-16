@@ -10,7 +10,7 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-	align: center;
+    align: center;
 }
 
 button {
@@ -65,35 +65,29 @@ span.psw {
 </style>
 
 <body>
-	<!--content-->
+    <!--content-->
 <div class="content">
-			<!--student-->
-			<div class="student-w3ls">
-				<div class="container">
-					<h3 class="title">LL Inspector Page</h3>
-					<div class="student-grids">
-						<div class="col-md-10 student-grid">
-
-						<p>
-						<ul>
-						<li><a href="get_llr_info.php"><h4>View LL entry table</h4></a></li>
-						<br>
-						<li><a href="llr_update.php"><h4>Update LL Status</h4></a></li>
-						<br>
-						</ul>
-						</p>
-
-						<p><a href="logout.php"><h4>Logout</h4></a></p>
-						</form>	</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-			<!--student-->
+            <!--student-->
+            <div class="student-w3ls">
+                <div class="container">
+                    <h3 class="title">LL Inspector Page</h3>
+                    <div class="container-fluid"><a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
 </div>
-
-</form>
+                    <div class="student-grids">
+                        <div class="col-md-10 student-grid">
+                        <ul>
+                        <li><a href="get_llr_info.php"><h4>View LL entry table</h4></a></li>
+                        <br>
+                        <li><a href="llr_update.php"><h4>Update LL Status</h4></a></li>
+                        <br>
+                        </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!--student-->
+</div>
 </body>
 <?php
 include("./include/footer.php");

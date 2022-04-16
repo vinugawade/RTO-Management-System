@@ -1,5 +1,6 @@
 <?php
 include("./include/header.php");
+include("./include/connect.php");
 ?>
 <body>
   <div class="content">
@@ -7,17 +8,17 @@ include("./include/header.php");
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Vehicle Registration</h3>
+				<div class="container-fluid py-3">
+    <a class="pull-left" href="./click_registration.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+</div>
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
 
-include("./include/connect.php");
-mysqli_select_db($conn,"rto_db");
 if(isset($_POST['submit']))
 {
 	$q1=implode(',',$_POST['q1']);
 	$aad = $_POST['aad'];
-	//$passwd = $_POST['passwd'];
 	$model = $_POST['model'];
 	$company = $_POST['company'];
 
@@ -25,15 +26,13 @@ if(isset($_POST['submit']))
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
 
-
-
 	$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar='{$aad}'";
 	$result5=$conn->query($sql5);
 	$row5=mysqli_fetch_row($result5);
 	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
 	$mail_id = $row5[3];
 
-	$sql2 = "select city from address where aadhar='$aad'";
+	$sql2 = "select city from address where aadhar='{$aad}'";
 	$result2=$conn->query($sql2);
 	$row2=mysqli_fetch_row($result2);
 	$city=$row2[0];
@@ -45,17 +44,13 @@ if(isset($_POST['submit']))
 	$d=date("Y-m-d", strtotime("+1 week"));
 	$dayofweek = date('w', strtotime($d));
 	if($dayofweek == 'Sunday')
-			$d = date("Y-m-d", strtotime("+1 day"));
-	$sql="INSERT INTO reg(aadhar,name,cov,model,company,rdate,mail_id) VALUES('$aad','$name','$q1','$model','$company','$d','$mail_id')";
-	if (mysqli_query($conn, $sql))
-		{
+	$d = date("Y-m-d", strtotime("+1 day"));
+	$sql="INSERT INTO reg(addhar,name,cov,model,company,rdate,mail_id) VALUES('$aad','$name','$q1','$model','$company','$d','$mail_id')";
+	if (mysqli_query($conn, $sql)){
 			echo "<script>window.alert('Record created successfully')</script>";
-		}
-		else
-		{
+		}else{
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
-
 }
 ?>
 </div>
@@ -85,9 +80,6 @@ if(isset($_POST['submit']))
  </td>
 </tr>
 </table>
-
-<p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>
-
     <div class="clearfix"></div>
   </div>
 </div>
@@ -96,6 +88,6 @@ if(isset($_POST['submit']))
 </div>
   </body>
 <?php
-include("./include/header.php");
+include("./include/footer.php");
 ?>
 </html>

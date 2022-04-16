@@ -1,135 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>RTO Maharashtra</title>
-<!--css-->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="css/ken-burns.css" type="text/css" media="all" />
-<link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
-<!--css-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="RTO WEB TEMPLATE" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--js-->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!--js-->
-<!--webfonts-->
-<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!--webfonts-->
-</head>
+<?php
+include("./include/header.php");
+include("./include/connect.php");
+?>
 <body>
-	<!--header-->
-		<div class="header">
-			<div class="container">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-				<!---Brand and toggle get grouped for better mobile display--->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<div class="navbar-brand">
-								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
-							</div>
-						</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<nav class="link-effect-2" id="link-effect-2">
-								<ul class="nav navbar-nav">
-									<li><a href="./index.php"><span data-hover="Home">Home</span></a></li>
-									<li><a href="click_llr.php"><span data-hover="LL">LL</span></a></li>
-									<li><a href="click_registration.php"><span data-hover="Registration">Registration</span></a></li>
-									<li><a href="click_dl.php"><span data-hover="DL">DL</span></a></li>
-									<li><a href="complaint.php"><span data-hover="Complaint">Complaint</span></a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-	<!--header-->
-
 	<div class="content">
-    <!--banner-bottom-->
-
     <!--student-->
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Vehicle Registration</h3>
+				<div class="container-fluid py-3">
+    <a class="pull-left" href="./click_registration.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+</div>
         <div class="student-grids">
           <div class="col-md-8 student-grid">
 			<?php
-
-include("./include/connect.php");
-				mysqli_select_db($conn,"rto_db");
-				$results1=0;
-
 					$aad=$_GET["aad"];
-					$passwd = $_GET["passwd"];
-					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 
-					$sql1 = "SELECT aadhar,reg_status,passwd FROM reg where aadhar=$aad";
-					$result1 = $conn->query($sql1);
-					$row1=mysqli_fetch_row($result1);
-
-
+					$sql = "SELECT * FROM citizen where aadhar='{$aad}'";
 					$result = $conn->query($sql);
 					if (mysqli_num_rows($result) > 0) {
 
 						while($row = mysqli_fetch_assoc($result)) {
-							echo "<p><br><br><br>";
 							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
 							echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 							echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
-							$dob=$row["dob"];						}
+							$dob=$row["dob"];
+						}
 					}
 					else {
 						echo "0 results";
 					}
 
-					if (mysqli_num_rows($result1) > 0 && $passwd!=$row1[2]){
-						echo ("<script>
-							window.alert('Password incorrect')
-							window.location.href='reg_status.php'
-							</script>");
-					}
+					$sql1 = "SELECT * FROM reg where addhar='{$aad}'";
+					$result1 = $conn->query($sql1);
+					$row1=mysqli_fetch_row($result1);
 
-
-					if (mysqli_num_rows($result1) > 0 && $passwd==$row1[2]){
-						$row1=mysqli_fetch_row($result1);
-						if($row1[1]==1){
-							echo "<br><br><br>&emsp; &emsp;Your Vehicle Registration Status: Approved";
+					if (mysqli_num_rows($result1) > 0){
+						if($row1[8]==1){ // index 8 for reg_status column
+							echo "<br>&emsp; &emsp;Your Vehicle Registration Status: Approved";
+						}else{
+							echo "<br>&emsp; &emsp;Your Vehicle Registration Status: Not Approved";
 						}
-						else{
-							echo "<br><br><br>&emsp; &emsp;Your Vehicle Registration Status: Not Approved";
-						}
-					}
-					else{
+					}else{
 						echo "<br><br>&emsp; &emsp; You have not applied for Vehicle Registration";
 					}
-
 					$age = floor((time() - strtotime($dob)) / 31556926);
-
-
-					if($age<18)
-					{echo ("<script>
-							window.alert('Not eligible')
-							window.location.href='./index.php'
+					if($age<18){
+						echo ("<script>
+								window.alert('Not eligible')
+								window.location.href='./index.php'
 							</script>");
 					}
 			?>
 		</div>
 		</div>
 		</div></div></div>
-		<p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>
 		</body>
+		<?php
+include("./include/footer.php");
+?>
 		</html>

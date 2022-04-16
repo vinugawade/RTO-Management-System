@@ -133,7 +133,7 @@ span.psw {
 
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
 						<p><a href="dl_inspector.php"><h4>Back</h4></a></p>
-						<p><a href="logout.php"><h4><font color="red">Logout</font></h4></a></p>
+						<p><a href="logout.php"><h4>Logout</h4></a></p>
 						</form>	</p>
 						</div>
 						<div class="clearfix"></div>

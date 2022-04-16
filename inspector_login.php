@@ -65,15 +65,13 @@ span.psw {
 </style>
 <body>
 	<!--content-->
-		<h2><p align="center"><font face="Arial Black" color="#fed513">RTO INSPECTOR'S LOGIN FORM</font></p></h2>
+		<h2 class="title">Inspector Login</h2>
 
 <form action="inspector_login_check.php" method="get" align="center">
 
   <div class="container">
-    <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
 	<br>
-    <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
 	<br><br>
 

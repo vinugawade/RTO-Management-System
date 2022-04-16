@@ -1,71 +1,50 @@
 <?php
 include("./include/header.php");
+include("./include/connect.php");
 ?>
 <body>
-<p><h1><b>RTO Maharashtra: Registration Table</b></h1></p>
-<p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-<a href="admin_logout.php"><font color="blue" size="5"><b>Logout</b></font></a></p>
+<p><h1 class="title">RTO Maharashtra: Registration Table</h1></p>
+<div class="container-fluid py-3">
+    <a class="pull-left" href="./rto_admin.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+    <a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
+</div>
 <?php
-
-				session_start();
-				$username=$_SESSION['username'];
-
-include("./include/connect.php");
-				if (mysqli_connect_errno())
-				{
-					echo "Failed to connect to MySQL: " . mysqli_connect_error();
-				}
-
-				mysqli_select_db($conn,"rto_db");
-
-$sql1 = "SELECT aadhar,name,cov,r_id,reg_status,mail_id FROM reg";
-
-$result1 = $conn->query($sql1);
-
+$sql1 = "SELECT * FROM reg";
+$result = $conn->query($sql1);
 $body="body";
-$subject="Refistration Update";
+$subject="Registration Update";
 
-if($result1){
-echo '<div align="center"><table align="left" border="2"
-cellspacing="2" cellpadding="10">
+if($result){
+	echo '<div class="container-fluid">
+			<table class="table" border="1">
+				<tr>
+				<th>Aadhaar No</th>
+				<th>Name</th>
+				<th>COV</th>
+				<th>Registration ID</th>
+				<th>Registration Status</th>
+				<th>Email</th>
+				</tr></div>';
 
-<tr>
-<td align="left"><b>Aadhaar No</b></td>
-<td align="left"><b>Name</b></td>
-<td align="left"><b>COV</b></td>
-<td align="left"><b>Registration ID</b></td>
-<td align="left"><b>Registration Status</b></td>
-<td align="left"><b>Email</b></td>
-</tr></div>';
-
-while($row = mysqli_fetch_array($result1)){
-$link=$row['mail_id'];
-echo '<div align="center"><tr><td align="left">' .
-$row['aadhar'] . '</td><td align="left">' .
-$row['name'] . '</td><td align="left">' .
-$row['cov'] . '</td><td align="left">' .
-$row['r_id'] . '</td><td align="left">' .
-$row['reg_status'] . '</td><td align="left">' .
-'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
-
+while($row = mysqli_fetch_array($result)){
+	echo '<div align="center"><tr><td>' .
+		$row['addhar'] . '</td><td>' .
+		$row['name'] . '</td><td>' .
+		$row['cov'] . '</td><td>' .
+		$row['r_id'] . '</td><td>' .
+		$row['reg_status'] . '</td><td>' .
+		'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
 }
-
-echo '</table>';
-
+echo '</table></div>';
 } else {
-
-							echo ("<script>
-							window.alert('Couldn't fetch the data')
-							window.location.href='rto_admin.php'
-							</script>");
-
+	echo ("<script>
+		window.alert('Couldn't fetch the data')
+		window.location.href='./rto_admin.php'
+	</script>");
 }
-
 mysqli_close($conn);
 ?>
 <br>
-
 </body>
 <?php
 include("./include/footer.php");

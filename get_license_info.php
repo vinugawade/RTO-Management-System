@@ -4,15 +4,13 @@ include("./include/connect.php");
 ?>
 <body>
 <p><h1><b>RTO Maharashtra: License Holders</b></h1></p>
-<p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<p><a href="rto_admin.php"><b>Back</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-<a href="admin_logout.php"><font color="blue" size="5"><b>Logout</b></font></a></p>
+<a href="admin_logout.php"><b>Logout</b></a></p>
 <?php
 session_start();
 $username=$_SESSION['username'];
-if (mysqli_connect_errno()){
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+
 mysqli_select_db($conn,"rto_db");
 $sql1 = "SELECT aadhar,name,license_no,cov,license_issue_date,mail_id FROM license";
 $result1 = $conn->query($sql1);

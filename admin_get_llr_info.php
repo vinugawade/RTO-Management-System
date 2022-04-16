@@ -3,9 +3,9 @@ include("./include/header.php");
 ?>
 <body>
 <p><h1><b>RTO Maharashtra: LL Table</b></h1></p>
-<p><a href="rto_admin.php"><font color="blue" size="5"><b>Back</b></font></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<p><a href="rto_admin.php"><b>Back</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-<a href="admin_logout.php"><font color="blue" size="5"><b>Logout</b></font></a></p>
+<a href="admin_logout.php"><b>Logout</b></a></p>
 <?php
 
 				session_start();

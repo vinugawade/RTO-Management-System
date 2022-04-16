@@ -65,7 +65,7 @@ span.psw {
 </style>
 <body>
 	<!--content-->
-		<h2><p align="center"><font face="Arial Black" color="#fed513">Add Inspector</font></p></h2>
+		<h2><p align="center">Add Inspector</p></h2>
 
 <form action="./inspector_added.php" method="post" align="center">
   <div class="container">

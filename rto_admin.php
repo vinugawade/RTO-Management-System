@@ -65,45 +65,40 @@ span.psw {
 
 <body>
 <div class="content">
-			<!--banner-bottom-->
-
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
-					<h3 class="title">RTO Admin Page</h3>
+					<h3 class="title">Admin Menu</h3>
+					<div class="container-fluid py-3">
+						<a class="pull-left" href="./admin_login.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+						<a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
+					</div>
 					<div class="student-grids">
 						<div class="col-md-10 student-grid">
-
-						<p>
 						<ul>
-						<li><a href="admin_get_llr_info.php"><h4>View LL entry table</h4></a></li>
+						<li><a href="./get_llr_info.php"><h4>View LL entry table</h4></a></li>
 						<br>
-						<li><a href="admin_get_reg_info.php"><h4>View Registration entry table</h4></a></li>
+						<li><a href="./admin_get_reg_info.php"><h4>View Registration entry table</h4></a></li>
 						<br>
-						<li><a href="admin_get_dl_info.php"><h4>View DL entry table</h4></a></li>
+						<li><a href="./admin_get_dl_info.php"><h4>View DL entry table</h4></a></li>
 						<br>
-						<li><a href="add_inspector.php"><h4>Add Inspector</h4></a></li>
+						<li><a href="./add_inspector.php"><h4>Add Inspector</h4></a></li>
 						<br>
-						<li><a href="remove_inspector.php"><h4>Remove Inspector</h4></a></li>
+						<li><a href="./remove_inspector.php"><h4>Remove Inspector</h4></a></li>
 						<br>
-						<li><a href="get_license_info.php"><h4>View License Holders</h4></a></li>
+						<li><a href="./get_license_info.php"><h4>View License Holders</h4></a></li>
 						<br>
-						<li><a href="get_license_expiry.php"><h4>License Expiry Details</h4></a></li>
+						<li><a href="./get_license_expiry.php"><h4>License Expiry Details</h4></a></li>
 						<br>
-						<li><a href="get_registration_info.php"><h4>View Registration Details</h4></a></li>
+						<li><a href="./get_registration_info.php"><h4>View Registration Details</h4></a></li>
 						<br>
-						<li><a href="get_registration_expiry.php"><h4>Registration Expiry Details</h4></a></li>
+						<li><a href="./get_registration_expiry.php"><h4>Registration Expiry Details</h4></a></li>
 						<br>
-						<li><a href="view_complaints.php"><h4>View Complaints</h4></a></li>
+						<li><a href="./view_complaints.php"><h4>View Complaints</h4></a></li>
 						<br>
-						<li><a href="update_database.php"><h4>Update database</h4></a></li>
+						<li><a href="./update_database.php"><h4>Update database</h4></a></li>
 						<br>
 						</ul>
-						</p>
-
-          				<!--<button type="submit"  name="submit" class="btn btn-primary">Submit</button>-->
-						<p><a href="admin_logout.php"><h4>Logout</h4></a></p>
-						</form>	</p>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -111,8 +106,6 @@ span.psw {
 			</div>
 			<!--student-->
 </div>
-
-</form>
 </body>
 <?php
 include("./include/footer.php");

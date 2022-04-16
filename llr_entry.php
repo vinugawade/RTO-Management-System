@@ -20,14 +20,14 @@ if(isset($_POST['submit']))
 	$sql="select edate,eid,llr_id FROM llr order by llr_id desc limit 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
-
 	$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
 	$result5=$conn->query($sql5);
 	$row5=mysqli_fetch_row($result5);
 	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
 	$mail_id = $row5[3];
-	$x = ''; $d = ''; $sub = '';
-	$x=$row[2]+1;
+	// $x = '';
+	// $x=$row[2]+1;
+	$d = ''; $sub = '';
 	$d=$row[0];
 	$d=date("Y-m-d", strtotime("+1 week"));
 	$dayofweek = date('w', strtotime($d));
@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
 	$sub=(string)$y;
 	$eid='e'.$sub;
 
-	$sql2 = "select city from address where aadhar='$aad'";
+	$sql2 = "select city from address where aadhar='{$aad}'";
 	$result2=$conn->query($sql2);
 	$row2=mysqli_fetch_row($result2);
 	$city=$row2[0];

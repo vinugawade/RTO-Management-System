@@ -19,6 +19,7 @@ session_start();
 					if (mysqli_num_rows($result) > 0) {
 
 						$_SESSION['username'] = $username;
+						$_SESSION['role'] = 'inspector';
 
 						if($row2[1]=='LL'){
 							echo ("<script>

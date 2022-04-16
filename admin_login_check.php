@@ -13,6 +13,7 @@ if(isset($_POST['submit'])) {
     $row2=mysqli_fetch_row($result);
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['username'] = $username;
+        $_SESSION['role'] = 'admin';
         echo ("<script>
 		window.alert('Welcome RTO Admin')
 		window.location.href='rto_admin.php'

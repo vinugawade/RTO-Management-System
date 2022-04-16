@@ -65,22 +65,18 @@ span.psw {
 }
 </style>
 	<!--content-->
-		<h2><p align="center"><font face="Arial Black" color="#fed513">RTO Maharashtra Admin Login Page</font></p></h2>
+<h2 class="title">Admin Login </h2>
 
-<form action="admin_login_check.php" method="post" align="center">
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
-	<br>
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-	<br><br>
-
-    <button type="submit" name="submit">Login</button>
-  </div>
-
+<form action="./admin_login_check.php" method="post" align="center">
+    <div class="container">
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <br>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <br><br>
+        <button type="submit" name="submit">Login</button>
+    </div>
 </form>
-		<!--content-->
+<!--content-->
 </body>
 <?php
 include("./include/footer.php");

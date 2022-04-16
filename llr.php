@@ -11,7 +11,6 @@ include("./include/connect.php");
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 			<?php
-				mysqli_select_db($conn,"rto_db");
 					$aad=$_GET["aad"];
 					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 					$result = $conn->query($sql);
@@ -72,7 +71,6 @@ include("./include/footer.php");
 </html>
 
 <?php
-mysqli_select_db($conn,"rto_db");
 if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
 	$sql="select edate,eid,id FROM llr order by id desc limit 1";
