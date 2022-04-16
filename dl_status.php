@@ -38,9 +38,7 @@
 							<div class="navbar-brand">
 								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
-						</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
+						</div>				<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
@@ -56,13 +54,9 @@
 				</nav>
 			</div>
 		</div>
-	<!--header-->
-
-	<!--content-->
+	<!--header-->	<!--content-->
 		<div class="content">
-			<!--banner-bottom-->
-
-			<!--student-->
+			<!--banner-bottom-->			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
 					<h3 class="title">Check status of your DL</h3>
@@ -75,9 +69,7 @@
 						<br><br><br>
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
 						</form>	</p>
-						</div>
-
-						<div class="clearfix"></div>
+						</div>						<div class="clearfix"></div>
 					</div>
 				</div>
 			</div>

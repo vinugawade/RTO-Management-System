@@ -29,9 +29,7 @@ p{
 	font-family: 'Open Sans', sans-serif;
 	line-height:1.8em;
 }
-/*--banner--*/
-
-/*---*/
+/*--banner--*//*---*/
 nav a {
 	position: relative;
 	display: inline-block;
@@ -1193,15 +1191,9 @@ h2.typoh2{
     background: #fed513;
 }
 /*--responsive--*/
-@media(max-width:1440px){
-
-}
-@media(max-width:1366px){
-
-}
-@media(max-width:1280px){
-
-}
+@media(max-width:1440px){}
+@media(max-width:1366px){}
+@media(max-width:1280px){}
 @media(max-width:1080px){
 .ban-grid h4,.student-grid h4,.new-right h4,.footer-grid h4,.about-grid h4,.what-grid h4,.staff-right h4,.ser-grid h4,.ourser-grid h4,.course-grid1 h4,.contact-left h4  {
     font-size: 1.8em;
@@ -1437,9 +1429,7 @@ h3.title, h3.title2, h3.title1 {
     width: 50%;
 }
 }
-@media(max-width:768px){
-
-}
+@media(max-width:768px){}
 @media(max-width:736px){
 .navbar-nav {
     float: none;
@@ -1967,7 +1957,6 @@ h3.title1{
     padding: 3em 3em;
 }
 }
-
 .road{background:url('https://transport.maharashtra.gov.in/Images/roadbg.jpg') repeat-x;height:106px;overflow:hidden}
 .div1{width:128px;height:55px;background:url('https://transport.maharashtra.gov.in/Images/rickshaw.png') no-repeat;font-weight:700;position:relative;margin-top:-35px;margin-left:-400px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite}
 .div2{width:128px;height:55px;background:url('https://transport.maharashtra.gov.in/Images/car2.png') no-repeat;font-weight:700;position:relative;margin-top:-50px;-webkit-animation:mymove 10s infinite;animation:mymove 10s infinite}

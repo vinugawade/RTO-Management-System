@@ -38,9 +38,7 @@
 							<div class="navbar-brand">
 								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
-						</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
+						</div>				<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
@@ -59,34 +57,22 @@
 		</div>
 	<!--header-->
   <div class="content">
-    <!--banner-bottom-->
-
-    <!--student-->
+    <!--banner-bottom-->    <!--student-->
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Driver's License Registration</h3>
         <div class="student-grids">
           <div class="col-md-10 student-grid">
-<?php
-
-include("./include/connect.php");
-mysqli_select_db($conn,"rto_db");
-					if(isset($_POST['submit']))
+<?phpinclude("./include/connect.php");					if(isset($_POST['submit']))
 					{
 						$q1=implode(',',$_POST['q1']);
 						$aad = $_POST['aad'];
 						$passwd = $_POST['passwd'];
 						$results1=0;
-						$flag=0;
-
-					$sql1="select llr_issue_date,llr_status,llr_id,cov FROM llr where aadhar=$aad order by llr_id desc" ;
-					$result1=$conn->query($sql1);
-
-					$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
+						$flag=0;					$sql1="select llr_issue_date,llr_status,llr_id,cov FROM llr where aadhar=$aad order by llr_id desc" ;
+					$result1=$conn->query($sql1);					$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
 					$result5=$conn->query($sql5);
-					$row5=mysqli_fetch_row($result5);
-
-					if(mysqli_num_rows($result1)>0)
+					$row5=mysqli_fetch_row($result5);					if(mysqli_num_rows($result1)>0)
 					{
 						while($row=mysqli_fetch_assoc($result1))
 						{
@@ -143,11 +129,7 @@ mysqli_select_db($conn,"rto_db");
 					{
 						$sql="select edate,eid,dl_id from dl order by dl_id desc limit 1";
 						$result=$conn->query($sql);
-						$flag=1;
-
-						$row=mysqli_fetch_array($result);
-
-						$x=$row[2]+1;
+						$flag=1;						$row=mysqli_fetch_array($result);						$x=$row[2]+1;
 						$d=$row[0];
 						$d=date("Y-m-d", strtotime("+1 week"));
 						$dayofweek = date('w', strtotime($d));
@@ -157,21 +139,15 @@ mysqli_select_db($conn,"rto_db");
 						$y=(int)$sub;
 						$y=$y+1;
 						$sub=(string)$y;
-						$eid='e'.$sub;
-
-						$sql2 = "select city from address where aadhar='$aad'";
+						$eid='e'.$sub;						$sql2 = "select city from address where aadhar='$aad'";
 						$result2=$conn->query($sql2);
 						$row2=mysqli_fetch_row($result2);
 						$city=$row2[0];
 						$sql3="SELECT rto_address from offices";
 						$result3=$conn->query($sql3);
 						$row3=mysqli_fetch_row($result3);
-						$rto_address = $row3[0];
-
-						$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
-						$mail_id = $row5[3];
-
-						$sql="INSERT INTO dl(aadhar,name,cov,edate,eid,passwd,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$passwd','$mail_id')";
+						$rto_address = $row3[0];						$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
+						$mail_id = $row5[3];						$sql="INSERT INTO dl(aadhar,name,cov,edate,eid,passwd,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$passwd','$mail_id')";
 						if (mysqli_query($conn, $sql))
 						{
 								echo "<script>window.alert('Record created successfully')</script>";
@@ -197,16 +173,10 @@ mysqli_select_db($conn,"rto_db");
 					}
 			}
 ?>
-</div>
-
-<div class="col-md-10">
-
-<table border ="1" cellpadding="10" cellspacing="5" align="center">
+</div><div class="col-md-10"><table border ="1" cellpadding="10" cellspacing="5" align="center">
 <tr>
   <td align = "center" colspan="2"><b>DL TEST DETAILS</b></td>
-</tr>
-
-<tr>
+</tr><tr>
   <td>Test Date</td>
   <td><?php echo "  ".$d ?></td>
 </tr>
@@ -221,9 +191,7 @@ mysqli_select_db($conn,"rto_db");
 <tr>
 <td>DL Test Venue</td>
 <td> <?php echo "  ".$rto_address ?></td>
-</tr>
-
-<tr>
+</tr><tr>
  <td colspan="2">
   <ul>
   <!--<li>Do not share password and ID</li>-->
@@ -232,18 +200,12 @@ mysqli_select_db($conn,"rto_db");
   </ul>
  </td>
 </tr>
-</table>
-
-<p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>
-
-    <div class="clearfix"></div>
+</table><p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>    <div class="clearfix"></div>
   </div>
 </div>
 </div>
 <!--student-->
 </div>
-
-
 <!--footer-->
   <div class="footer-w3">
     <div class="container">

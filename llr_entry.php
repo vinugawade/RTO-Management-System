@@ -11,13 +11,9 @@ include("./include/connect.php");
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
-mysqli_select_db($conn,"rto_db");
-if(isset($_POST['submit']))
-{
+if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
-	$aad = $_POST['aad'];
-
-	$sql="select edate,eid,llr_id FROM llr order by llr_id desc limit 1";
+	$aad = $_POST['aad'];	$sql="select edate,eid,llr_id FROM llr order by llr_id desc limit 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
 	$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
@@ -38,18 +34,14 @@ if(isset($_POST['submit']))
 	$y=(int)$sub;
 	$y=$y+1;
 	$sub=(string)$y;
-	$eid='e'.$sub;
-
-	$sql2 = "select city from address where aadhar='{$aad}'";
+	$eid='e'.$sub;	$sql2 = "select city from address where aadhar='{$aad}'";
 	$result2=$conn->query($sql2);
 	$row2=mysqli_fetch_row($result2);
 	$city=$row2[0];
 	$sql3="SELECT rto_address from offices";
 	$result3=$conn->query($sql3);
 	$row3=mysqli_fetch_row($result3);
-	$rto_address = $row3[0];
-
-	function generate_password($length){
+	$rto_address = $row3[0];	function generate_password($length){
 		$chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.'0123456789$_';
 		$str = '';
 		$max = strlen($chars) - 1;

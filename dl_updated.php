@@ -1,24 +1,16 @@
 <?php
 				session_start();
-				$username=$_SESSION['username'];
-
-include("./include/connect.php");
+				$username=$_SESSION['username'];include("./include/connect.php");
 				if (mysqli_connect_errno())
 				{
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				}
-
-				mysqli_select_db($conn,"rto_db");
 				if(isset($_GET['submit'])){
 					$aad=$_GET["aad"];
 					$dl_id=$_GET["dl_id"];
 					$dl_status=$_GET["dl_status"];
 					$sql="select dl_id,dl_status,name,cov,mail_id from dl where aadhar='$aad' and dl_id='$dl_id'";
-
-
-					$result = $conn->query($sql);
-
-					$row3=mysqli_fetch_row($result);
+					$result = $conn->query($sql);					$row3=mysqli_fetch_row($result);
 					$name = $row3[2];
 					$cov = $row3[3];
 					$mail_id = $row3[4];
@@ -41,9 +33,7 @@ include("./include/connect.php");
 								$strnum = (string)$num;
 								$lno = 'KA'.$strnum;
 								$exp = Date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")+2))."<br>";
-							$sql7="insert into license(aadhar,name,license_no,cov,license_issue_date,license_expiry_date,mail_id) values ('$aad','$name','$lno','$cov','$date','$exp','$mail_id')";
-
-								if($conn->query($sql1)==TRUE && $conn->query($sql7)==TRUE){
+							$sql7="insert into license(aadhar,name,license_no,cov,license_issue_date,license_expiry_date,mail_id) values ('$aad','$name','$lno','$cov','$date','$exp','$mail_id')";								if($conn->query($sql1)==TRUE && $conn->query($sql7)==TRUE){
 								echo ("<script>
 								window.alert('Record Updated successfully!!')
 								window.location.href='dl_update.php'
@@ -63,9 +53,7 @@ include("./include/connect.php");
 							else
 							{
 								echo "Error updating record: " . $conn->error;
-							}
-
-						}
+							}						}
 						else if($row3[1]==1 || $row3[1]==-1){
 							echo ("<script>
 							window.alert('Already updated!!')

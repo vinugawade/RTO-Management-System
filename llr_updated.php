@@ -2,9 +2,7 @@
 include("./include/connect.php");
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-if(isset($_GET['submit'])) {
+}if(isset($_GET['submit'])) {
     $aad=$_GET["aad"];
     $llr_status=$_GET["llr_status"];
     $sql="select llr_status FROM llr where aadhar='{$aad}'";

@@ -30,9 +30,7 @@ include("./include/header.php");
                 <span class="sr-only">Next</span>
             </a>
         </div>
-<!--carousel-->
-
-	<!--content-->
+<!--carousel-->	<!--content-->
 		<div class="content">
 			<!--banner-bottom-->
 			<div class="banner-bottom">
@@ -44,19 +42,16 @@ include("./include/header.php");
 				<div class="col-md-3 ban-grid">
 					<div>
 						<h4>Qualified inspectors</h4>
-
 					</div>
 				</div>
 				<div class="col-md-3 ban-grid">
 					<div>
 						<h4>Easily approachable</h4>
-
 					</div>
 				</div>
 				<div class="col-md-3 ban-grid">
 					<div>
 						<h4>Online LL,DL application</h4>
-
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -80,8 +75,7 @@ include("./include/header.php");
 						<div id="div3" class="div3">
 						</div>
 				</div>
-
-				</div>
+			</div>
 			</div>
 			<!--welcome-->
 			<!--student-->
@@ -101,8 +95,7 @@ include("./include/header.php");
 									<li><i class="glyphicon glyphicon-ok-sign"> </i>Amend traffic rules and regulations</li>
 									<li><i class="glyphicon glyphicon-ok-sign"> </i>Conduct awareness programmes on road safety, pollution control etc.</li>
 								</ul>
-
-						</div>
+							</div>
 						<div class="col-md-6 student-grid">
 							<img src="./images/m-map.png" class="img-responsive" alt="Image-2">
 						</div>

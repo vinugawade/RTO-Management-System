@@ -4,7 +4,7 @@ include("./include/connect.php");
 ?>
 <body>
 <p><h1 class="title">RTO Maharashtra: Registration Table</h1></p>
-<div class="container-fluid py-3">
+<div class="container-fluid">
     <a class="pull-left" href="./rto_admin.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
     <a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
 </div>
@@ -12,9 +12,7 @@ include("./include/connect.php");
 $sql1 = "SELECT * FROM reg";
 $result = $conn->query($sql1);
 $body="body";
-$subject="Registration Update";
-
-if($result){
+$subject="Registration Update";if($result){
 	echo '<div class="container-fluid">
 			<table class="table" border="1">
 				<tr>
@@ -24,10 +22,8 @@ if($result){
 				<th>Registration ID</th>
 				<th>Registration Status</th>
 				<th>Email</th>
-				</tr></div>';
-
-while($row = mysqli_fetch_array($result)){
-	echo '<div align="center"><tr><td>' .
+				</tr></div>';while($row = mysqli_fetch_array($result)){
+	echo '<div><tr><td>' .
 		$row['addhar'] . '</td><td>' .
 		$row['name'] . '</td><td>' .
 		$row['cov'] . '</td><td>' .
@@ -44,7 +40,6 @@ echo '</table></div>';
 }
 mysqli_close($conn);
 ?>
-<br>
 </body>
 <?php
 include("./include/footer.php");

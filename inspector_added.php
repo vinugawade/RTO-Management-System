@@ -1,13 +1,9 @@
 <?php
 				session_start();
-				$username=$_SESSION['username'];
-
-include("./include/connect.php");
+				$username=$_SESSION['username'];include("./include/connect.php");
 				if (mysqli_connect_errno()){
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				}
-
-				mysqli_select_db($conn,"rto_db");
 				if(isset($_POST['submit'])){
 					$password=$_POST["password"];
 					$username=$_POST["username"];
@@ -27,6 +23,4 @@ include("./include/connect.php");
 								window.location.href='./rto_admin.php'
 								</script>");
 					}
-				}
-
-?>
+				}?>

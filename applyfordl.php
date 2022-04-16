@@ -2,13 +2,9 @@
 include("./include/header.php");
 ?>
 <body>
-	<!-- banner -->
-
-	<!--content-->
+	<!-- banner -->	<!--content-->
 		<div class="content">
-			<!--banner-bottom-->
-
-			<!--student-->
+			<!--banner-bottom-->			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
 					<h3 class="title">Driver's License Registration</h3>
@@ -22,8 +18,6 @@ include("./include/header.php");
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
           			</form>	</p>
 								<p></p>
-
-
 						</div>
 						<div class="col-md-3 student-grid">
 							<img src="images/llr1.jpg" class="img-responsive">

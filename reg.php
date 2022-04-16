@@ -1,6 +1,6 @@
 <?php
-require "./include/header.php";
-require "./include/connect.php";
+include("./include/header.php");
+include("./include/connect.php");
 ?>
 <body>
   <div class="content">
@@ -11,8 +11,7 @@ require "./include/connect.php";
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
-	mysqli_select_db($conn, "rto_db");
-	$aad = $_GET["aad"];
+    $aad = $_GET["aad"];
 	$q = "SELECT * FROM citizen WHERE aadhar = '{$aad}'";
 	$sql = $conn->query($q);
 	$dob = '';
@@ -21,8 +20,7 @@ require "./include/connect.php";
         window.alert('User not found please sign up.')
         window.location.href='./customer.php'
         </script>");
-    }
-	else if ($sql->num_rows > 0) {
+    }else if ($sql->num_rows > 0) {
 		echo "<script>alert('Welcome \"{$aad}\".');</script>";
 			$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 			$result = $conn->query($sql);
@@ -34,8 +32,7 @@ require "./include/connect.php";
 				echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
 				$dob=$row["dob"];
 			}
-		}
-		else {
+		}else{
 			echo "0 results found";
 		}
 	}
@@ -49,28 +46,18 @@ require "./include/connect.php";
 ?>
     </div>
     <div class="col-md-3 student-grid">
-            <form method="post" action="reg_entry.php">
-
-            <br><br>
-
-<p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>
-
-                <p>&emsp;&emsp;&emsp;Select category of vehicle
+            <form method="post" action="reg_entry.php">            <br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>                <p>&emsp;&emsp;&emsp;Select category of vehicle
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">MCWoG</p>
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="four" value="HPMV">HPMV</p>
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="five" value="HGMV">HGMV</p>
                 <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
-      </b>
-
-    </div>
+      </b>    </div>
     <div class="col-md-6 student-grid"><br><br><br><br><br>
       Vehicle Model: <input type="text" name="model" placeholder="Vehicle Model">
                         <br><br>
-        Vehicle Company: <input type="text" name="company" placeholder="Vehicle Company">
-
-        </form>
+        Vehicle Company: <input type="text" name="company" placeholder="Vehicle Company">        </form>
     <div class="clearfix"></div>
   </div>
 </div>
@@ -78,25 +65,15 @@ require "./include/connect.php";
 <!--student-->
 </div>
   </body>
-    <?php
-    require "./include/footer.php";
-    ?>
-</html>
-
 <?php
-
-require "./include/connect.php";
-mysqli_select_db($conn, "rto_db");
+include("./include/footer.php");
+?>
+</html>
+<?php
 if(isset($_POST['submit'])) {
-    $q1=implode(',', $_POST['q1']);
-
-    $sql="select edate,eid,id FROM llr order by id desc limit 1";
+    $q1=implode(',', $_POST['q1']);    $sql="select edate,eid,id FROM llr order by id desc limit 1";
     $result=$conn->query($sql);
-    $row=mysqli_fetch_row($result);
-
-    echo "edate: ".$row;
-
-    $x=$row[2]+1;
+    $row=mysqli_fetch_row($result);    echo "edate: ".$row;    $x=$row[2]+1;
     $d=$row[0];
     $sub=substr($row[1], 1);
     $y=(int)$sub;
@@ -106,9 +83,7 @@ if(isset($_POST['submit'])) {
         $date2=Date("Y-m-d", mktime(0, 0, 0, $date_arr[1], $date_arr[2]+1, $date_arr[0]))."<br>";
         $eid='e01';
         $d=$date2;
-    }
-    else
-    {
+    }else{
         $y=$y+1;
         $z=0;
         if($y==10) {
@@ -117,10 +92,8 @@ if(isset($_POST['submit'])) {
             $z=0;
         }
         $eid='e' . $z . $y%10;
-
     }
-    function generate_password($length)
-    {
+    function generate_password($length){
         $chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.
             '0123456789$_';
         $str = '';
@@ -131,18 +104,11 @@ if(isset($_POST['submit'])) {
         return $str;
     }
     $pwd=generate_password(10);
-
     $sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
     if (mysqli_query($conn, $sql)) {
         echo "<script>window.alert('Record created successfully')</script>";
-    }
-    else
-    {
+    }else{
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-
 }
 ?>
-
-
-

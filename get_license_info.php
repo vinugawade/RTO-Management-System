@@ -3,56 +3,44 @@ include("./include/header.php");
 include("./include/connect.php");
 ?>
 <body>
-<p><h1><b>RTO Maharashtra: License Holders</b></h1></p>
-<p><a href="rto_admin.php"><b>Back</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-<a href="admin_logout.php"><b>Logout</b></a></p>
+<p><h1 class="title"><b>RTO Maharashtra: License Holders</b></h1></p>
+<div class="container-fluid">
+    <a class="pull-left" href="./rto_admin.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+    <a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
+</div>
 <?php
-session_start();
-$username=$_SESSION['username'];
-
-mysqli_select_db($conn,"rto_db");
-$sql1 = "SELECT aadhar,name,license_no,cov,license_issue_date,mail_id FROM license";
-$result1 = $conn->query($sql1);
+$sql = "SELECT * FROM license";
+$result = $conn->query($sql);
 $body="body";
 $subject="DL Update";
-
-if($result1){
-echo '<div align="center"><table align="left" border="2"
-cellspacing="2" cellpadding="10">
-
-<tr>
-<td align="left"><b>Aadhaar No</b></td>
-<td align="left"><b>Name</b></td>
-<td align="left"><b>License No</b></td>
-<td align="left"><b>COV</b></td>
-<td align="left"><b>License Issue Date</b></td>
-<td align="left"><b>Email</b></td>
-</tr></div>';
-
-while($row = mysqli_fetch_array($result1)){
-$link=$row['mail_id'];
-echo '<div align="center"><tr><td align="left">' .
-$row['aadhar'] . '</td><td align="left">' .
-$row['name'] . '</td><td align="left">' .
-$row['license_no'] . '</td><td align="left">' .
-$row['cov'] . '</td><td align="left">' .
-$row['license_issue_date'] . '</td><td align="left">' .
-'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';
+if($result){
+	echo '<div class="container-fluid">
+			<table class="table" border="1">
+				<tr>
+				<th><b>Aadhaar No</b></th>
+				<th><b>Name</b></th>
+				<th><b>License No</b></th>
+				<th><b>COV</b></th>
+				<th><b>License Issue Date</b></th>
+				<th><b>Email</b></th>
+				</tr></div>';while($row = mysqli_fetch_array($result)){
+	echo '<div><tr><td>' .
+	$row['aadhar'] . '</td><td>' .
+	$row['name'] . '</td><td>' .
+	$row['license_no'] . '</td><td>' .
+	$row['cov'] . '</td><td>' .
+	$row['license_issue_date'] . '</td><td>' .
+	'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
 }
-
-echo '</table>';
-
+echo '</table></div>';
 } else {
 	echo ("<script>
-	window.alert('Couldn't fetch the data')
-	window.location.href='rto_admin.php'
+		window.alert('Couldn't fetch the data')
+		window.location.href='./rto_admin.php'
 	</script>");
 }
-
 mysqli_close($conn);
 ?>
-<br>
 </body>
 <?php
 include("./include/footer.php");

@@ -13,16 +13,8 @@ $role = $_SESSION['role'];
 <?php
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-$sql = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM llr";
-
-$result = $conn->query($sql);
-
-$body="Hello! We are RTO Officers,";
-$subject="LL Update";
-
-if($result) {
+}$sql = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM llr";$result = $conn->query($sql);$body="Hello! We are RTO Officers,";
+$subject="LL Update";if($result) {
     echo '<div class="container-fluid">
         <table class="table" border="1">
         <tr>
@@ -32,9 +24,7 @@ if($result) {
         <th>LL ID</th>
         <th>LL Status</th>
         <th>Email</th>
-        </tr></div>';
-
-    while($row = mysqli_fetch_array($result)){
+        </tr></div>';    while($row = mysqli_fetch_array($result)){
         $status = ($row['llr_status']==1) ? "Passed" : (($row['llr_status']==0) ? "Pending" : "Rejected");
         echo '<tr><td>' .
         $row['aadhar'] . '</td><td>' .
@@ -44,9 +34,7 @@ if($result) {
         $status . '</td><td>' .
         '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr>';
     }
-    echo '</table></div>';
-
-} else {
+    echo '</table></div>';} else {
 	echo ("<script>
         window.alert('Couldn't fetch the data')
         window.location.href='./llr_inspector.php'
@@ -54,7 +42,6 @@ if($result) {
 }
 mysqli_close($conn);
 ?>
-<br>
 </body>
 <?php
 include("./include/footer.php");

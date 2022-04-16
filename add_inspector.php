@@ -1,9 +1,7 @@
 <?php
 include("./include/header.php");
 ?>
-<style>
-
-input[type=text], input[type=password] {
+<style>input[type=text], input[type=password] {
     width: 30%;
     padding: 12px 20px;
     margin: 8px 8px;
@@ -11,9 +9,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 	align: center;
-}
-
-button {
+}button {
     background-color: #041793;
     color: white;
     padding: 14px 20px;
@@ -21,38 +17,24 @@ button {
     border: none;
     cursor: pointer;
     width: 30%;
-}
-
-button:hover {
+}button:hover {
     opacity: 0.8;
-}
-
-.cancelbtn {
+}.cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
-}
-
-.imgcontainer {
+}.imgcontainer {
     text-align: center;
     margin: 24px 24px 12px 24px;
-}
-
-img.avatar {
+}img.avatar {
     width: 20%;
     border-radius: 50%;
-}
-
-.container {
+}.container {
     padding: 16px;
-}
-
-span.psw {
+}span.psw {
     float: right;
     padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
+}/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -65,9 +47,7 @@ span.psw {
 </style>
 <body>
 	<!--content-->
-		<h2><p align="center">Add Inspector</p></h2>
-
-<form action="./inspector_added.php" method="post" align="center">
+		<h2><p align="center">Add Inspector</p></h2><form action="./inspector_added.php" method="post" align="center">
   <div class="container">
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
@@ -86,5 +66,3 @@ span.psw {
 include("./include/footer.php");
 ?>
 </html>
-
-

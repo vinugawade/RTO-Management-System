@@ -18,8 +18,6 @@ include("./include/header.php");
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
           			</form>	</p>
 								<p></p>
-
-
 						</div>
 						<div class="col-md-3 student-grid">
 							<img src="./images/llr1.jpg" class="img-responsive">

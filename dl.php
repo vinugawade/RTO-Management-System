@@ -38,9 +38,7 @@
 							<div class="navbar-brand">
 								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
-						</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
+						</div>				<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
@@ -58,28 +56,16 @@
 		</div>
 	<!--header-->
   <div class="content">
-    <!--banner-bottom-->
-
-    <!--student-->
+    <!--banner-bottom-->    <!--student-->
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Driver's License Registration</h3>
         <div class="student-grids">
           <div class="col-md-3 student-grid">
-			<?php
-
-include("./include/connect.php");
-				mysqli_select_db($conn,"rto_db");
-				$results1=0;
-
-					$aad=$_GET["aad"];
+			<?phpinclude("./include/connect.php");				$results1=0;					$aad=$_GET["aad"];
 					$passwd=$_GET["passwd"];
-					$sql = "SELECT first_name,middle_name,last_name,dob,mail_id FROM citizen where aadhar=$aad";
-
-					$result = $conn->query($sql);
-					if (mysqli_num_rows($result) > 0) {
-
-						while($row = mysqli_fetch_assoc($result)) {
+					$sql = "SELECT first_name,middle_name,last_name,dob,mail_id FROM citizen where aadhar=$aad";					$result = $conn->query($sql);
+					if (mysqli_num_rows($result) > 0) {						while($row = mysqli_fetch_assoc($result)) {
 							echo "<p><br><br><br>";
 							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
 							echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
@@ -91,8 +77,6 @@ include("./include/connect.php");
 						echo "0 results";
 					}
 					$age = floor((time() - strtotime($dob)) / 31556926);
-
-
 					if($age<18)
 					{echo ("<script>
 							window.alert('Not eligible')
@@ -102,14 +86,8 @@ include("./include/connect.php");
 			?>
     </div>
     <div class="col-md-3 student-grid">
-			<form method="post" action="dl_entry.php">
-
-			<br><br>
-
-<p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>
-<p><input name="passwd" type="hidden" id="b" value="<?php echo $_GET["passwd"] ?>"></p>
-
-				<p>&emsp;&emsp;&emsp;Select category of vehicle
+			<form method="post" action="dl_entry.php">			<br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>
+<p><input name="passwd" type="hidden" id="b" value="<?php echo $_GET["passwd"] ?>"></p>				<p>&emsp;&emsp;&emsp;Select category of vehicle
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">MCWoG</p>
@@ -168,23 +146,11 @@ include("./include/connect.php");
   </div>
   <!---copy--->
   </body>
-</html>
-
-<?php
-
-include("./include/connect.php");
-mysqli_select_db($conn,"rto_db");
-if(isset($_POST['submit']))
+</html><?phpinclude("./include/connect.php");if(isset($_POST['submit']))
 {
-	$q1=implode(',',$_POST['q1']);
-
-	$sql="select edate,eid,id FROM llr order by id desc limit 1";
+	$q1=implode(',',$_POST['q1']);	$sql="select edate,eid,id FROM llr order by id desc limit 1";
 	$result=$conn->query($sql);
-	$row=mysqli_fetch_row($result);
-
-	echo "edate: ".$row;
-
-	$x=$row[2]+1;
+	$row=mysqli_fetch_row($result);	echo "edate: ".$row;	$x=$row[2]+1;
 	$d=$row[0];
 	$sub=substr($row[1],1);
 	$y=(int)$sub;
@@ -204,9 +170,7 @@ if(isset($_POST['submit']))
 			$z=1;
 		else
 			$z=0;
-		$eid='e' . $z . $y%10;
-
-	}
+		$eid='e' . $z . $y%10;	}
 	function generate_password($length)
 	{
 		$chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.
@@ -217,9 +181,7 @@ if(isset($_POST['submit']))
 			$str .= $chars[random_int(0, $max)];
 		return $str;
 	}
-	$pwd=generate_password(10);
-
-	$sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
+	$pwd=generate_password(10);	$sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
 	if (mysqli_query($conn, $sql))
 		{
 			echo "<script>window.alert('Record created successfully')</script>";
@@ -227,10 +189,5 @@ if(isset($_POST['submit']))
 		else
 		{
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-		}
-
-}
+		}}
 ?>
-
-
-

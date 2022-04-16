@@ -20,9 +20,7 @@
 <link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--webfonts-->
-</head>
-
-	<!--header-->
+</head>	<!--header-->
   <div class="header">
 			<div class="container">
 				<nav class="navbar navbar-default">

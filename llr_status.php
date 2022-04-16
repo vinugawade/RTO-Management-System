@@ -17,9 +17,7 @@ include("./include/header.php");
 						<br><br><br>
           				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
 						</form>	</p>
-						</div>
-
-						<div class="clearfix"></div>
+						</div>						<div class="clearfix"></div>
 					</div>
 				</div>
 			</div>

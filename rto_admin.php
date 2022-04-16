@@ -10,9 +10,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 	align: center;
-}
-
-button {
+}button {
     background-color: #041793;
     color: white;
     padding: 14px 20px;
@@ -20,38 +18,24 @@ button {
     border: none;
     cursor: pointer;
     width: 30%;
-}
-
-button:hover {
+}button:hover {
     opacity: 0.8;
-}
-
-.cancelbtn {
+}.cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
-}
-
-.imgcontainer {
+}.imgcontainer {
     text-align: center;
     margin: 24px 24px 12px 24px;
-}
-
-img.avatar {
+}img.avatar {
     width: 20%;
     border-radius: 50%;
-}
-
-.container {
+}.container {
     padding: 16px;
-}
-
-span.psw {
+}span.psw {
     float: right;
     padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
+}/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -61,21 +45,19 @@ span.psw {
        width: 100%;
     }
 }
-</style>
-
-<body>
+</style><body>
 <div class="content">
 			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
 					<h3 class="title">Admin Menu</h3>
-					<div class="container-fluid py-3">
+					<div class="container-fluid">
 						<a class="pull-left" href="./admin_login.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
 						<a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
 					</div>
-					<div class="student-grids">
-						<div class="col-md-10 student-grid">
+					<div class="student-grids row">
 						<ul>
+							<div class="col-md-10 student-grid col-lg-6">
 						<li><a href="./get_llr_info.php"><h4>View LL entry table</h4></a></li>
 						<br>
 						<li><a href="./admin_get_reg_info.php"><h4>View Registration entry table</h4></a></li>
@@ -87,6 +69,8 @@ span.psw {
 						<li><a href="./remove_inspector.php"><h4>Remove Inspector</h4></a></li>
 						<br>
 						<li><a href="./get_license_info.php"><h4>View License Holders</h4></a></li>
+					</div>
+					<div class="col-md-10 student-grid col-lg-6">
 						<br>
 						<li><a href="./get_license_expiry.php"><h4>License Expiry Details</h4></a></li>
 						<br>
@@ -98,6 +82,7 @@ span.psw {
 						<br>
 						<li><a href="./update_database.php"><h4>Update database</h4></a></li>
 						<br>
+					</div>
 						</ul>
 						</div>
 						<div class="clearfix"></div>

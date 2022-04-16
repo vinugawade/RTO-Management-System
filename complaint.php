@@ -23,9 +23,7 @@ include("./include/connect.php");
     </div>
     <div class="col-md-6 student-grid">
       <img src="images/comp.jpg" class="img-responsive">
-    </div>
-
-    <div class="clearfix"></div>
+    </div>    <div class="clearfix"></div>
   </div>
 </div>
 </div>

@@ -7,9 +7,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/ken-burns.css" type="text/css" media="all" />
 <link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
-<!--css-->
-
-<style>
+<!--css--><style>
 input[type=text], input[type=password] {
     width: 30%;
     padding: 12px 20px;
@@ -18,9 +16,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 	align: center;
-}
-
-button {
+}button {
     background-color: #041793;
     color: white;
     padding: 14px 20px;
@@ -28,38 +24,24 @@ button {
     border: none;
     cursor: pointer;
     width: 30%;
-}
-
-button:hover {
+}button:hover {
     opacity: 0.8;
-}
-
-.cancelbtn {
+}.cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
-}
-
-.imgcontainer {
+}.imgcontainer {
     text-align: center;
     margin: 24px 24px 12px 24px;
-}
-
-img.avatar {
+}img.avatar {
     width: 20%;
     border-radius: 50%;
-}
-
-.container {
+}.container {
     padding: 16px;
-}
-
-span.psw {
+}span.psw {
     float: right;
     padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
+}/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -69,11 +51,7 @@ span.psw {
        width: 100%;
     }
 }
-</style>
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+</style><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="RTO WEB TEMPLATE" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -109,13 +87,9 @@ span.psw {
 			</div>
 		</div>
 	<!--header-->
-	<!-- banner -->
-
-	<!--content-->
+	<!-- banner -->	<!--content-->
 <div class="content">
-			<!--banner-bottom-->
-
-			<!--student-->
+			<!--banner-bottom-->			<!--student-->
 			<div class="student-w3ls">
 				<div class="container">
 					<h3 class="title">Vehicle Registration Status Update</h3>
@@ -129,13 +103,9 @@ span.psw {
 						Registration ID: <input type="text" name="r_id">
 						<br>
 						Registration Status: <input type="text" name="reg_status"><br>
-						Enter 1 for Approval, -1 for Rejection in Registration Status<br><br>
-
-						Assigned Vehicle No: <input type="text" name="vno"><br>
+						Enter 1 for Approval, -1 for Rejection in Registration Status<br><br>						Assigned Vehicle No: <input type="text" name="vno"><br>
 						Fill in Vehicle no if Registration Status=1, otherwise fill NULL<br>
-						<br>
-
-          				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
+						<br>          				<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
 						<p><a href="reg_inspector.php"><h4>Back</h4></a></p>
 						<p><a href="logout.php"><h4>Logout</h4></a></p>
 						</form>	</p>
@@ -145,9 +115,7 @@ span.psw {
 				</div>
 			</div>
 			<!--student-->
-</div>
-
-</form>
+</div></form>
 		<!--content-->
 		<!--footer-->
 			<div class="footer-w3">

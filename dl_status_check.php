@@ -38,9 +38,7 @@
 							<div class="navbar-brand">
 								<h1><a href="./index.php">RTO <span>Maharashtra</span></a></h1>
 							</div>
-						</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
+						</div>				<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<nav class="link-effect-2" id="link-effect-2">
 								<ul class="nav navbar-nav">
@@ -57,36 +55,20 @@
 				</nav>
 			</div>
 		</div>
-	<!--header-->
-
-	<div class="content">
-    <!--banner-bottom-->
-
-    <!--student-->
+	<!--header-->	<div class="content">
+    <!--banner-bottom-->    <!--student-->
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Driver's License Status</h3>
         <div class="student-grids">
           <div class="col-md-10 student-grid">
-			<?php
-
-include("./include/connect.php");
-				mysqli_select_db($conn,"rto_db");
-				$results1=0;
-
-					$aad=$_GET["aad"];
+			<?phpinclude("./include/connect.php");				$results1=0;					$aad=$_GET["aad"];
 					$passwd = $_GET["passwd"];
-					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
-
-					$sql1 = "SELECT aadhar,dl_status,passwd FROM dl where aadhar=$aad";
+					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";					$sql1 = "SELECT aadhar,dl_status,passwd FROM dl where aadhar=$aad";
 					$result2 = $conn->query($sql1);
 					$row2=mysqli_fetch_row($result2);
-
-
 					$result = $conn->query($sql);
-					if (mysqli_num_rows($result) > 0) {
-
-						while($row = mysqli_fetch_assoc($result)) {
+					if (mysqli_num_rows($result) > 0) {						while($row = mysqli_fetch_assoc($result)) {
 							echo "<p><br><br><br>";
 							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
 							echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
@@ -95,16 +77,12 @@ include("./include/connect.php");
 					}
 					else {
 						echo "0 results";
-					}
-
-					if (mysqli_num_rows($result2) > 0 && $passwd!=$row2[2]){
+					}					if (mysqli_num_rows($result2) > 0 && $passwd!=$row2[2]){
 						echo ("<script>
 							window.alert('Password incorrect')
 							window.location.href='dl_status.php'
 							</script>");
 					}
-
-
 					if (mysqli_num_rows($result2) > 0 && $passwd==$row2[2]){
 						$row2=mysqli_fetch_row($result2);
 						if($row2[1]==1){
@@ -119,11 +97,7 @@ include("./include/connect.php");
 					}
 					else{
 						echo "<br><br>&emsp; &emsp; You have not applied for DL";
-					}
-
-					$age = floor((time() - strtotime($dob)) / 31556926);
-
-
+					}					$age = floor((time() - strtotime($dob)) / 31556926);
 					if($age<18)
 					{echo ("<script>
 							window.alert('Not eligible')

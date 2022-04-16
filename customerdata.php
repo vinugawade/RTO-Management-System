@@ -11,7 +11,6 @@ include("./include/connect.php");
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
-mysqli_select_db($conn,"rto_db");
 if(isset($_POST['submit'])){
 	$fn = $_POST['first_name'];
 	$mn = $_POST['middle_name'];
@@ -23,9 +22,7 @@ if(isset($_POST['submit'])){
 	$mailid = $_POST['mail_id'];
 	$st=$_POST['street'];
 	$ct=$_POST['city'];
-	$state=$_POST['state'];
-
-	$sql="INSERT INTO citizen(first_name,middle_name,last_name,aadhar,gender,dob,phone_no,mail_id) VALUES('$fn','$mn','$ln','$aad','$gn','$db','$pn','$mailid')";
+	$state=$_POST['state'];	$sql="INSERT INTO citizen(first_name,middle_name,last_name,aadhar,gender,dob,phone_no,mail_id) VALUES('$fn','$mn','$ln','$aad','$gn','$db','$pn','$mailid')";
 	if (mysqli_query($conn, $sql)){
 		$sql1="INSERT INTO address(aadhar,street,city,state) VALUES('$aad','$st','$ct','$state')";
 		if (mysqli_query($conn, $sql1)){

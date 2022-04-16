@@ -15,7 +15,6 @@ include("./include/connect.php");
 					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
 					$result = $conn->query($sql);
 					if (mysqli_num_rows($result) > 0) {
-
 						while($row = mysqli_fetch_assoc($result)) {
 							echo "<p><br><br><br>";
 							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
@@ -37,12 +36,7 @@ include("./include/connect.php");
     </div>
     <div class="col-md-3 student-grid">
 			<form method="post" action="llr_entry.php">
-
-			<br><br>
-
-<p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>
-
-				<p>&emsp;&emsp;&emsp;Select category of vehicle
+				<br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>				<p>&emsp;&emsp;&emsp;Select category of vehicle
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">MCWoG</p>
@@ -69,7 +63,6 @@ include("./include/connect.php");
 include("./include/footer.php");
 ?>
 </html>
-
 <?php
 if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
@@ -105,7 +98,6 @@ if(isset($_POST['submit'])){
 		return $str;
 	}
 	$pwd=generate_password(10);
-
 	$sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
 	if (mysqli_query($conn, $sql)){
 			echo "<script>window.alert('Record created successfully');</script>";
@@ -114,6 +106,3 @@ if(isset($_POST['submit'])){
 		}
 }
 ?>
-
-
-
