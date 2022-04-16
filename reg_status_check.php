@@ -14,9 +14,11 @@ include("./include/connect.php");
         <div class="student-grids">
           <div class="col-md-8 student-grid">
 			<?php
-					$aad=$_GET["aad"];					$sql = "SELECT * FROM citizen where aadhar='{$aad}'";
+					$aad=$_GET["aad"];
+					$sql = "SELECT * FROM citizen where aadhar='{$aad}'";
 					$result = $conn->query($sql);
-					if (mysqli_num_rows($result) > 0) {						while($row = mysqli_fetch_assoc($result)) {
+					if (mysqli_num_rows($result) > 0) {
+						while($row = mysqli_fetch_assoc($result)) {
 							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
 							echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 							echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
@@ -25,9 +27,11 @@ include("./include/connect.php");
 					}
 					else {
 						echo "0 results";
-					}					$sql1 = "SELECT * FROM reg where addhar='{$aad}'";
+					}
+					$sql1 = "SELECT * FROM reg where addhar='{$aad}'";
 					$result1 = $conn->query($sql1);
-					$row1=mysqli_fetch_row($result1);					if (mysqli_num_rows($result1) > 0){
+					$row1=mysqli_fetch_row($result1);
+					if (mysqli_num_rows($result1) > 0){
 						if($row1[8]==1){ // index 8 for reg_status column
 							echo "<br>&emsp; &emsp;Your Vehicle Registration Status: Approved";
 						}else{
@@ -48,7 +52,7 @@ include("./include/connect.php");
 		</div>
 		</div></div></div>
 		</body>
-		<?php
+<?php
 include("./include/footer.php");
 ?>
 		</html>
