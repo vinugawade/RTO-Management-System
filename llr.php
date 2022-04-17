@@ -8,16 +8,21 @@ include("./include/connect.php");
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Learner's License Registration</h3>
+				<div class="container-fluid">
+						<a class="pull-left" href="./applyforllr.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+						<a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
+				</div>
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 			<?php
-					$aad=$_GET["aad"];
-					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen where aadhar=$aad";
+					$aad = $_GET["aad"];
+					$age = '';
+					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen WHERE aadhar='{$aad}'";
 					$result = $conn->query($sql);
 					if (mysqli_num_rows($result) > 0) {
 						while($row = mysqli_fetch_assoc($result)) {
 							echo "<p><br><br><br>";
-							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
+							echo "<p><b>&emsp; &emsp;Aadhaar number: " . $aad . "<br>";
 							echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 							echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
 							$dob=$row["dob"];						}
@@ -36,7 +41,7 @@ include("./include/connect.php");
     </div>
     <div class="col-md-3 student-grid">
 			<form method="post" action="llr_entry.php">
-				<br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>				<p>&emsp;&emsp;&emsp;Select category of vehicle
+				<br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>				<p>&emsp;&emsp;&emsp;SELECT category of vehicle
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
 				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">MCWoG</p>
@@ -47,10 +52,10 @@ include("./include/connect.php");
 			</form>
     </div>
     <div class="col-md-3 student-grid">
-      <img src="images/llr1.jpg" class="img-responsive">
+      <img src="./images/llr1.jpg" class="img-responsive">
     </div>
     <div class="col-md-3 student-grid">
-      <img src="images/llr2.jpg" class="img-responsive">
+      <img src="./images/llr2.jpg" class="img-responsive">
     </div>
     <div class="clearfix"></div>
   </div>
@@ -66,7 +71,7 @@ include("./include/footer.php");
 <?php
 if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
-	$sql="select edate,eid,id FROM llr order by id desc limit 1";
+	$sql="SELECT edate,eid,id FROM llr order by id desc limit 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
 	echo "edate: ".$row;
@@ -89,16 +94,7 @@ if(isset($_POST['submit'])){
 			$z=0;
 		$eid='e' . $z . $y%10;
 	}
-	function generate_password($length){
-		$chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.'0123456789$_';
-		$str = '';
-		$max = strlen($chars) - 1;
-		for ($i=0; $i < $length; $i++)
-			$str .= $chars[random_int(0, $max)];
-		return $str;
-	}
-	$pwd=generate_password(10);
-	$sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
+	$sql="INSERT INTO llr(aadhar,vtype,edate,eid) VALUES('$aad','$q1','$d','$eid')";
 	if (mysqli_query($conn, $sql)){
 			echo "<script>window.alert('Record created successfully');</script>";
 		}else{

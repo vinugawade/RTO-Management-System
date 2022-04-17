@@ -82,18 +82,18 @@ include("./include/header.php");
 						<h4>Enter the details of citizen's Registration entry</h4>
 						<form action="reg_updated.php" method="get">
 							<br><br>
-							Aadhar number: <input type="text" name="aad" pattern="^\d{12}$" required>
+							Aadhaar number: <input type="text" name="aad" pattern="^\d{12}$" required>
 							<br>
 							Registration ID: <input type="text" name="r_id" required>
 							<br>
 							Registration Status:
-							<select name="reg_status" class="form-control" required>
+							<SELECT name="reg_status" class="form-control" required>
 								<option value="0">Pending</option>
 								<option value="1">Approve</option>
 								<option value="-1">Reject</option>
 							</select>
 							<br>
-							Select in Registration Status<br><br>
+							SELECT in Registration Status<br><br>
 							Assigned Vehicle No: <input type="text" name="vno">
 							<br>
 							Fill in Vehicle no if Registration is Approved<br>

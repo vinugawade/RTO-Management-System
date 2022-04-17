@@ -8,7 +8,7 @@ mysqli_select_db($conn, "rto_db");
 if(isset($_POST['submit'])) {
     $username=$_POST["username"];
     $password=$_POST["password"];
-    $sql="select username from admin where username='{$username}' and password='{$password}'";
+    $sql="SELECT username from admin where username='{$username}' and password='{$password}'";
     $result = $conn->query($sql);
     $row2=mysqli_fetch_row($result);
     if (mysqli_num_rows($result) > 0) {

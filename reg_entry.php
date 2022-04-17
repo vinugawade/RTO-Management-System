@@ -18,13 +18,13 @@ if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
 	$aad = $_POST['aad'];
 	$model = $_POST['model'];
-	$company = $_POST['company'];	$sql="select rdate,r_id from reg order by r_id desc limit 1";
+	$company = $_POST['company'];	$sql="SELECT rdate,r_id from reg order by r_id desc limit 1";
 	$result=$conn->query($sql);
-	$row=mysqli_fetch_row($result);	$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar='{$aad}'";
+	$row=mysqli_fetch_row($result);	$sql5="SELECT first_name,middle_name,last_name,mail_id from citizen where aadhar='{$aad}'";
 	$result5=$conn->query($sql5);
 	$row5=mysqli_fetch_row($result5);
 	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
-	$mail_id = $row5[3];	$sql2 = "select city from address where aadhar='{$aad}'";
+	$mail_id = $row5[3];	$sql2 = "SELECT city from address where aadhar='{$aad}'";
 	$result2=$conn->query($sql2);
 	$row2=mysqli_fetch_row($result2);
 	$city=$row2[0];

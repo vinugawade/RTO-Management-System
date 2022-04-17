@@ -8,7 +8,7 @@ session_start();
 				if(isset($_GET['submit'])){
 					$username=$_GET["username"];
 					$password=$_GET["password"];
-					$sql="select id,privilege from inspector where username='$username' and password='$password'";
+					$sql="SELECT id,privilege from inspector where username='$username' and password='$password'";
 					$result = $conn->query($sql);					$row2=mysqli_fetch_row($result);
 					if (mysqli_num_rows($result) > 0) {						$_SESSION['username'] = $username;
 						$_SESSION['role'] = 'inspector';						if($row2[1]=='LL'){

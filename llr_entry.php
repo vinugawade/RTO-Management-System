@@ -8,21 +8,24 @@ include("./include/connect.php");
     <div class="student-w3ls">
       <div class="container">
         <h3 class="title">Learner's License Registration</h3>
+				<div class="container-fluid">
+						<a class="pull-left" href="./click_llr.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+						<a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
+				</div>
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
 if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
-	$aad = $_POST['aad'];	$sql="select edate,eid,llr_id FROM llr order by llr_id desc limit 1";
+	$aad = $_POST['aad'];
+	$sql="SELECT edate,eid,llr_id FROM llr ORDER BY llr_id DESC LIMIT 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
-	$sql5="select first_name,middle_name,last_name,mail_id from citizen where aadhar=$aad";
+	$sql5="SELECT first_name,middle_name,last_name,mail_id FROM citizen WHERE aadhar='{$aad}'";
 	$result5=$conn->query($sql5);
 	$row5=mysqli_fetch_row($result5);
 	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
 	$mail_id = $row5[3];
-	// $x = '';
-	// $x=$row[2]+1;
 	$d = ''; $sub = '';
 	$d=$row[0];
 	$d=date("Y-m-d", strtotime("+1 week"));
@@ -34,23 +37,15 @@ if(isset($_POST['submit'])){
 	$y=(int)$sub;
 	$y=$y+1;
 	$sub=(string)$y;
-	$eid='e'.$sub;	$sql2 = "select city from address where aadhar='{$aad}'";
+	$eid='e'.$sub;	$sql2 = "SELECT city from address where aadhar='{$aad}'";
 	$result2=$conn->query($sql2);
 	$row2=mysqli_fetch_row($result2);
 	$city=$row2[0];
 	$sql3="SELECT rto_address from offices";
 	$result3=$conn->query($sql3);
 	$row3=mysqli_fetch_row($result3);
-	$rto_address = $row3[0];	function generate_password($length){
-		$chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.'0123456789$_';
-		$str = '';
-		$max = strlen($chars) - 1;
-		for ($i=0; $i < $length; $i++)
-			$str .= $chars[random_int(0, $max)];
-		return $str;
-	}
-	$pwd=generate_password(10);
-	$sql="INSERT INTO llr(aadhar,name,cov,edate,eid,epwd,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$pwd','$mail_id')";
+	$rto_address = $row3[0];
+	$sql="INSERT INTO llr(aadhar,name,cov,edate,eid,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$mail_id')";
 	if (mysqli_query($conn, $sql)){
 			echo "<script>window.alert('Record created successfully');</script>";
 		}else{
@@ -73,10 +68,6 @@ if(isset($_POST['submit'])){
   <td><?php echo $eid ?></td>
 </tr>
 <tr>
-<td>Exam password</td>
-<td><?php echo $pwd ?></td>
-</tr>
-<tr>
 <td>Exam Venue</td>
 <td> <?php echo "  ".$rto_address; ?></td>
 </tr>
@@ -91,8 +82,6 @@ if(isset($_POST['submit'])){
  </td>
 </tr>
 </table>
-<p align="center"><a href="./index.php"><h2 align="center">Exit</h2></a></p>
-    <div class="clearfix"></div>
   </div>
 </div>
 </div>

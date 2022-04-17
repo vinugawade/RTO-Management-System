@@ -19,7 +19,7 @@ include("./include/connect.php");
 					$result = $conn->query($sql);
 					if (mysqli_num_rows($result) > 0) {
 						while($row = mysqli_fetch_assoc($result)) {
-							echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
+							echo "<p><b>&emsp; &emsp; Aadhaar number: " . $aad . "<br>";
 							echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 							echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
 							$dob=$row["dob"];

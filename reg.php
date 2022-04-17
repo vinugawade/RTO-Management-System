@@ -27,7 +27,7 @@ include("./include/connect.php");
 		if (mysqli_num_rows($result) > 0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "<p><br><br><br>";
-				echo "<p><b>&emsp; &emsp; Aadhar number: " . $aad . "<br>";
+				echo "<p><b>&emsp; &emsp; Aadhaar number: " . $aad . "<br>";
 				echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 				echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
 				$dob=$row["dob"];
@@ -39,14 +39,15 @@ include("./include/connect.php");
 	$age = floor((time() - strtotime($dob)) / 31556926);
 	if($age<18) {
 	echo ("<script>
-	window.alert('Not eligible')
-	window.location.href='./index.php'
+        window.alert('Not eligible')
+        window.location.href='./index.php'
 	</script>");
 	}
 ?>
     </div>
     <div class="col-md-3 student-grid">
-            <form method="post" action="reg_entry.php">            <br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>                <p>&emsp;&emsp;&emsp;Select category of vehicle
+            <form method="post" action="reg_entry.php">
+                <br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>                <p>&emsp;&emsp;&emsp;SELECT category of vehicle
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
                 <p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">MCWoG</p>
@@ -56,8 +57,9 @@ include("./include/connect.php");
       </b>    </div>
     <div class="col-md-6 student-grid"><br><br><br><br><br>
       Vehicle Model: <input type="text" name="model" placeholder="Vehicle Model">
-                        <br><br>
-        Vehicle Company: <input type="text" name="company" placeholder="Vehicle Company">        </form>
+        <br><br>
+        Vehicle Company: <input type="text" name="company" placeholder="Vehicle Company">
+    </form>
     <div class="clearfix"></div>
   </div>
 </div>
@@ -71,9 +73,11 @@ include("./include/footer.php");
 </html>
 <?php
 if(isset($_POST['submit'])) {
-    $q1=implode(',', $_POST['q1']);    $sql="select edate,eid,id FROM llr order by id desc limit 1";
+    $q1=implode(',', $_POST['q1']);
+    $sql="SELECT edate,eid,id FROM llr order by id desc limit 1";
     $result=$conn->query($sql);
-    $row=mysqli_fetch_row($result);    echo "edate: ".$row;    $x=$row[2]+1;
+    $row=mysqli_fetch_row($result);
+    echo "edate: ".$row;
     $d=$row[0];
     $sub=substr($row[1], 1);
     $y=(int)$sub;
@@ -93,18 +97,8 @@ if(isset($_POST['submit'])) {
         }
         $eid='e' . $z . $y%10;
     }
-    function generate_password($length){
-        $chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.
-            '0123456789$_';
-        $str = '';
-        $max = strlen($chars) - 1;
-        for ($i=0; $i < $length; $i++) {
-            $str .= $chars[random_int(0, $max)];
-        }
-        return $str;
-    }
-    $pwd=generate_password(10);
-    $sql="INSERT INTO llr(aadhar,vtype,edate,eid,epwd) VALUES('$aad','$q1','$d','$eid','$pwd')";
+
+    $sql="INSERT INTO llr(aadhar,vtype,edate,eid) VALUES('$aad','$q1','$d','$eid')";
     if (mysqli_query($conn, $sql)) {
         echo "<script>window.alert('Record created successfully')</script>";
     }else{

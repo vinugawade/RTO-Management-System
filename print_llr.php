@@ -10,24 +10,24 @@ mysqli_select_db($conn,"rto_db");
 $aad = $_SESSION['aadhar'];
 //echo $aad;
 
-$sql1 = "select gender,first_name,middle_name,last_name from citizen where aadhar='$aad'";
+$sql1 = "SELECT gender,first_name,middle_name,last_name from citizen where aadhar='$aad'";
 $result1 = $conn->query($sql1);
 $row1 = mysqli_fetch_row($result1);
 $name = $row1[1] ." ".$row1[2]." ".$row1[3];
 $gender = $row1[0];
 if($gender=='M')
-	$image = "images/anonymous.png";
-else $image = "images/anonymous.png";
+	$image = "./images/anonymous.png";
+else $image = "./images/anonymous.png";
 //echo $name;
 
 
-$sql2 = "select street,city,state from address where aadhar='$aad'";
+$sql2 = "SELECT street,city,state from address where aadhar='$aad'";
 $result2 = $conn->query($sql2);
 $row2 = mysqli_fetch_row($result2);
 $address = $row2[0].", ".$row2[1].", ".$row2[2];
 //echo $address;
 
-$sql3 = "select llr_issue_date,cov FROM llr where aadhar='$aad' order by llr_id desc limit 1";
+$sql3 = "SELECT llr_issue_date,cov FROM llr where aadhar='$aad' order by llr_id desc limit 1";
 $result3 = $conn->query($sql3);
 $row3 = mysqli_fetch_row($result3);
 $llr_issue_date = $row3[0];
@@ -74,7 +74,7 @@ $llr_expiry_date = date("Y-m-d", strtotime("+6 months",strtotime($llr_issue_date
 
 <tr >
 <td  colspan="3" height=100px align=center>
-<img src="images/GOVERNMENT-LOGO-1.jpg" height="100px" width="100px">
+<img src="./images/GOVERNMENT-LOGO-1.jpg" height="100px" width="100px">
 </td>
 </tr>
 

@@ -32,7 +32,7 @@ include("./include/header.php");
         </div>
 <!--carousel-->	<!--content-->
 		<div class="content">
-			<!--banner-bottom-->
+
 			<div class="banner-bottom">
 				<div class="col-md-3 ban-grid">
 					<div>
@@ -56,7 +56,7 @@ include("./include/header.php");
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<!--banner-bottom-->
+
 			<!--welcome-->
 			<div class="welcome-w3">
 				<div class="container-fluid" style="padding: 0;">

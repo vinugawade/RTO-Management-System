@@ -22,15 +22,17 @@ $subject="Registration Update";if($result){
 				<th>Registration ID</th>
 				<th>Registration Status</th>
 				<th>Email</th>
-				</tr></div>';while($row = mysqli_fetch_array($result)){
-	echo '<div><tr><td>' .
-		$row['addhar'] . '</td><td>' .
-		$row['name'] . '</td><td>' .
-		$row['cov'] . '</td><td>' .
-		$row['r_id'] . '</td><td>' .
-		$row['reg_status'] . '</td><td>' .
-		'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
-}
+				</tr></div>';
+	while($row = mysqli_fetch_array($result)){
+		$status = ($row['reg_status']==1) ? "Passed" : (($row['reg_status']==0) ? "Pending" : "Rejected");
+		echo '<div><tr><td>' .
+			$row['addhar'] . '</td><td>' .
+			$row['name'] . '</td><td>' .
+			$row['cov'] . '</td><td>' .
+			$row['r_id'] . '</td><td>' .
+			$status . '</td><td>' .
+			'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
+	}
 echo '</table></div>';
 } else {
 	echo ("<script>

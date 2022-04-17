@@ -1,37 +1,50 @@
-<!DOCTYPE HTML>
-<html>
-<title>DL Table</title>
-<body>
-<p><h1><b><u>RTO Maharashtra: DL Table</u></b></h1></p>
-<p><a href="dl_inspector.php"><b>Back</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="logout.php"><b>Logout</b></a></p>
 <?php
-				session_start();
-				$username=$_SESSION['username'];include("./include/connect.php");
-				if (mysqli_connect_errno())
-				{
-					echo "Failed to connect to MySQL: " . mysqli_connect_error();
-				}$sql1 = "SELECT aadhar,name,cov,dl_id,dl_status,mail_id FROM dl";$result1 = $conn->query($sql1);$body="body";
-$subject="DL Update";if($result1){
-echo '<div><table align="left" border="2"
-cellspacing="2" cellpadding="10"><tr>
-<td align="left"><b>Aadhaar No</b></td>
-<td align="left"><b>Name</b></td>
-<td align="left"><b>COV</b></td>
-<td align="left"><b>DL ID</b></td>
-<td align="left"><b>DL Status</b></td>
-<td align="left"><b>Email</b></td>
-</tr></div>';while($row = mysqli_fetch_array($result1)){
-$link=$row['mail_id'];
-echo '<div><tr><td align="left">' .
-$row['aadhar'] . '</td><td align="left">' .
-$row['name'] . '</td><td align="left">' .
-$row['cov'] . '</td><td align="left">' .
-$row['dl_id'] . '</td><td align="left">' .
-$row['dl_status'] . '</td><td align="left">' .
-'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';}echo '</table>';} else {							echo ("<script>
-							window.alert('Couldn't fetch the data')
-							window.location.href='dl_inspector.php'
-							</script>");}mysqli_close($conn);
+include("./include/header.php");
+include("./include/connect.php");
+?>
+<body>
+<p><h1 class="title">RTO Maharashtra: DL Table</h1></p>
+<div class="container-fluid">
+    <a class="pull-left" href="./dl_inspector.php"><i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i><b>Back</b></a>
+    <a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
+</div>
+<?php
+$sql1 = "SELECT * FROM dl";
+$result1 = $conn->query($sql1);
+$body="body";
+$subject="DL Update";
+
+if($result1){
+	echo '<div class="container-fluid">
+			<table class="table" border="1">
+				<tr>
+				<th>Aadhaar No</th>
+				<th>Name</th>
+				<th>COV</th>
+				<th>DL ID</th>
+				<th>DL Status</th>
+				<th>Email</th>
+				</tr></div>';
+
+	while($row = mysqli_fetch_array($result1)){
+		$status = ($row['dl_status']==1) ? "Passed" : (($row['dl_status']==0) ? "Pending" : "Rejected");
+		echo '<div><tr><td>' .
+		$row['aadhar'] . '</td><td>' .
+		$row['name'] . '</td><td>' .
+		$row['cov'] . '</td><td>' .
+		$row['dl_id'] . '</td><td>' .
+		$status . '</td><td>' .
+		'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
+	}
+echo '</table></div>';
+} else {
+	echo ("<script>
+		window.alert('Couldn't fetch the data')
+		window.location.href='./dl_inspector.php'
+	</script>");}mysqli_close($conn);
 ?>
 </body>
+<?php
+include("./include/footer.php");;
+?>
 </html>

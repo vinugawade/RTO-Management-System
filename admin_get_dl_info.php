@@ -23,12 +23,13 @@ $subject="DL Update";if($result){
 			<th>Email</th>
 			</tr></div>';
 	while($row = mysqli_fetch_array($result)){
+		$status = ($row['dl_status']==1) ? "Passed" : (($row['dl_status']==0) ? "Pending" : "Rejected");
 		echo '<div><tr><td>' .
 		$row['aadhar'] . '</td><td>' .
 		$row['name'] . '</td><td>' .
 		$row['cov'] . '</td><td>' .
 		$row['dl_id'] . '</td><td>' .
-		$row['dl_status'] . '</td><td>' .
+		$status . '</td><td>' .
 		'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
 	}
 	echo '</table></div>';

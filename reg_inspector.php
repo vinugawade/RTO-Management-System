@@ -48,7 +48,7 @@ input[type=text], input[type=password] {
 </style>
 <body>
 <div class="content">
-			<!--banner-bottom-->			<!--student-->
+
 			<div class="student-w3ls">
 				<div class="container">
 					<h3 class="title">Registration Inspector Page</h3>

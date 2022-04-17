@@ -63,15 +63,16 @@ require "./include/header.php";
                         <h4>Enter the details of citizen's LL entry</h4>
                         <form action="llr_updated.php" method="get">
                             <br><br>
-                            Aadhar number: <input type="text" name="aad" pattern="^\d{12}$" required>
+                            Aadhaar number: <input type="text" name="aad" pattern="^\d{12}$" required>
                             <br>
                             LL Status:
-                            <select name="llr_status" class="form-control">
+                            <SELECT name="llr_status" class="form-control">
                                 <option value="0">Pending</option>
                                 <option value="1">Approve</option>
                                 <option value="-1">Reject</option>
                             </select><br>
-                            Select Result for LL Status<br><br>                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                            SELECT Result for LL Status<br><br>
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                     <div class="clearfix"></div>
@@ -79,7 +80,8 @@ require "./include/header.php";
             </div>
         </div>
         <!--student-->
-    </div>    </form>
+    </div>
+</form>
 </body>
 <?php
 include("./include/footer.php");
