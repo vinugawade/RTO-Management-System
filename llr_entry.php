@@ -21,11 +21,11 @@ if(isset($_POST['submit'])){
 	$sql="SELECT edate,eid,llr_id FROM llr ORDER BY llr_id DESC LIMIT 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
-	$sql5="SELECT first_name,middle_name,last_name,mail_id FROM citizen WHERE aadhar='{$aad}'";
+	$sql5="SELECT * FROM citizen WHERE aadhar='{$aad}'";
 	$result5=$conn->query($sql5);
 	$row5=mysqli_fetch_row($result5);
 	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
-	$mail_id = $row5[3];
+	$mail_id = $row5[7];
 	$d = ''; $sub = '';
 	$d=$row[0];
 	$d=date("Y-m-d", strtotime("+1 week"));
@@ -37,20 +37,20 @@ if(isset($_POST['submit'])){
 	$y=(int)$sub;
 	$y=$y+1;
 	$sub=(string)$y;
-	$eid='e'.$sub;	$sql2 = "SELECT city from address where aadhar='{$aad}'";
+	$eid='e'.$sub;
+	$sql2 = "SELECT city from address where aadhar='{$aad}'";
 	$result2=$conn->query($sql2);
 	$row2=mysqli_fetch_row($result2);
-	$city=$row2[0];
 	$sql3="SELECT rto_address from offices";
 	$result3=$conn->query($sql3);
 	$row3=mysqli_fetch_row($result3);
 	$rto_address = $row3[0];
 	$sql="INSERT INTO llr(aadhar,name,cov,edate,eid,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$mail_id')";
 	if (mysqli_query($conn, $sql)){
-			echo "<script>window.alert('Record created successfully');</script>";
-		}else{
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-		}
+		echo "<script>window.alert('Record created successfully');</script>";
+	}else{
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
 }
 ?>
 </div>
