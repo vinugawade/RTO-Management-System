@@ -2,7 +2,7 @@
 include("./include/header.php");
 include("./include/connect.php");
 session_start();
-$role = $_SESSION['role'];
+$role = @$_SESSION['role'];
 ?>
 <body>
 <p><h1 class="title"><b>RTO Maharashtra: LL Table</b></h1></p>
@@ -11,9 +11,7 @@ $role = $_SESSION['role'];
     <a class="pull-right" href="./logout.php"><b>Logout</b><i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i></a>
 </div>
 <?php
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}$sql = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM llr";$result = $conn->query($sql);$body="Hello! We are RTO Officers,";
+$sql = "SELECT aadhar,name,cov,llr_id,llr_status,mail_id FROM llr";$result = $conn->query($sql);$body="Hello! We are RTO Officers,";
 $subject="LL Update";if($result) {
     echo '<div class="container-fluid">
         <table class="table" border="1">
