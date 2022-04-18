@@ -4,8 +4,7 @@ include "./include/connect.php";
 
 <body>
 <?php
-session_start();
-$aad = $_SESSION['aadhar'];
+$aad = $_GET['aadhaar'];
 
 $sql1 = "SELECT * from citizen where aadhar='{$aad}'";
 $result1 = $conn->query($sql1);

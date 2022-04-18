@@ -32,7 +32,7 @@ $row1 = mysqli_fetch_row($result1);
 if (mysqli_num_rows($result1) > 0) {
     if ($row1[1] == 1) {
         echo "<br><br><br>&emsp; &emsp;Your LL Status: Approved";
-        echo "&emsp; &emsp;<a href=./print_llr.php>Print</a>";
+        echo "&emsp; &emsp;<a href=./print_llr.php?aadhaar=". $aad .">Print</a>";
     } else if ($row1[1] == -1) {
         echo "<br><br><br>&emsp; &emsp;Your LL Status: Rejected, apply for LL again!!";
     } else {
