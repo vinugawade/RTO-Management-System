@@ -8,6 +8,7 @@
 4. Now copy the folder i.e. `RTO-Management-System` by default. You can rename it as you want.
 5. Start the `Apache server` and `MySQL service` in XAMPP. Then open up your browser and type `localhost/RTO-Management-System` or `localhost/<renamed_project_folder>`
 
+6. Default `admin` login credentials are :- `admin / admin`.
 ## Technologies
 
 ![PHP](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=php&message=PHP&color=777BB4&labelColor=white)
@@ -27,6 +28,16 @@
 ![User Registration](https://i.ibb.co/9Wj0v6x/image.png)
 
 ![Driving License](https://i.ibb.co/9rcg6cx/image.png)
+
+## ToDo List
+
+1. Secure login.
+2. More secure data validation.
+3. Latest UI technologies.
 # Author
 
 ### ✨ [Vinay Gawade](https://github.com/vinugawade) 👨🏻‍💻
+
+# 📝 License
+
+> This project is [GNU GPLv3](https://github.com/vinugawade/RTO-Management-System/blob/master/license) licensed.
