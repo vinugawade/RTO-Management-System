@@ -1,12 +1,27 @@
-# RTO-Management-System
-A website basically built to issue driving license to citizens. Citizens can apply for learner's license, driving license, vehicle registration and monitor the status of application. Citizens can also submit complaints/queries.
+# RTO Management System
 
-Here are the steps to run the project:
-1. Install XAMPP for Windows. Get to know to work with XAMPP. I recommend you to go through any online tutorial and get to know
-   how to run servers on local machine using XAMPP and how to create databases using XAMPP.
-2. After doing whatever is mentioned in step 1, create a database with the name 'rto_db' (that's the name I gave to the database while
-   running the project).
-3. Create the required tables in the 'rto_db' by referring to the 'tables_to_be_created.pdf' file in the repo.
-4. The downloaded project folder's name from git will be 'RTO-Management-System-Master' by default. You can rename it as you want. Find out    where XAMPP is installed on your computer. Usually, it will be in Windows 'C' directory. Place the entire project folder in 'htdocs'        folder inside 'xampp' folder. In my machine, the path to place the project folder is "C:\xampp\htdocs\".
-5. Start the Apache server and MySQL service in XAMPP (I'm assuming you have learnt the basics of XAMPP).
-   Open up your browser and type 'localhost/RTO-Management-System-master' or 'localhost/<renamed_project_folder>'
+## Steps to Setup Project :-
+
+1. Install XAMPP on your Windows. download/clone this repository and put inside the `htdocs` of your XAMPP.
+2. After doing whatever is mentioned in step 1, create a database with the name 'rto_db' (that's the name I gave to the database while running the project).
+3. Import the 'database/rto_db.sql' under the `rto_db` in `phpmyadmin` using MySQL.
+4. Now copy the folder i.e. 'RTO-Management-System' by default. You can rename it as you want.
+5. Start the Apache server and MySQL service in XAMPP. Then open up your browser and type 'localhost/RTO-Management-System' or 'localhost/<renamed_project_folder>'
+
+## Technologies
+---
+
+![PHP](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=php&message=PHP&color=777BB4&labelColor=white)
+![BOOTSTRAP](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=BOOTSTRAP&message=Bootstrap&color=7952B3&labelColor=white&logoColor=7952B3)
+![JAVASCRIPT](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=JavaScript&message=JavaScript&color=F7DF1E&labelColor=black)
+![CSS3](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=CSS3&message=CSS3&color=1572B6&labelColor=white&logoColor=1572B6)
+![MySQL](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=MySQL&message=MySQL&color=4479A1&labelColor=white&logoColor=1572B6)
+![GitHub](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=GitHub&message=GitHub&color=181717&labelColor=white&logoColor=181717)
+![Git](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=Git&message=Git&color=F05032&labelColor=white&logoColor=F05032)
+
+## Screenshots
+---
+
+# Author
+
+### ✨ [Vinay Gawade](https://github.com/vinugawade) 👨🏻‍💻
