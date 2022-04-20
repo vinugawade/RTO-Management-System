@@ -1,5 +1,6 @@
 # RTO Management System
 
+> A website basically built to issue driving license to citizens. Citizens can apply for learner's license, driving license, vehicle registration and monitor the status of application. Citizens can also submit complaints/queries.
 ## Steps to Setup Project :-
 
 1. Install XAMPP on your `Windows OS`. download or clone this repository and put inside the `htdocs` of your XAMPP.
@@ -36,7 +37,7 @@
 3. Latest UI technologies.
 # Author
 
-### ✨ [Vinay Gawade](https://github.com/vinugawade) 👨🏻‍💻
+>### ✨ [Vinay Gawade](https://github.com/vinugawade) 👨🏻‍💻
 
 # 📝 License
 
