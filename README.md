@@ -3,7 +3,7 @@
 > A website basically built to issue driving license to citizens. Citizens can apply for learner's license, driving license, vehicle registration and monitor the status of application. Citizens can also submit complaints/queries.
 ## Steps to Setup Project :-
 
-1. Install XAMPP on your `Windows OS`. download or clone this repository and put inside the `htdocs` of your XAMPP.
+1. Install XAMPP on your `Windows OS`. [download](https://github.com/vinugawade/RTO-Management-System/releases/tag/v1.0.0) or [clone](https://github.com/vinugawade/RTO-Management-System.git) this repository and put inside the `htdocs` of your XAMPP.
 2. After doing whatever is mentioned in step 1, create a database with the name `rto_db` (that`s the name I gave to the database while running the project).
 3. Import the `database/rto_db.sql` under the `rto_db` in `phpmyadmin` using MySQL.
 4. Now copy the folder i.e. `RTO-Management-System` by default. You can rename it as you want.
