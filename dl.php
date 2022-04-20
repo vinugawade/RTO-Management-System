@@ -2,6 +2,7 @@
 include ("./include/header.php");
 include ("./include/connect.php");
 ?>
+
 <body>
   <div class="content">
     <div class="student-w3ls">
@@ -10,21 +11,18 @@ include ("./include/connect.php");
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
-			$aad=$_GET["aad"];
+			$aad = @$_GET["aad"];
 			$sql = "SELECT * FROM citizen where aadhar='{$aad}'";
 			$result = $conn->query($sql);
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {
-					echo "<p><br><br><br>";
 					echo "<p><b>&emsp;&emsp; Aadhaar number: " . $aad . "<br>";
 					echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 					echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
 					$dob=$row["dob"];
 				}
-			}	else {
-				echo "0 results";
 			}
-			$age = floor((time() - strtotime($dob)) / 31556926);
+			@$age = floor((time() - strtotime($dob)) / 31556926);
 			if($age<18){
 				echo ("<script>
 					window.alert('Not eligible')
@@ -32,72 +30,36 @@ include ("./include/connect.php");
 				</script>");
 			}
 ?>
-    </div>
-    <div class="col-md-3 student-grid">
-			<form method="post" action="./dl_entry.php">
-				<br><br><p><input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>"></p>
-				<p>&emsp;&emsp;&emsp;SELECT category of vehicle
-				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">LMV</p>
-				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">MCWG</p>
-				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">MCWoG</p>
-				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="four" value="HPMV">HPMV</p>
-				<p>&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="five" value="HGMV">HGMV</p>
-				<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button type="submit"  name="submit" class="btn btn-primary">Submit</button>
-      </b>
-			</form>
-    </div>
-    <div class="col-md-3 student-grid">
-      <img src="./images/llr1.jpg" class="img-responsive">
-    </div>
-    <div class="col-md-3 student-grid">
-      <img src="./images/llr2.jpg" class="img-responsive">
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-</div>
-<!--student-->
-</div>
-<!--footer-->
-  <div class="footer-w3">
-    <div class="container">
-      <div class="footer-grids">
-        <div class="col-md-8 footer-grid">
-          <h4>About Us</h4>
-          <p>  Organisation of the Indian government responsible for maintaining a database of drivers and a database of vehicles for Maharashtra.<span>
-              It issues driving licences, organises collection of vehicle excise duty and sells personalised registrations.
-              It also is responsible to inspect vehicle's insurance and clear the pollution test.</span></p>
+          </div>
+          <div class="col-md-3 student-grid">
+            <form method="post" action="./dl_entry.php">
+              <input name="aad" type="hidden" id="a" value="<?php echo $_GET[" aad"] ?>">
+              <p>Select Category of Vehicle</p>
+              <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">&emsp;LMV</p>
+              <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">&emsp;MCWG</p>
+              <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="three" value="MCWoG">&emsp;MCWoG</p>
+              <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="four" value="HPMV">&emsp;HPMV</p>
+              <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="five" value="HGMV">&emsp;HGMV</p>
+              <br>&emsp;&emsp;&emsp;<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="col-md-3 student-grid">
+            <img src="./images/llr1.jpg" class="img-responsive">
+          </div>
+          <div class="col-md-3 student-grid">
+            <img src="./images/llr2.jpg" class="img-responsive">
+          </div>
+          <div class="clearfix"></div>
         </div>
-        <div class="col-md-4 footer-grid">
-        <h4>Information</h4>
-          <ul>
-            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Oros</li>
-            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>080 2956789</li>
-            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:oros@rto.com"> oros@rto.com</a></li>
-            <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Fri 10:00 AM - 08:00 PM</li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
       </div>
     </div>
+    <!--student-->
   </div>
-<!--footer-->
-<!---copy--->
-  <div class="copy-section">
-    <div class="container">
-      <div class="social-icons">
-        <a href="#"><i class="icon1"></i></a>
-        <a href="#"><i class="icon2"></i></a>
-        <a href="#"><i class="icon3"></i></a>
-        <a href="#"><i class="icon4"></i></a>
-      </div>
-    </div>
-  </div>
-  <!---copy--->
-  </body>
+</body>
 <?php
 include("./include/footer.php");
 ?>
+
 </html>
 <?php
 if (isset($_POST['submit'])) {
@@ -124,10 +86,11 @@ if (isset($_POST['submit'])) {
         } else {
             $z = 0;
         }
-        $eid = 'e' . $z . $y % 10;}
+        $eid = 'e' . $z . $y % 10;
+      }
     $sql = "INSERT INTO llr(aadhar,vtype,edate,eid) VALUES('{$aad}','{$q1}','{$d}','{$eid}')";
     if (mysqli_query($conn, $sql)) {
-        echo "<script>window.alert('Record created successfully')</script>";
+        echo "<script>window.alert('Record created successfully');</script>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

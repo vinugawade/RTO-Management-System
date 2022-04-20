@@ -3,17 +3,6 @@ include("./include/header.php");
 ?>
 <!--css-->
 <style>
-	input[type=text],
-	input[type=password] {
-		width: 30%;
-		padding: 12px 20px;
-		margin: 8px 8px;
-		display: inline-block;
-		border: 1px solid #ccc;
-		box-sizing: border-box;
-		align: center;
-	}
-
 	button {
 		background-color: #041793;
 		color: white;
@@ -78,28 +67,30 @@ include("./include/header.php");
 							aria-hidden="true"></i></a>
 				</div>
 				<div class="student-grids">
-					<div class="col-md-10 student-grid">
-						<h4>Enter the details of citizen's Registration entry</h4>
+					<div class="col-md-6 student-grid">
+						<h4>Enter Details of Registration Entry</h4>
 						<form action="reg_updated.php" method="get">
 							<br><br>
-							Aadhaar number: <input type="text" name="aad" pattern="^\d{12}$" required>
+							<input type="text" class="form-control" placeholder="Aadhaar Number" name="aad" pattern="^\d{12}$"
+								required>
 							<br>
-							Registration ID: <input type="text" name="r_id" required>
+							<input type="text" class="form-control" placeholder="Registration ID" name="r_id" required>
 							<br>
-							Registration Status:
 							<SELECT name="reg_status" class="form-control" required>
 								<option value="0">Pending</option>
 								<option value="1">Approve</option>
 								<option value="-1">Reject</option>
 							</select>
 							<br>
-							SELECT in Registration Status<br><br>
-							Assigned Vehicle No: <input type="text" name="vno">
+							<input type="text" class="form-control" placeholder="Assigned Vehicle Number" name="vno">
 							<br>
-							Fill in Vehicle no if Registration is Approved<br>
+							Note :- Fill In Vehicle No If Registration Is Approved<br>
 							<br>
 							<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 						</form>
+					</div>
+					<div class="col-md-6 student-grid">
+						<img src="./images/reg1.png" class="img-responsive">
 					</div>
 				</div>
 			</div>

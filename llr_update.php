@@ -2,50 +2,49 @@
 require "./include/header.php";
 ?>
 <style>
-    input[type=text],
-    input[type=password] {
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 8px;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        align: center;
-    }    button {
-        background-color: #041793;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 30%;
-    }    button:hover {
+    button:hover {
         opacity: 0.8;
-    }    .cancelbtn {
+    }
+
+    .cancelbtn {
         width: auto;
         padding: 10px 18px;
         background-color: #f44336;
-    }    .imgcontainer {
+    }
+
+    .imgcontainer {
         text-align: center;
         margin: 24px 24px 12px 24px;
-    }    img.avatar {
+    }
+
+    img.avatar {
         width: 20%;
         border-radius: 50%;
-    }    .container {
+    }
+
+    .container {
         padding: 16px;
-    }    span.psw {
+    }
+
+    span.psw {
         float: right;
         padding-top: 16px;
-    }    /* Change styles for span and cancel button on extra small screens */
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
     @media screen and (max-width: 300px) {
         span.psw {
             display: block;
             float: none;
-        }        .cancelbtn {
+        }
+
+        .cancelbtn {
             width: 100%;
         }
     }
-</style><body>
+</style>
+
+<body>
     <!--content-->
     <div class="content">
         <!--student-->
@@ -59,21 +58,26 @@ require "./include/header.php";
                             aria-hidden="true"></i></a>
                 </div>
                 <div class="student-grids">
-                    <div class="col-md-10 student-grid">
+                    <div class="col-md-6 student-grid">
                         <h4>Enter the details of citizen's LL entry</h4>
                         <form action="llr_updated.php" method="get">
                             <br><br>
-                            Aadhaar number: <input type="text" name="aad" pattern="^\d{12}$" required>
+                            <input type="text" class="form-control" placeholder="Aadhaar Number" name="aad"
+                                pattern="^\d{12}$" required>
                             <br>
-                            LL Status:
                             <SELECT name="llr_status" class="form-control">
                                 <option value="0">Pending</option>
                                 <option value="1">Approve</option>
                                 <option value="-1">Reject</option>
                             </select><br>
-                            SELECT Result for LL Status<br><br>
                             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                         </form>
+                    </div>
+                    <div class="col-md-3 student-grid">
+                        <img src="./images/llr1.jpg" class="img-responsive">
+                    </div>
+                    <div class="col-md-3 student-grid">
+                        <img src="./images/llr2.jpg" class="img-responsive">
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -81,9 +85,10 @@ require "./include/header.php";
         </div>
         <!--student-->
     </div>
-</form>
+    </form>
 </body>
 <?php
 include("./include/footer.php");
 ?>
+
 </html>

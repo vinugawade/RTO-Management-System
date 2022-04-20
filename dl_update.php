@@ -3,17 +3,6 @@ include("./include/header.php");
 include("./include/connect.php");
 ?>
 <style>
-	input[type=text],
-	input[type=password] {
-		width: 30%;
-		padding: 12px 20px;
-		margin: 8px 8px;
-		display: inline-block;
-		border: 1px solid #ccc;
-		box-sizing: border-box;
-		align: center;
-	}
-
 	button {
 		background-color: #041793;
 		color: white;
@@ -79,24 +68,26 @@ include("./include/connect.php");
 							aria-hidden="true"></i></a>
 				</div>
 				<div class="student-grids">
-					<div class="col-md-10 student-grid">
-						<h4>Enter the details of citizen's DL entry</h4>
+					<div class="col-md-6 student-grid">
+						<h4>Enter Details of Citizen's DL Entry</h4>
 						<form action="dl_updated.php" method="get">
-							<br><br>
-							Aadhaar number: <input type="text" name="aad" pattern="^\d{12}$" required>
 							<br>
-							DL ID: <input type="text" name="dl_id">
+							<input type="text" class="form-control" placeholder="Aadhaar Number" name="aad" pattern="^\d{12}$"
+								required>
 							<br>
-							DL Status:
+							<input type="number" class="form-control" placeholder="DL ID" name="dl_id">
+							<br>
 							<SELECT name="dl_status" class="form-control">
 								<option value="0">Pending</option>
 								<option value="1">Approve</option>
 								<option value="-1">Reject</option>
 							</select>
 							<br>
-							SELECT DL Status<br><br>
 							<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 						</form>
+					</div>
+					<div class="col-md-6 student-grid">
+						<img src="./images/rto2.png" class="img-responsive">
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -104,7 +95,6 @@ include("./include/connect.php");
 		</div>
 		<!--student-->
 	</div>
-	</form>
 	<!--content-->
 </body>
 <?php
