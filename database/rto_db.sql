@@ -32,7 +32,7 @@ CREATE TABLE `address` (
   `street` varchar(100) NOT NULL,
   `city` varchar(30) NOT NULL,
   `state` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -43,7 +43,7 @@ CREATE TABLE `address` (
 CREATE TABLE `admin` (
   `username` varchar(20) NOT NULL,
   `password` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -67,7 +67,7 @@ CREATE TABLE `citizen` (
   `dob` date NOT NULL,
   `phone_no` char(10) NOT NULL,
   `mail_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE `complaint` (
   `cdate` date NOT NULL,
   `cdesc` text NOT NULL,
   `cid` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,7 @@ CREATE TABLE `dl` (
   `mail_id` varchar(50) NOT NULL,
   `dl_status` int NOT NULL DEFAULT '0',
   `dl_issue_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `inspector` (
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `privilege` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -128,7 +128,7 @@ CREATE TABLE `license` (
   `license_issue_date` date NOT NULL,
   `license_expiry_date` date NOT NULL,
   `mail_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE `llr` (
   `mail_id` varchar(50) NOT NULL,
   `llr_status` int NOT NULL DEFAULT '0',
   `llr_issue_date` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -157,7 +157,7 @@ CREATE TABLE `llr` (
 CREATE TABLE `offices` (
   `district` varchar(30) NOT NULL,
   `rto_address` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -176,9 +176,9 @@ CREATE TABLE `reg` (
   `mail_id` varchar(50) NOT NULL,
   `reg_status` int NOT NULL DEFAULT '0',
   `reg_issue_date` text,
-  `vno` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `vno` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `reg_expiry_date` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
