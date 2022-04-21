@@ -3,10 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2022 at 01:16 AM
+-- Generation Time: Apr 22, 2022 at 12:51 AM
 -- Server version: 8.0.20
 -- PHP Version: 7.4.29
--- Author: Vinay Gawade
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -159,6 +159,13 @@ CREATE TABLE `offices` (
   `rto_address` varchar(200) NOT NULL
 );
 
+--
+-- Dumping data for table `offices`
+--
+
+INSERT INTO `offices` (`district`, `rto_address`) VALUES
+('Sindhudurg', 'Oros');
+
 -- --------------------------------------------------------
 
 --
@@ -176,7 +183,7 @@ CREATE TABLE `reg` (
   `mail_id` varchar(50) NOT NULL,
   `reg_status` int NOT NULL DEFAULT '0',
   `reg_issue_date` text,
-  `vno` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `vno` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `reg_expiry_date` text
 );
 
@@ -251,37 +258,37 @@ ALTER TABLE `reg`
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `cid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `cid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dl`
 --
 ALTER TABLE `dl`
-  MODIFY `dl_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `dl_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `inspector`
 --
 ALTER TABLE `inspector`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `license`
 --
 ALTER TABLE `license`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `llr`
 --
 ALTER TABLE `llr`
-  MODIFY `llr_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `llr_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `reg`
 --
 ALTER TABLE `reg`
-  MODIFY `r_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `r_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
