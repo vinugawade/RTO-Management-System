@@ -17,7 +17,7 @@ include("./include/connect.php");
 				</div>
 				<div class="student-grids">
 					<div class="col-md-3 student-grid">
-						<?php
+<?php
 					$aad = @$_GET["aad"];
 					$age = '';
 					$sql = "SELECT first_name,middle_name,last_name,dob FROM citizen WHERE aadhar='{$aad}'";
@@ -29,6 +29,11 @@ include("./include/connect.php");
 							echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
 							$dob=$row["dob"];
 						}
+					}else{
+						echo ("<script>
+								window.alert('User Not Registered. Please Register First.')
+								window.location.href='./customer.php'
+							</script>");
 					}
 					@$age = floor((time() - strtotime($dob)) / 31556926);
 					if($age<18){
@@ -40,7 +45,7 @@ include("./include/connect.php");
 			?>
 					</div>
 					<div class="col-md-3 student-grid">
-						<form method="post" action="llr_entry.php">
+						<form method="post" action="./llr_entry.php">
 							<input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>">
 							<p>Select Category of Vehicle
 							<p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">&emsp;LMV</p>

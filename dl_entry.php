@@ -16,7 +16,7 @@ include ("./include/connect.php");
 <?php
 if (isset($_POST['submit'])) {
     $q1 = implode(',', $_POST['q1']);
-    $aad = $_POST['aad'];
+    $aad = @$_POST['aad'];
     $flag = 0;
     $sql1 = "SELECT * FROM llr WHERE aadhar='{$aad}' ORDER BY llr_id DESC";
     $result1 = $conn->query($sql1);
@@ -33,7 +33,6 @@ if (isset($_POST['submit'])) {
     } else {
         echo ("<script>
           window.alert('Apply for LL first')
-          window.location.href='./applyforllr.php'
         </script>");
     }
     if ($cov != $q1) {

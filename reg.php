@@ -24,7 +24,7 @@ include("./include/connect.php");
 	$dob = '';
 	if ($sql->num_rows == 0) {
         echo ("<script>
-          window.alert('User not found please sign up.')
+          window.alert('User Not Registered. Please Register First.')
           window.location.href = './customer.php'
         </script>");
     }else if ($sql->num_rows > 0) {
@@ -51,7 +51,7 @@ include("./include/connect.php");
           </div>
           <div class="col-md-3 student-grid">
             <form method="post" action="reg_entry.php">
-              <input name="aad" type="hidden" id="a" value="<?php echo $_GET[" aad"] ?>">
+              <input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>">
               <p>&emsp;&emsp;&emsp;SELECT category of vehicle</p>
               <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">&emsp;LMV</p>
               <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">&emsp;MCWG</p>
