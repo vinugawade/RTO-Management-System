@@ -6,7 +6,7 @@ if (isset($_GET['submit'])) {
     $aad = $_GET["aad"];
     $r_id = $_GET["r_id"];
     $reg_status = $_GET["reg_status"];
-    $vno = $_GET["vno"];
+    $vno = "MH07 " . $_GET["vno"];
     $sql = "SELECT * FROM reg WHERE addhar='{$aad}' AND r_id='{$r_id}'";
     $result = $conn->query($sql);
     $row = mysqli_fetch_row($result);

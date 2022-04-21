@@ -69,7 +69,7 @@ include("./include/header.php");
 				<div class="student-grids">
 					<div class="col-md-6 student-grid">
 						<h4>Enter Details of Registration Entry</h4>
-						<form action="reg_updated.php" method="get">
+						<form action="./reg_updated.php" method="get">
 							<br><br>
 							<input type="text" class="form-control" placeholder="Aadhaar Number" name="aad" pattern="^\d{12}$"
 								required>
@@ -82,7 +82,12 @@ include("./include/header.php");
 								<option value="-1">Reject</option>
 							</select>
 							<br>
-							<input type="text" class="form-control" placeholder="Assigned Vehicle Number" name="vno">
+							<div class="row">
+								<div class="col-lg-2" style="font-size: 24px;">MH07</div>
+								<div class="col-lg-10">
+								 <input type="text" class="form-control" placeholder="Assigned Vehicle Number" name="vno">
+							</div>
+							</div>
 							<br>
 							Note :- Fill In Vehicle No If Registration Is Approved<br>
 							<br>
