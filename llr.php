@@ -41,7 +41,7 @@ include("./include/connect.php");
 					</div>
 					<div class="col-md-3 student-grid">
 						<form method="post" action="llr_entry.php">
-							<input name="aad" type="hidden" id="a" value="<?php echo $_GET[" aad"] ?>">
+							<input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>">
 							<p>Select Category of Vehicle
 							<p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">&emsp;LMV</p>
 							<p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">&emsp;MCWG</p>

@@ -22,9 +22,9 @@ if(isset($_POST['submit'])){
 	$mailid = $_POST['mail_id'];
 	$st=$_POST['street'];
 	$ct=$_POST['city'];
-	$state=$_POST['state'];	$sql="INSERT INTO citizen(first_name,middle_name,last_name,aadhar,gender,dob,phone_no,mail_id) VALUES('$fn','$mn','$ln','$aad','$gn','$db','$pn','$mailid')";
+	$state=$_POST['state'];	$sql="INSERT INTO citizen(first_name,middle_name,last_name,aadhar,gender,dob,phone_no,mail_id) VALUES('{$fn}','{$mn}','{$ln}','{$aad}','{$gn}','{$db}','{$pn}','{$mailid}')";
 	if (mysqli_query($conn, $sql)){
-		$sql1="INSERT INTO address(aadhar,street,city,state) VALUES('$aad','$st','$ct','$state')";
+		$sql1="INSERT INTO address(aadhar,street,city,state) VALUES('{$aad}','{$st}','{$ct}','{$state}')";
 		if (mysqli_query($conn, $sql1)){
 			echo "<script>window.alert('Record created successfully');</script>";
 		}else{

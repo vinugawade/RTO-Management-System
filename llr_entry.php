@@ -15,25 +15,25 @@ include("./include/connect.php");
         <div class="student-grids">
           <div class="col-md-3 student-grid">
 <?php
-if(isset($_POST['submit'])){
+if(isset($_POST['submit'])&&isset($_POST['q1'])&&isset($_POST['aad'])){
 	$q1=implode(',',$_POST['q1']);
-	$aad = $_POST['aad'];
+	$aad = @$_POST['aad'];
 	$sql="SELECT edate,eid,llr_id FROM llr ORDER BY llr_id DESC LIMIT 1";
 	$result=$conn->query($sql);
 	$row=mysqli_fetch_row($result);
 	$sql5="SELECT * FROM citizen WHERE aadhar='{$aad}'";
 	$result5=$conn->query($sql5);
 	$row5=mysqli_fetch_row($result5);
-	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
-	$mail_id = $row5[7];
+	$name = @$row5[0] ." ".@$row5[1]." ".@$row5[2] ;
+	$mail_id = @$row5[7];
 	$d = ''; $sub = '';
-	$d=$row[0];
-	$d=date("Y-m-d", strtotime("+1 week"));
+	$d = @$row[0];
+	$d = date("Y-m-d", strtotime("+1 week"));
 	$dayofweek = date('w', strtotime($d));
 	if($dayofweek == 'Sunday'){
 		$d = date("Y-m-d", strtotime("+1 day"));
 	}
-	$sub=substr($row[1],1);
+	$sub=substr(@$row[1],1);
 	$y=(int)$sub;
 	$y=$y+1;
 	$sub=(string)$y;
@@ -44,8 +44,8 @@ if(isset($_POST['submit'])){
 	$sql3="SELECT rto_address from offices";
 	$result3=$conn->query($sql3);
 	$row3=mysqli_fetch_row($result3);
-	$rto_address = $row3[0];
-	$sql="INSERT INTO llr(aadhar,name,cov,edate,eid,mail_id) VALUES('$aad','$name','$q1','$d','$eid','$mail_id')";
+	$rto_address = @$row3[0];
+	$sql="INSERT INTO llr(aadhar,name,cov,edate,eid,mail_id) VALUES('{$aad}','{$name}','{$q1}','{$d}','{$eid}','{$mail_id}')";
 	if (mysqli_query($conn, $sql)){
 		echo "<script>window.alert('Record created successfully');</script>";
 	}else{

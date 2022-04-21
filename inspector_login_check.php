@@ -2,15 +2,15 @@
 include("./include/connect.php");
 session_start();
 if(isset($_GET['submit'])){
-	$username=$_GET["username"];
-	$password=$_GET["password"];
+	$username = $_GET["username"];
+	$password = $_GET["password"];
 	$sql="SELECT id,privilege FROM inspector WHERE username='{$username}' AND password='{$password}'";
 	$result = $conn->query($sql);
 	$row2=mysqli_fetch_row($result);
 	if (mysqli_num_rows($result) > 0) {
 		$_SESSION['username'] = $username;
 		$_SESSION['role'] = 'inspector';
-		if($row2[1]=='LL'){
+		if($row2[1]=='LL' || $row2[1]=='LLR'){
 			echo ("<script>
 				window.alert('Welcome LL Inspector')
 				window.location.href='./llr_inspector.php'
