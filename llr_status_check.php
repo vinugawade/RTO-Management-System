@@ -13,7 +13,7 @@ include ("./include/connect.php");
 <?php
 $aad = $_GET["aad"];
 $_SESSION['aadhar'] = $aad;
-
+$dob = '';
 $sql = "SELECT first_name,middle_name,last_name,dob FROM citizen WHERE aadhar='{$aad}'";
 $result = $conn->query($sql);
 if (mysqli_num_rows($result) > 0) {
@@ -22,8 +22,11 @@ if (mysqli_num_rows($result) > 0) {
         echo "<p>&emsp; &emsp; Name: " . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "<br>";
         echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
         $dob = $row["dob"];}
-} else {
-    echo "0 results";
+}else{
+    echo ("<script>
+            window.alert('User Not Registered. Please Register First.')
+            window.location.href='./customer.php'
+        </script>");
 }
 
 $sql1 = "SELECT aadhar,llr_status FROM llr where aadhar='{$aad}' order by llr_id desc limit 1";

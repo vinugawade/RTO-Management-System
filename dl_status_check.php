@@ -15,6 +15,7 @@ include("./include/connect.php");
     <div class="col-md-10 student-grid">
 <?php
 $aad = $_GET["aad"];
+$dob = '';
 $sql = "SELECT * FROM citizen where aadhar='{$aad}'";
 $sql1 = "SELECT * FROM dl where aadhar='{$aad}'";
 $result2 = $conn->query($sql1);
@@ -28,8 +29,11 @@ if (mysqli_num_rows($result) > 0) {
         echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
         $dob = $row["dob"];
 	}
-} else {
-    echo "0 results";
+}else{
+    echo ("<script>
+            window.alert('User Not Registered. Please Register First.')
+            window.location.href='./customer.php'
+        </script>");
 }
 
 if (mysqli_num_rows($result2) > 0) {
