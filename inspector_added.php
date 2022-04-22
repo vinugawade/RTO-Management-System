@@ -12,15 +12,15 @@
 					$result = $conn->query($sql);
 					if (mysqli_affected_rows($conn)==1) {
 								echo ("<script>
-								window.alert('Inspector added successfully!!')
-								window.location.href='./rto_admin.php'
+								window.alert('Inspector added successfully!!');
+								window.location.href='./rto_admin.php';
 								</script>");
 					}
 					else
 					{
 						echo ("<script>
-								window.alert('Error adding Inspector!!')
-								window.location.href='./rto_admin.php'
+								window.alert('Error adding Inspector!!');
+								window.location.href='./rto_admin.php';
 								</script>");
 					}
 				}?>

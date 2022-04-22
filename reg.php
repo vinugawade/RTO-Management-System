@@ -24,8 +24,8 @@ include("./include/connect.php");
 	$dob = '';
 	if ($sql->num_rows == 0) {
         echo ("<script>
-          window.alert('User Not Registered. Please Register First.')
-          window.location.href = './customer.php'
+          window.alert('User Not Registered. Please Register First.');
+          window.location.href = './customer.php';
         </script>");
     }else if ($sql->num_rows > 0) {
 		echo "<script>alert('Welcome \"{$aad}\".');</script>";
@@ -43,8 +43,8 @@ include("./include/connect.php");
 	$age = floor((time() - strtotime($dob)) / 31556926);
 	if($age<18) {
 	echo ("<script>
-    window.alert('Not eligible')
-    window.location.href='./index.php'
+    window.alert('Not eligible');
+    window.location.href='./index.php';
 	</script>");
 	}
 ?>
@@ -109,7 +109,7 @@ if(isset($_POST['submit'])) {
 
     $sql="INSERT INTO llr(aadhar,vtype,edate,eid) VALUES('$aad','$q1','$d','$eid')";
     if (mysqli_query($conn, $sql)) {
-        echo "<script>window.alert('Record created successfully')</script>";
+        echo "<script>window.alert('Record created successfully');</script>";
     }else{
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

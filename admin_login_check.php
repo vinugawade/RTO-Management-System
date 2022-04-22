@@ -15,12 +15,12 @@ if(isset($_POST['submit'])) {
         $_SESSION['username'] = $username;
         $_SESSION['role'] = 'admin';
         echo ("<script>
-		window.alert('Welcome RTO Admin')
+		window.alert('Welcome RTO Admin');
 		window.location.href='rto_admin.php'
 		</script>");
     } else {
         echo ("<script>
-		window.alert('Invalid Credentials')
+		window.alert('Invalid Credentials');
 		window.location.href='admin_login.php'
 		</script>");
     }

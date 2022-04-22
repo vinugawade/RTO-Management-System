@@ -38,7 +38,7 @@ if($result){
 echo '</table></div>';
 } else {
 	echo ("<script>
-		window.alert('Couldn't fetch the data')
+		window.alert('Couldn't fetch the data');
 		window.location.href='reg_inspector.php'
 	</script>");
 }

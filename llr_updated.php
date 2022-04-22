@@ -12,8 +12,8 @@ if(isset($_GET['submit'])) {
             $sql1="update llr set llr_status='{$llr_status}', llr_issue_date='{$date}' where aadhar='{$aad}'";
             if($conn->query($sql1)==true) {
                 echo ("<script>
-                        window.alert('Record Updated successfully!!')
-                        window.location.href='./get_llr_info.php'
+                        window.alert('Record Updated successfully!!');
+                        window.location.href='./get_llr_info.php';
                     </script>");
             }else{
                 echo "Error updating record: " . $conn->error;
@@ -23,7 +23,7 @@ if(isset($_GET['submit'])) {
     }else{
         echo ("<script>
                 window.alert('LL entry not found');
-                window.location.href='./llr_update.php'
+                window.location.href='./llr_update.php';
             </script>");
     }
 ?>

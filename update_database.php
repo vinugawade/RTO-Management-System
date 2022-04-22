@@ -11,13 +11,13 @@ if (mysqli_connect_errno()){
 	$result3 = $conn->query($sql3);
 	if (($result1 && $result2 && $result3) == TRUE) {
 			echo ("<script>
-			window.alert('Database updated successfully!!')
-			window.location.href='rto_admin.php'
+			window.alert('Database updated successfully!!');
+			window.location.href='rto_admin.php';
 			</script>");
 	}else{
 		echo ("<script>
-		window.alert('Database Not successfully!!')
-		window.location.href='rto_admin.php'
+		window.alert('Database Not successfully!!');
+		window.location.href='rto_admin.php';
 		</script>");
 	}
 ?>

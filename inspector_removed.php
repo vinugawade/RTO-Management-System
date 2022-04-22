@@ -10,13 +10,13 @@ if(isset($_POST['submit'])){
 		$result = $conn->query($sql);
 		if (mysqli_affected_rows($conn)==1) {
 			echo("<script>
-				window.alert('Inspector removed successfully!!')
-				window.location.href='rto_admin.php'
+				window.alert('Inspector removed successfully!!');
+				window.location.href='rto_admin.php';
 			</script>");
 	}else{
 		echo ("<script>
-				window.alert('Enter existing Inspector data!!')
-				window.location.href='rto_admin.php'
+				window.alert('Enter existing Inspector data!!');
+				window.location.href='rto_admin.php';
 				</script>");
 	}
 }

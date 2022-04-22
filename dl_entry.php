@@ -32,36 +32,36 @@ if (isset($_POST['submit'])) {
         }
     } else {
         echo ("<script>
-          window.alert('Apply for LL first')
+          window.alert('Apply for LL first');
         </script>");
     }
     if ($cov != $q1) {
         echo ("<script>
-          window.alert('Apply for vehicles for which LL has been approved')
+          window.alert('Apply for vehicles for which LL has been approved');
           window.location.href='./applyfordl.php'
         </script>");
     }
     if ($llr_status == -1) {
         echo ("<script>
-          window.alert('You did not pass the LL test. Apply for it again.')
+          window.alert('You did not pass the LL test. Apply for it again.');
           window.location.href='./applyforllr.php'
         </script>");
     }
     if ($llr_status == 0) {
         echo ("<script>
-          window.alert('Your LL is not yet approved')
+          window.alert('Your LL is not yet approved');
           window.location.href='./index.php'
         </script>");
     }
     $llr_exp_date = floor((time() - strtotime($llr_issue_date)) / 2592000);
     if ($llr_exp_date < 1) {
         echo ("<script>
-          window.alert('Apply after one month of LL issued')
+          window.alert('Apply after one month of LL issued');
           window.location.href='./index.php'
         </script>");
     } else if ($llr_exp_date > 6) {
         echo ("<script>
-          window.alert('Your LL has expired. Apply for LL again.')
+          window.alert('Your LL has expired. Apply for LL again.');
           window.location.href='./applyforllr.php'
         </script>");
     } else {
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
       $mail_id = $row5[7];
       $sql = "INSERT INTO dl(aadhar,name,cov,edate,eid,mail_id) VALUES('{$aad}','{$name}','{$q1}','{$d}','{$eid}','{$mail_id}')";
       if (mysqli_query($conn, $sql)) {
-        echo "<script>window.alert('Record created successfully')</script>";
+        echo "<script>window.alert('Record created successfully');</script>";
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }

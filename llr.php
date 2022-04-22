@@ -31,15 +31,15 @@ include("./include/connect.php");
 						}
 					}else{
 						echo ("<script>
-								window.alert('User Not Registered. Please Register First.')
-								window.location.href='./customer.php'
+								window.alert('User Not Registered. Please Register First.');
+								window.location.href='./customer.php';
 							</script>");
 					}
 					@$age = floor((time() - strtotime($dob)) / 31556926);
 					if($age<18){
 						echo ("<script>
-								window.alert('Not eligible')
-								window.location.href='./index.php'
+								window.alert('Not eligible');
+								window.location.href='./index.php';
 							</script>");
 					}
 			?>

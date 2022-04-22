@@ -35,19 +35,19 @@ if (isset($_GET['submit'])) {
                     echo "Error updating record-1: " . $conn->error;
                 }
             }
-							if($conn->query($sql1)==true){
-								echo ("<script>
-									window.alert('Record Updated successfully!!');
-									window.location.href='./get_dl_info.php';
-								</script>");
+            if($conn->query($sql1)==true){
+                echo ("<script>
+                    window.alert('Record Updated successfully!!');
+                    window.location.href='./get_dl_info.php';
+                </script>");
             } else {
                 echo "Error updating record-2: " . $conn->error;
             }
         }
     } else {
         echo ("<script>
-								window.alert('DL entry not found')
-								window.location.href='./dl_update.php'
-							</script>");
+            window.alert('DL entry not found')
+            window.location.href='./dl_update.php'
+        </script>");
     }
 }

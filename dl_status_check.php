@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
 	}
 }else{
     echo ("<script>
-            window.alert('User Not Registered. Please Register First.')
+            window.alert('User Not Registered. Please Register First.');
             window.location.href='./customer.php'
         </script>");
 }

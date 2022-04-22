@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
 	$d = date("Y-m-d", strtotime("+1 day"));
 	$sql="INSERT INTO reg(addhar,name,cov,model,company,rdate,mail_id) VALUES('$aad','$name','$q1','$model','$company','$d','$mail_id')";
 	if (mysqli_query($conn, $sql)){
-			echo "<script>window.alert('Record created successfully')</script>";
+			echo "<script>window.alert('Record created successfully');</script>";
 		}else{
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}

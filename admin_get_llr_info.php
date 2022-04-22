@@ -29,7 +29,7 @@ $row['cov'] . '</td><td align="left">' .
 $row['llr_id'] . '</td><td align="left">' .
 $row['llr_status'] . '</td><td align="left">' .
 '<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td><td align="left"></td></tr></div>';}echo '</table>;';} else {							echo ("<script>
-							window.alert('Couldn't fetch the data')
+							window.alert('Couldn't fetch the data');
 							window.location.href='rto_admin.php'
 							</script>");}mysqli_close($conn);
 ?></body>
