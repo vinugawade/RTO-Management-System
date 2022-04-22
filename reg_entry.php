@@ -31,15 +31,21 @@ if(isset($_POST['submit'])){
 	$sql3="SELECT rto_address from offices";
 	$result3=$conn->query($sql3);
 	$row3=mysqli_fetch_row($result3);
-	$rto_address = $row3[0];	$d=date("Y-m-d", strtotime("+1 week"));
+	$rto_address = $row3[0];
+	$d=date("Y-m-d", strtotime("+1 week"));
 	$dayofweek = date('w', strtotime($d));
 	if($dayofweek == 'Sunday')
 	$d = date("Y-m-d", strtotime("+1 day"));
 	$sql="INSERT INTO reg(addhar,name,cov,model,company,rdate,mail_id) VALUES('$aad','$name','$q1','$model','$company','$d','$mail_id')";
 	if (mysqli_query($conn, $sql)){
-			echo "<script>window.alert('Record created successfully');</script>";
+			echo "<script>window.alert('Record created successfully');
+						window.location.href='./click_registration.php';
+			</script>";
 		}else{
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			echo ("<script>
+					window.alert('Error in vehicle registration!');
+					window.location.href='./click_registration.php';
+			</script>");
 		}
 }
 ?>

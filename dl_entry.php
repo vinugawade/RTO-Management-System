@@ -38,31 +38,31 @@ if (isset($_POST['submit'])) {
     if ($cov != $q1) {
         echo ("<script>
           window.alert('Apply for vehicles for which LL has been approved');
-          window.location.href='./applyfordl.php'
+          window.location.href='./applyfordl.php';
         </script>");
     }
     if ($llr_status == -1) {
         echo ("<script>
           window.alert('You did not pass the LL test. Apply for it again.');
-          window.location.href='./applyforllr.php'
+          window.location.href='./applyforllr.php';
         </script>");
     }
     if ($llr_status == 0) {
         echo ("<script>
           window.alert('Your LL is not yet approved');
-          window.location.href='./index.php'
+          window.location.href='./index.php';
         </script>");
     }
     $llr_exp_date = floor((time() - strtotime($llr_issue_date)) / 2592000);
     if ($llr_exp_date < 1) {
         echo ("<script>
           window.alert('Apply after one month of LL issued');
-          window.location.href='./index.php'
+          window.location.href='./index.php';
         </script>");
     } else if ($llr_exp_date > 6) {
         echo ("<script>
           window.alert('Your LL has expired. Apply for LL again.');
-          window.location.href='./applyforllr.php'
+          window.location.href='./applyforllr.php';
         </script>");
     } else {
       $sql = "SELECT edate,eid,dl_id FROM dl ORDER BY dl_id DESC LIMIT 1";
@@ -91,7 +91,10 @@ if (isset($_POST['submit'])) {
       if (mysqli_query($conn, $sql)) {
         echo "<script>window.alert('Record created successfully');</script>";
       } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo ("<script>
+            window.alert('Error in DL creation!');
+            window.location.href='./click_dl.php';
+        </script>");
       }
 
       $sql3 = "SELECT rto_address FROM offices";

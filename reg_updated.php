@@ -18,22 +18,22 @@ if (isset($_GET['submit'])) {
             $sql1 = "UPDATE reg SET reg_status=$reg_status,reg_issue_date='{$date}',vno='{$vno}',reg_expiry_date='{$exp}' WHERE addhar='{$aad}' AND r_id='{$r_id}'";
             if ($conn->query($sql1) == true) {
                 echo ("<script>
-									window.alert('Record Updated successfully!!');
-									window.location.href='reg_update.php';
-								</script>");
+                    window.alert('Record Updated successfully!!');
+                    window.location.href='./reg_update.php';
+                </script>");
             } else {
                 echo "Error updating record: " . $conn->error;
             }
-					}else if($row[8]==1 || $row[8]==-1 || $row[8]==0) {
+        }else if($row[8]==1 || $row[8]==-1 || $row[8]==0) {
             echo ("<script>
-							window.alert('Already updated!!');
-							window.location.href='reg_update.php';
-						</script>");
+                window.alert('Already updated!!');
+                window.location.href='./reg_update.php';
+            </script>");
         }
     } else {
         echo ("<script>
 			window.alert('Registration entry not found');
-			window.location.href='reg_update.php';
+			window.location.href='./reg_inspector.php';
 			</script>");
     }
 }
