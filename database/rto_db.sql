@@ -184,7 +184,7 @@ CREATE TABLE `reg` (
   `mail_id` varchar(50) NOT NULL,
   `reg_status` int NOT NULL DEFAULT '0',
   `reg_issue_date` text,
-  `vno` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `vno` varchar(20) DEFAULT NULL,
   `reg_expiry_date` text
 );
 
