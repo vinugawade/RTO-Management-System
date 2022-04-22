@@ -33,8 +33,8 @@ if($result){
 		$row['name'] . '</td><td>' .
 		$row['cov'] . '</td><td>' .
 		$row['r_id'] . '</td><td>' .
-		$row['vno'] . '</td><td>' .
 		$status. '</td><td>' .
+		$row['vno'] . '</td><td>' .
 		'<a href="mailto:'.$row['mail_id'].'?subject='.$subject.'&body='.$body.'">'.$row['mail_id'].'</a>'.'</td></tr></div>';
 	}
 echo '</table></div>';
