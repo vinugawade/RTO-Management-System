@@ -16,30 +16,34 @@ include("./include/connect.php");
 <?php
 if(isset($_POST['submit'])){
 	$q1=implode(',',$_POST['q1']);
+	$d = '';
 	$aad = $_POST['aad'];
 	$model = $_POST['model'];
-	$company = $_POST['company'];	$sql="SELECT rdate,r_id from reg order by r_id desc limit 1";
-	$result=$conn->query($sql);
-	$row=mysqli_fetch_row($result);	$sql5="SELECT first_name,middle_name,last_name,mail_id from citizen where aadhar='{$aad}'";
-	$result5=$conn->query($sql5);
-	$row5=mysqli_fetch_row($result5);
+	$company = $_POST['company'];
+	$sql = "SELECT rdate,r_id from reg order by r_id desc limit 1";
+	$result = $conn->query($sql);
+	$row = mysqli_fetch_row($result);
+	$sql5 = "SELECT first_name,middle_name,last_name,mail_id from citizen where aadhar = '{$aad}'";
+	$result5 = $conn->query($sql5);
+	$row5 = mysqli_fetch_row($result5);
 	$name = $row5[0] ." ".$row5[1]." ".$row5[2] ;
 	$mail_id = $row5[3];	$sql2 = "SELECT city from address where aadhar='{$aad}'";
-	$result2=$conn->query($sql2);
-	$row2=mysqli_fetch_row($result2);
-	$city=$row2[0];
-	$sql3="SELECT rto_address from offices";
-	$result3=$conn->query($sql3);
-	$row3=mysqli_fetch_row($result3);
+	$result2 = $conn->query($sql2);
+	$row2 = mysqli_fetch_row($result2);
+	$city = $row2[0];
+	$sql3 = "SELECT rto_address from offices";
+	$result3 = $conn->query($sql3);
+	$row3 = mysqli_fetch_row($result3);
 	$rto_address = $row3[0];
-	$d=date("Y-m-d", strtotime("+1 week"));
+	$d = date("Y-m-d", strtotime("+1 week"));
 	$dayofweek = date('w', strtotime($d));
 	if($dayofweek == 'Sunday')
 	$d = date("Y-m-d", strtotime("+1 day"));
-	$sql="INSERT INTO reg(addhar,name,cov,model,company,rdate,mail_id) VALUES('$aad','$name','$q1','$model','$company','$d','$mail_id')";
+	$sql="INSERT INTO reg(addhar,name,cov,model,company,rdate,mail_id) VALUES('{$aad}','{$name}','{$q1}','{$model}','{$company}','{$d}','{$mail_id}')";
 	if (mysqli_query($conn, $sql)){
-			echo "<script>window.alert('Record created successfully');
-						window.location.href='./click_registration.php';
+			echo "<script>
+					window.alert('Record created successfully');
+					window.location.href='./click_registration.php';
 			</script>";
 		}else{
 			echo ("<script>
