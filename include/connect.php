@@ -1,9 +1,22 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', 'Admin@123');
+
+// Update below information with your database details.
+define('HOSTNAME','localhost');
+define('USERNAME','root');
+define('PASSWORD','');
+define('DATABASE','rto_db');
+
+$conn = mysqli_connect(HOSTNAME, USERNAME, PASSWORD);
 if (!$conn){
-    die("Database Connection Failed" . mysqli_error($conn));
+    echo ("<script>
+        window.alert('Database Connection Failed. Please follow the step-4 from README file.')
+        window.location.href='./index.php'
+    </script>");
 }
-$select_db = mysqli_select_db($conn, 'rto_db');
+$select_db = mysqli_select_db($conn, DATABASE);
 if (!$select_db){
-    die("Database Selection Failed" . mysqli_error($conn));
+    echo ("<script>
+        window.alert('Database Connection Failed. Please follow the step-4 from README file.')
+        window.location.href='./index.php'
+    </script>");
 }

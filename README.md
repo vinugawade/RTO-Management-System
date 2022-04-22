@@ -6,10 +6,10 @@
 1. Install XAMPP on your `Windows OS`. [download](https://github.com/vinugawade/RTO-Management-System/releases/tag/v1.0.0) or [clone](https://github.com/vinugawade/RTO-Management-System.git) this repository and put inside the `htdocs` of your XAMPP.
 2. After doing whatever is mentioned in step 1, create a database with the name `rto_db` (that`s the name I gave to the database while running the project).
 3. Import the `database/rto_db.sql` under the `rto_db` in `phpmyadmin` using MySQL.
-4. Now copy the folder i.e. `RTO-Management-System` by default. You can rename it as you want.
-5. Start the `Apache server` and `MySQL service` in XAMPP. Then open up your browser and type `localhost/RTO-Management-System` or `localhost/<renamed_project_folder>`
-
-6. Default `admin` login credentials are :- `admin / admin`.
+4. Configure the database `username` & `password` with project by editing `include/connect.php` file.
+5. Now copy the folder i.e. `RTO-Management-System` by default. You can rename it as you want.
+6. Start the `Apache server` and `MySQL service` in XAMPP. Then open up your browser and type `localhost/RTO-Management-System` or `localhost/<renamed_project_folder>`
+7. Default `admin` login credentials are :- `admin / admin`.
 ## Technologies
 
 ![PHP](https://img.shields.io/static/v1?style=flat-square&label&style=for-the-badge&logo=php&message=PHP&color=777BB4&labelColor=white)
