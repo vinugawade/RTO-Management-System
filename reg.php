@@ -36,7 +36,7 @@ include("./include/connect.php");
 				echo "<p>&emsp; &emsp; Aadhaar number: " . $aad . "<br>";
 				echo "<p>&emsp; &emsp; Name: " . $row["first_name"] ." ".$row["middle_name"]." ".$row["last_name"] . "<br>";
 				echo "<p>&emsp; &emsp; Date of birth: " . $row["dob"] . "<br>";
-				$dob=$row["dob"];
+				$dob = $row["dob"];
 			}
 		}
   }
@@ -51,7 +51,7 @@ include("./include/connect.php");
           </div>
           <div class="col-md-3 student-grid">
             <form method="post" action="./reg_entry.php">
-              <input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"] ?>">
+              <input name="aad" type="hidden" id="a" value="<?php echo $_GET["aad"]; ?>">
               <p>&emsp;&emsp;&emsp;SELECT category of vehicle</p>
               <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="one" value="LMV">&emsp;LMV</p>
               <p>&emsp; &emsp; &emsp;<input name="q1[]" type="checkbox" id="two" value="MCWG">&emsp;MCWG</p>
@@ -63,10 +63,10 @@ include("./include/connect.php");
           <div class="col-md-6 student-grid">
             <br>
             <input type="text" class="form-control" placeholder="Vehicle Model" name="model"
-              placeholder="Vehicle Model">
+              placeholder="Vehicle Model" required>
             <br>
             <input type="text" class="form-control" placeholder="Vehicle Company" name="company"
-              placeholder="Vehicle Company">
+              placeholder="Vehicle Company" requiured>
             </form>
             <div class="clearfix"></div>
           </div>
