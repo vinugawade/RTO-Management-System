@@ -22,6 +22,7 @@ if($result){
 				<th>COV</th>
 				<th>Registration ID</th>
 				<th>Registration Status</th>
+				<th>Vehicle Number</th>
 				<th>Email</th>
 				</tr></div>';
 
