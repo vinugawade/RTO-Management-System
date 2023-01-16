@@ -35,7 +35,8 @@
 1. Secure login.
 2. More secure data validation.
 3. Latest UI technologies.
-# Author
+
+# Maintainer
 
 >### ✨ [Vinay Gawade](https://github.com/vinugawade) 👨🏻‍💻
 
